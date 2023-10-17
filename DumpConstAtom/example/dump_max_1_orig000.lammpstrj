@@ -1,0 +1,43 @@
+dump.lammpstrj
+1
+-1 0.0 0.0 0.0
+ITEM: TIMESTEP
+0
+ITEM: NUMBER OF ATOMS
+1
+ITEM: BOX BOUNDS pp pp pp
+0 10.0
+0 10.0
+0 10.0
+ITEM: ATOMS id type x y z
+1 1 5.0    5.0    5.0
+ITEM: TIMESTEP
+10
+ITEM: NUMBER OF ATOMS
+1
+ITEM: BOX BOUNDS pp pp pp
+0 10.0
+0 10.0
+0 10.0
+ITEM: ATOMS id type x y z
+1 1 5.0    5.0    5.0
+ITEM: TIMESTEP
+20
+ITEM: NUMBER OF ATOMS
+1
+ITEM: BOX BOUNDS pp pp pp
+0 10.0
+0 10.0
+0 10.0
+ITEM: ATOMS id type x y z
+1 1 5.0    5.0    5.0
+ITEM: TIMESTEP
+30
+ITEM: NUMBER OF ATOMS
+1
+ITEM: BOX BOUNDS pp pp pp
+0 10.0
+0 10.0
+0 10.0
+ITEM: ATOMS id type x y z
+1 1 5.0    5.0    5.0
