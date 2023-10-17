@@ -1,0 +1,26 @@
+LAMMPS data file
+
+Masses
+
+1    NEW_COEFFS
+4    NEW_COEFFS
+6    NEW_COEFFS
+
+Pair Coeffs
+
+2  NEW_COEFFS
+1  NEW_COEFFS
+
+Bond Coeffs
+
+1  NEW_COEFFS
+
+
+Dihedral Coeffs
+
+2  NEW_COEFFS
+4  NEW_COEFFS
+
+Angle Coeffs
+
+1  NEW_COEFFS
