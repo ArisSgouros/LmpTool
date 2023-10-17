@@ -8,7 +8,7 @@ Remove duplicate coefficients from Lammps data files
 The script removes duplicate coefficients from Lammps data files
 
 # Organization
-The RuSseL1D repository includes the following files and directories:
+The folder includes the following files and directories:
  - README            -> current file
  - LICENSE           -> MIT LICENSE
  - example/          -> directory containing an indicative example

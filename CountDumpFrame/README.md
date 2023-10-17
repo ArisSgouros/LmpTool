@@ -8,7 +8,7 @@ Count the number of frames of a Lammps dump file
 The outputs the number of frames of a Lammps dump file
 
 # Organization
-The RuSseL1D repository includes the following files and directories:
+The folder includes the following files and directories:
  - README               -> current file
  - LICENSE              -> MIT LICENSE
  - example/             -> directory containing an indicative example
