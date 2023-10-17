@@ -42,43 +42,61 @@ class c_dihedral:
 #
 # This section parses the command line arguments
 #
-nargs = len(sys.argv) - 1
-print("nargs = ", nargs)
+side = "0"
+mol_offset = 0
 ptype_offset = 0
 btype_offset = 0
 atype_offset = 0
 dtype_offset = 0
 iype_offset = 0
-if nargs > 3:
+xx_offset = 0.0
+yy_offset = 0.0
+zz_offset = 0.0
+
+nargs = len(sys.argv)
+if nargs > 4:
    data_file_A = sys.argv[1]
    print("First data file:", data_file_A)
    data_file_B = sys.argv[2]
    print("Second data file:", data_file_B)
    data_file_merged = sys.argv[3]
    print("Merged data file:", data_file_merged)
-   side = sys.argv[4]
-   if side in ["-x", "+x", "-y", "+y", "-z", "+z", "0"]:
-      print("Side:", side)
-   else:
-      print("wrong side value.", side)
-      print("Choose between -x, +x, -y, +y, -z, +z, and 0")
-      quit()
-   if nargs > 4: ptype_offset = int(sys.argv[5])
-   print("atom type offset: ",ptype_offset)
-   if nargs > 5: btype_offset = int(sys.argv[6])
-   print("bond type offset: ",btype_offset)
-   if nargs > 6: atype_offset = int(sys.argv[7])
-   print("angle type offset: ",atype_offset)
-   if nargs > 7: dtype_offset = int(sys.argv[8])
-   print("dihedral type offset: ",dtype_offset)
-   if nargs > 8: iype_offset = int(sys.argv[9])
-   print("improper type offset: ",iype_offset)
 else:
    print("Please set the name of the data file")
    print("by issuing the command:\n")
    print("python lmp_merge_datafile.py \"datafile_A\" \"datafile_B\" \"newdatafile\"\n")
    print("exiting...")
    exit()
+
+for iarg in range(1, nargs):
+   arg_prev = sys.argv[iarg-1]
+   if arg_prev == "-side":
+      side = sys.argv[iarg]
+      print("side: ",side)
+   if arg_prev == "-moloffset":
+      mol_offset = int(sys.argv[iarg])
+      print("molid offset: ",mol_offset)
+   if arg_prev == "-poffset":
+      ptype_offset = int(sys.argv[iarg])
+      print("atom type offset: ",ptype_offset)
+   if arg_prev == "-boffset":
+      btype_offset = int(sys.argv[iarg])
+      print("bond type offset: ",btype_offset)
+   if arg_prev == "-aoffset":
+      atype_offset = int(sys.argv[iarg])
+      print("angle type offset: ",atype_offset)
+   if arg_prev == "-doffset":
+      dtype_offset = int(sys.argv[iarg])
+      print("dihedral type offset: ",dtype_offset)
+   if arg_prev == "-ioffset":
+      itype_offset = int(sys.argv[iarg])
+      print("improper type offset: ",iype_offset)
+   if arg_prev == "-posoffset":
+      xx_offset = float(sys.argv[iarg])
+      yy_offset = float(sys.argv[iarg + 1])
+      zz_offset = float(sys.argv[iarg + 2])
+      print("posoffset: ",xx_offset, yy_offset, zz_offset)
+
 
 atoms = {}
 bonds = {}
@@ -264,14 +282,13 @@ except:
    print("Problem with reading masses section/not existing")
 #
 # Read the Atoms section
-molId_offset = 0
 try:
    print("atom section:", n_atoms)
    for ii in range(n_atoms):
       line = lines[Atoms_start+ii].split()
       Id = int(line[0])
       molId = int(line[1])
-      molId_offset = max(molId_offset, molId)
+      mol_offset = max(mol_offset, molId)
       type = int(line[2])
       q = float(line[3])
       x = float(line[4])
@@ -300,8 +317,8 @@ try:
       line = lines[Bonds_start+ii].split()
       Id = int(line[0])
       type = int(line[1])
-      i = float(line[2])
-      j = float(line[3])
+      i = int(line[2])
+      j = int(line[3])
 
       ibond = c_bond(Id, type, i, j)
       bonds[Id] = ibond
@@ -315,9 +332,9 @@ try:
       line = lines[Angles_start+ii].split()
       Id = int(line[0])
       type = int(line[1])
-      i = float(line[2])
-      j = float(line[3])
-      k = float(line[4])
+      i = int(line[2])
+      j = int(line[3])
+      k = int(line[4])
 
       iangle = c_angle(Id, type, i, j, k)
       angles[Id] = iangle
@@ -326,18 +343,18 @@ except:
 #
 # Read the Dihedrals section
 try:
-   print("dihedrals:", n_impropers)
+   print("dihedrals:", n_dihedrals)
    for ii in range(n_dihedrals):
-      line = lines[Dehidrals_start+ii].split()
+      line = lines[Dihedrals_start+ii].split()
       Id = int(line[0])
       type = int(line[1])
-      i = float(line[2])
-      j = float(line[3])
-      k = float(line[4])
-      l = float(line[5])
+      i = int(line[2])
+      j = int(line[3])
+      k = int(line[4])
+      l = int(line[5])
 
       idihedral = c_dihedral(Id, type, i, j, k, l)
-      dihedralss[Id] = idihedral
+      dihedrals[Id] = idihedral
 except:
    print("Problem with reading dihedrals section")
 #
@@ -348,10 +365,10 @@ try:
       line = lines[Impropers_start+ii].split()
       Id = int(line[0])
       type = int(line[1])
-      i = float(line[2])
-      j = float(line[3])
-      k = float(line[4])
-      l = float(line[5])
+      i = int(line[2])
+      j = int(line[3])
+      k = int(line[4])
+      l = int(line[5])
 
       iimpriper = c_dihedral(Id, type, i, j, k, l)
       impropers[Id] = iimproper
@@ -586,7 +603,7 @@ try:
    for ii in range(n_atoms):
       line = lines[Atoms_start+ii].split()
       Id = int(line[0]) + atId_offset
-      molId = int(line[1]) + molId_offset
+      molId = int(line[1]) + mol_offset
       type = int(line[2]) + ptype_offset
       q = float(line[3])
       x = float(line[4])
@@ -603,9 +620,9 @@ try:
       except:
          pass
 
-      x += coord_offset[0]
-      y += coord_offset[1]
-      z += coord_offset[2]
+      x += coord_offset[0] + xx_offset
+      y += coord_offset[1] + yy_offset
+      z += coord_offset[2] + zz_offset
 
       iatom = c_atom(Id, molId, type, q, x, y, z)
       atoms[Id] = iatom
@@ -619,8 +636,8 @@ try:
       line = lines[Bonds_start+ii].split()
       Id = int(line[0]) + bId_offset
       type = int(line[1]) + btype_offset
-      i = float(line[2]) + atId_offset
-      j = float(line[3]) + atId_offset
+      i = int(line[2]) + atId_offset
+      j = int(line[3]) + atId_offset
 
       ibond = c_bond(Id, type, i, j)
       bonds[Id] = ibond
@@ -634,9 +651,9 @@ try:
       line = lines[Angles_start+ii].split()
       Id = int(line[0]) + aId_offset
       type = int(line[1]) + atype_offset
-      i = float(line[2]) + atId_offset
-      j = float(line[3]) + atId_offset
-      k = float(line[4]) + atId_offset
+      i = int(line[2]) + atId_offset
+      j = int(line[3]) + atId_offset
+      k = int(line[4]) + atId_offset
 
       iangle = c_angle(Id, type, i, j, k)
       angles[Id] = iangle
@@ -645,18 +662,18 @@ except:
 #
 # Read the Dihedrals section
 try:
-   print("dihedrals:", n_impropers)
+   print("dihedrals:", n_dihedrals)
    for ii in range(n_dihedrals):
-      line = lines[Dehidrals_start+ii].split()
+      line = lines[Dihedrals_start+ii].split()
       Id = int(line[0]) + dId_offset
       type = int(line[1]) + dtype_offset
-      i = float(line[2]) + atId_offset
-      j = float(line[3]) + atId_offset
-      k = float(line[4]) + atId_offset
-      l = float(line[5]) + atId_offset
+      i = int(line[2]) + atId_offset
+      j = int(line[3]) + atId_offset
+      k = int(line[4]) + atId_offset
+      l = int(line[5]) + atId_offset
 
       idihedral = c_dihedral(Id, type, i, j, k, l)
-      dihedralss[Id] = idihedral
+      dihedrals[Id] = idihedral
 except:
    print("Problem with reading dihedrals section")
 #
@@ -667,10 +684,10 @@ try:
       line = lines[Impropers_start+ii].split()
       Id = int(line[0]) + iId_offset
       type = int(line[1]) + itype_offset
-      i = float(line[2]) + atId_offset
-      j = float(line[3]) + atId_offset
-      k = float(line[4]) + atId_offset
-      l = float(line[5]) + atId_offset
+      i = int(line[2]) + atId_offset
+      j = int(line[3]) + atId_offset
+      k = int(line[4]) + atId_offset
+      l = int(line[5]) + atId_offset
 
       iimpriper = c_dihedral(Id, type, i, j, k, l)
       impropers[Id] = iimproper
