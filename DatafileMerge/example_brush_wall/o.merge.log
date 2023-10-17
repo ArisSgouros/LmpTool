@@ -1,13 +1,8 @@
-nargs =  5
 First data file: pos_brush.dat
 Second data file: pos_wall.dat
 Merged data file: pos_brush_wall.dat
-Side: -z
+side:  -z
 atom type offset:  6
-bond type offset:  0
-angle type offset:  0
-dihedral type offset:  0
-improper type offset:  0
 Reading the datafile: pos_brush.dat
 bond coeffs: 6
 angle coeffs: 10
