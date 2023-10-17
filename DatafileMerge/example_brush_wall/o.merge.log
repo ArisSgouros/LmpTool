@@ -1,0 +1,47 @@
+nargs =  5
+First data file: pos_brush.dat
+Second data file: pos_wall.dat
+Merged data file: pos_brush_wall.dat
+Side: -z
+atom type offset:  6
+bond type offset:  0
+angle type offset:  0
+dihedral type offset:  0
+improper type offset:  0
+Reading the datafile: pos_brush.dat
+bond coeffs: 6
+angle coeffs: 10
+dihedral coeffs: 0
+improper coeffs: 0
+pair coeffs: 6
+Problem with reading pair coeffs section/not existing
+Masses section
+atom section: 2838
+bonds: 684
+angles: 756
+dihedrals: 0
+impropers 0
+box A dimensions: 0.0 9.396385446 xlo xhi
+                  0.0 9.396385446 ylo yhi
+                  0.0 10.718251239076086 zlo zhi
+Reading the datafile: pos_wall.dat
+box B dimensions: 0.0 9.396387 xlo xhi
+                  0.0 9.396387 ylo yhi
+                  0.0 0.4271085 zlo zhi
+bond coeffs: 0
+angle coeffs: 0
+dihedral coeffs: 0
+improper coeffs: 0
+pair coeffs: 1
+Problem with reading pair coeffs section/not existing
+Masses section
+atom section: 242
+bonds: 0
+angles: 0
+dihedrals: 0
+impropers 0
+Generate the merged datafile: pos_brush_wall.dat
+merged box dimensions:
+                       0.0 9.396385446 xlo xhi
+                       0.0 9.396385446 ylo yhi
+                       0.0 11.145359739076085 zlo zhi
