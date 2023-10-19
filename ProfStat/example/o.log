@@ -1,0 +1,51 @@
+Test: process file profile_sample
+
+File name     :  profile_sample
+Read every    :  1
+Print density :  True
+Print mean    :  True
+Print std     :  True
+Print err     :  True
+Sum           :  True
+number of columns   :  2
+number of Bins      :  3
+Bin width           :  0.5
+coord            weight           density          ave_val1         ave_val2         std_val1         std_val2         err_val1         err_val2         
+0.500000         5.000000         1.000000         3.000000         1.000000         1.581139         0.000000         0.707107         0.000000         
+1.000000         10.000000        2.000000         4.000000         1.100000         1.054093         0.994429         0.333333         0.314466         
+1.500000         17.000000        3.400000         3.588235         12.823529        1.277636         14.612646        0.309872         3.544087         
+
+Test: process file profile_sample (values are multiplied w/ weights)
+
+File name     :  profile_sample
+Read every    :  1
+Print density :  True
+Print mean    :  True
+Print std     :  True
+Print err     :  True
+Sum           :  True
+number of columns   :  2
+number of Bins      :  3
+Bin width           :  0.5
+coord            weight           density          ave_val1         ave_val2         std_val1         std_val2         err_val1         err_val2         
+0.500000         5.000000         1.000000         3.000000         1.000000         1.581139         0.000000         0.707107         0.000000         
+1.000000         5.000000         2.000000         8.000000         2.200000         8.124038         2.683282         3.633180         1.200000         
+1.500000         5.000000         3.400000         12.200000        43.600000        10.401923        82.962642        4.651881         37.102022        
+
+Test: process file profile_sample (export mean only)
+
+File name     :  profile_sample
+Read every    :  1
+Print density :  False
+Print mean    :  True
+Print std     :  False
+Print err     :  False
+Sum           :  False
+number of columns   :  2
+number of Bins      :  3
+Bin width           :  0.5
+coord            weight           ave_val1         ave_val2         
+0.500000         5.000000         3.000000         1.000000         
+1.000000         10.000000        4.000000         1.100000         
+1.500000         17.000000        3.588235         12.823529        
+
