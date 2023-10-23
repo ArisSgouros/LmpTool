@@ -9,6 +9,7 @@ The script changes the number of atoms to a constant value
 
 # Organization
 The folder includes the following files and directories:
- - README            -> current file
- - example/          -> directory containing an indicative example
+ - README             -> current file
+ - LICENSE            -> MIT LICENSE
+ - example/           -> directory containing an indicative example
  - dump_const_atom.py -> python script setting constant number of atoms

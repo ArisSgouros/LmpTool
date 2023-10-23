@@ -10,5 +10,6 @@ The script can be used to combine Lammps data files taking account the offset in
 # Organization
 The folder includes the following files and directories:
  - README            -> current file
+ - LICENSE           -> MIT LICENSE
  - example/          -> directory containing an indicative example
  - datafile_merge.py -> python script merging Lammps data files
