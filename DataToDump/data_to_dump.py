@@ -49,7 +49,7 @@ if __name__ == "__main__":
    print("format     : ", fmt)
    print("file type  : ", file_type)
 
-   if file_type not in ["lammpstrj"]:
+   if file_type not in ["lammpstrj", "xyz"]:
       print("Unsupported file type ", file_type)
       sys.exit()
 
@@ -110,18 +110,26 @@ if __name__ == "__main__":
 
    # Export the header of the dump file
    foo = open(file_dump, 'w')
-   foo.write("ITEM: TIMESTEP\n")
-   foo.write("0\n")
-   foo.write("ITEM: NUMBER OF ATOMS\n")
-   foo.write("%d\n" % (n_atom))
-   foo.write("ITEM: BOX BOUNDS pp pp pp\n")
-   foo.write("%s %s\n" % (xlo, xhi))
-   foo.write("%s %s\n" % (ylo, yhi))
-   foo.write("%s %s\n" % (zlo, zhi))
-   foo.write("ITEM: ATOMS")
-   for kind in fmt:
-      foo.write(" %s" % (kind))
-   foo.write("\n")
+   if file_type == "lammpstrj":
+      foo.write("ITEM: TIMESTEP\n")
+      foo.write("0\n")
+      foo.write("ITEM: NUMBER OF ATOMS\n")
+      foo.write("%d\n" % (n_atom))
+      foo.write("ITEM: BOX BOUNDS pp pp pp\n")
+      foo.write("%s %s\n" % (xlo, xhi))
+      foo.write("%s %s\n" % (ylo, yhi))
+      foo.write("%s %s\n" % (zlo, zhi))
+      foo.write("ITEM: ATOMS")
+      for kind in fmt:
+         foo.write(" %s" % (kind))
+      foo.write("\n")
+   elif file_type == "xyz":
+      foo.write("%d\n" % (n_atom))
+      for kind in fmt:
+         foo.write("%s " % (kind))
+      foo.write("\n")
+   else:
+      sys.exit()
 
    fmt_no_coord = cp.copy(fmt)
    if "x" in fmt_no_coord:
