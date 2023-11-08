@@ -32,6 +32,7 @@ parser.add_argument('data_file', type=str, help='Path of the lammps data file')
 parser.add_argument('atom_style',  type=str, help='Lammps atom style')
 parser.add_argument('-fmt', '--fmt', help='format of Lammps dump file', type=str)
 parser.add_argument('-dump_file', type=str, default="dump.lammpstrj", help='Path of the Lammps dump file.')
+parser.add_argument('-file_type', type=str, default="lammpstrj", help='Type of the dump file.')
 
 
 if __name__ == "__main__":
@@ -39,12 +40,18 @@ if __name__ == "__main__":
    file_data = args.data_file
    atom_style = args.atom_style
    file_dump = args.dump_file
+   file_type = args.file_type
    fmt = [item for item in args.fmt.split(',')]
 
    print("data file  : ", file_data)
    print("atom_style : ", atom_style)
    print("dump_file  : ", file_dump)
    print("format     : ", fmt)
+   print("file type  : ", file_type)
+
+   if file_type not in ["lammpstrj"]:
+      print("Unsupported file type ", file_type)
+      sys.exit()
 
    atoms = {}
 
