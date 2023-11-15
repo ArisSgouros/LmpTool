@@ -20,4 +20,5 @@ The folder includes the following files and directories:
  - ProfStat             -> Export statistics of Lammps profiles
  - ThermoMerge          -> Merge multiple thermo files
  - ThermoStat           -> Export statistics of Lammps thermo outputs
+ - MsdMol               -> Calculate the mean square displacement of molecules
  - Dev                  -> Miscellaneous code under development
