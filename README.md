@@ -1,11 +1,8 @@
-# LmpProc
+# LmpTool
 A suite of processing scripts for Lammps files
 
 # Author
 - Dr. Aristotelis P. Sgouros (arissgouros@gmail.com)
-
-# Description
-The script changes the number of atoms to a constant value
 
 # Organization
 The folder includes the following files and directories:
