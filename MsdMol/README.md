@@ -11,6 +11,7 @@ Calculate the mean square displacement of one or multiple molecules
 The folder includes the following files and directories:
  - README   -> current file
  - LICENSE  -> MIT LICENSE
+ - example/ -> directory containing an indicative example
  - main.cpp -> source file of the c++ script for the estimation of MSD
  - make.sh  -> bash file executing the compilation
  - clean.sh  -> bash file cleaning the compilation
