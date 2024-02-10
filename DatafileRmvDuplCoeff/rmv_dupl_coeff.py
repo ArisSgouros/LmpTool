@@ -75,6 +75,12 @@ angles = 0
 dihedrals = 0
 impropers = 0
 
+atom_types = 0
+bond_types = 0
+angle_types = 0
+dihedral_types = 0
+improper_types = 0
+
 lines = []
 line_num = 0
 while True:
