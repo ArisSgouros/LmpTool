@@ -1,0 +1,17 @@
+
+Parsing command line arguments and building connectivity..
+
+Group           nmol            type            segs/mol        mols           
+1               30              SINGLE          1              
+DGEBF_A        
+
+
+Connectivity of Group 1..
+seg_ID          prev_seg        cur_seg         next_seg       
+1               void            DGEBF_A         void           
+
+Output file name: SMART_30-DGEBF_A.dat
+
+Generating SMART file from Group 1
+
+SUCCESS!

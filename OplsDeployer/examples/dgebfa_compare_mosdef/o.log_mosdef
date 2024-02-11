@@ -1,0 +1,183 @@
+Atoms:
+Atom <Atom H30 [0]; In XXXX 0> is typed as opls_140
+Atom <Atom C11 [1]; In XXXX 0> is typed as opls_135
+Atom <Atom O2 [2]; In XXXX 0> is typed as opls_154
+Atom <Atom C7 [3]; In XXXX 0> is typed as opls_158
+Atom <Atom H31 [4]; In XXXX 0> is typed as opls_140
+Atom <Atom C15 [5]; In XXXX 0> is typed as opls_182
+Atom <Atom H27 [6]; In XXXX 0> is typed as opls_140
+Atom <Atom O4 [7]; In XXXX 0> is typed as opls_180
+Atom <Atom H40 [8]; In XXXX 0> is typed as opls_185
+Atom <Atom H41 [9]; In XXXX 0> is typed as opls_185
+Atom <Atom C21 [10]; In XXXX 0> is typed as opls_145
+Atom <Atom C23 [11]; In XXXX 0> is typed as opls_145
+Atom <Atom C25 [12]; In XXXX 0> is typed as opls_145
+Atom <Atom C17 [13]; In XXXX 0> is typed as opls_145
+Atom <Atom H47 [14]; In XXXX 0> is typed as opls_146
+Atom <Atom C19 [15]; In XXXX 0> is typed as opls_145
+Atom <Atom H49 [16]; In XXXX 0> is typed as opls_146
+Atom <Atom C9 [17]; In XXXX 0> is typed as opls_145
+Atom <Atom H43 [18]; In XXXX 0> is typed as opls_146
+Atom <Atom H45 [19]; In XXXX 0> is typed as opls_146
+Atom <Atom C5 [20]; In XXXX 0> is typed as opls_149
+Atom <Atom C8 [21]; In XXXX 0> is typed as opls_145
+Atom <Atom C16 [22]; In XXXX 0> is typed as opls_145
+Atom <Atom C18 [23]; In XXXX 0> is typed as opls_145
+Atom <Atom C22 [24]; In XXXX 0> is typed as opls_145
+Atom <Atom H42 [25]; In XXXX 0> is typed as opls_146
+Atom <Atom C24 [26]; In XXXX 0> is typed as opls_145
+Atom <Atom H44 [27]; In XXXX 0> is typed as opls_146
+Atom <Atom C20 [28]; In XXXX 0> is typed as opls_145
+Atom <Atom H46 [29]; In XXXX 0> is typed as opls_146
+Atom <Atom H48 [30]; In XXXX 0> is typed as opls_146
+Atom <Atom O3 [31]; In XXXX 0> is typed as opls_180
+Atom <Atom C14 [32]; In XXXX 0> is typed as opls_182
+Atom <Atom C6 [33]; In XXXX 0> is typed as opls_158
+Atom <Atom H38 [34]; In XXXX 0> is typed as opls_185
+Atom <Atom H39 [35]; In XXXX 0> is typed as opls_185
+Atom <Atom O1 [36]; In XXXX 0> is typed as opls_154
+Atom <Atom C10 [37]; In XXXX 0> is typed as opls_135
+Atom <Atom H26 [38]; In XXXX 0> is typed as opls_140
+Atom <Atom H28 [39]; In XXXX 0> is typed as opls_140
+Atom <Atom H29 [40]; In XXXX 0> is typed as opls_140
+Atom <Atom H42 [41]; In XXXX 0> is typed as opls_140
+Atom <Atom H43 [42]; In XXXX 0> is typed as opls_140
+Atom <Atom H44 [43]; In XXXX 0> is typed as opls_140
+Atom <Atom H45 [44]; In XXXX 0> is typed as opls_140
+Atom <Atom H46 [45]; In XXXX 0> is typed as opls_155
+Atom <Atom H47 [46]; In XXXX 0> is typed as opls_155
+Bonds:
+<Bond <Atom C11 [1]; In XXXX 0>--<Atom H30 [0]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom C11 [1]; In XXXX 0>--<Atom H31 [4]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom C11 [1]; In XXXX 0>--<Atom H44 [43]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom O2 [2]; In XXXX 0>--<Atom C7 [3]; In XXXX 0>; type=<BondType; k=320.000, req=1.410>> 
+<Bond <Atom O2 [2]; In XXXX 0>--<Atom H47 [46]; In XXXX 0>; type=<BondType; k=553.000, req=0.945>> 
+<Bond <Atom C7 [3]; In XXXX 0>--<Atom C11 [1]; In XXXX 0>; type=<BondType; k=268.000, req=1.529>> 
+<Bond <Atom C7 [3]; In XXXX 0>--<Atom C15 [5]; In XXXX 0>; type=<BondType; k=268.000, req=1.529>> 
+<Bond <Atom C7 [3]; In XXXX 0>--<Atom H27 [6]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom C15 [5]; In XXXX 0>--<Atom H40 [8]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom C15 [5]; In XXXX 0>--<Atom H41 [9]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom O4 [7]; In XXXX 0>--<Atom C15 [5]; In XXXX 0>; type=<BondType; k=320.000, req=1.410>> 
+<Bond <Atom O4 [7]; In XXXX 0>--<Atom C21 [10]; In XXXX 0>; type=<BondType; k=450.000, req=1.364>> 
+<Bond <Atom C21 [10]; In XXXX 0>--<Atom C23 [11]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C21 [10]; In XXXX 0>--<Atom C25 [12]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C23 [11]; In XXXX 0>--<Atom H47 [14]; In XXXX 0>; type=<BondType; k=367.000, req=1.080>> 
+<Bond <Atom C25 [12]; In XXXX 0>--<Atom H49 [16]; In XXXX 0>; type=<BondType; k=367.000, req=1.080>> 
+<Bond <Atom C17 [13]; In XXXX 0>--<Atom C23 [11]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C17 [13]; In XXXX 0>--<Atom H43 [18]; In XXXX 0>; type=<BondType; k=367.000, req=1.080>> 
+<Bond <Atom C19 [15]; In XXXX 0>--<Atom C25 [12]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C19 [15]; In XXXX 0>--<Atom H45 [19]; In XXXX 0>; type=<BondType; k=367.000, req=1.080>> 
+<Bond <Atom C9 [17]; In XXXX 0>--<Atom C17 [13]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C9 [17]; In XXXX 0>--<Atom C19 [15]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C5 [20]; In XXXX 0>--<Atom C9 [17]; In XXXX 0>; type=<BondType; k=317.000, req=1.510>> 
+<Bond <Atom C5 [20]; In XXXX 0>--<Atom C8 [21]; In XXXX 0>; type=<BondType; k=317.000, req=1.510>> 
+<Bond <Atom C5 [20]; In XXXX 0>--<Atom H42 [41]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom C5 [20]; In XXXX 0>--<Atom H43 [42]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom C8 [21]; In XXXX 0>--<Atom C16 [22]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C8 [21]; In XXXX 0>--<Atom C18 [23]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C16 [22]; In XXXX 0>--<Atom C22 [24]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C16 [22]; In XXXX 0>--<Atom H42 [25]; In XXXX 0>; type=<BondType; k=367.000, req=1.080>> 
+<Bond <Atom C18 [23]; In XXXX 0>--<Atom C24 [26]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C18 [23]; In XXXX 0>--<Atom H44 [27]; In XXXX 0>; type=<BondType; k=367.000, req=1.080>> 
+<Bond <Atom C22 [24]; In XXXX 0>--<Atom H46 [29]; In XXXX 0>; type=<BondType; k=367.000, req=1.080>> 
+<Bond <Atom C24 [26]; In XXXX 0>--<Atom H48 [30]; In XXXX 0>; type=<BondType; k=367.000, req=1.080>> 
+<Bond <Atom C20 [28]; In XXXX 0>--<Atom C22 [24]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom C20 [28]; In XXXX 0>--<Atom C24 [26]; In XXXX 0>; type=<BondType; k=469.000, req=1.400>> 
+<Bond <Atom O3 [31]; In XXXX 0>--<Atom C20 [28]; In XXXX 0>; type=<BondType; k=450.000, req=1.364>> 
+<Bond <Atom O3 [31]; In XXXX 0>--<Atom C14 [32]; In XXXX 0>; type=<BondType; k=320.000, req=1.410>> 
+<Bond <Atom C14 [32]; In XXXX 0>--<Atom H38 [34]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom C14 [32]; In XXXX 0>--<Atom H39 [35]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom C6 [33]; In XXXX 0>--<Atom C14 [32]; In XXXX 0>; type=<BondType; k=268.000, req=1.529>> 
+<Bond <Atom C6 [33]; In XXXX 0>--<Atom C10 [37]; In XXXX 0>; type=<BondType; k=268.000, req=1.529>> 
+<Bond <Atom C6 [33]; In XXXX 0>--<Atom H26 [38]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom O1 [36]; In XXXX 0>--<Atom C6 [33]; In XXXX 0>; type=<BondType; k=320.000, req=1.410>> 
+<Bond <Atom O1 [36]; In XXXX 0>--<Atom H46 [45]; In XXXX 0>; type=<BondType; k=553.000, req=0.945>> 
+<Bond <Atom C10 [37]; In XXXX 0>--<Atom H28 [39]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom C10 [37]; In XXXX 0>--<Atom H29 [40]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+<Bond <Atom C10 [37]; In XXXX 0>--<Atom H45 [44]; In XXXX 0>; type=<BondType; k=340.000, req=1.090>> 
+Angles:
+<Angle <Atom H30 [0]; In XXXX 0>--<Atom C11 [1]; In XXXX 0>--<Atom C7 [3]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom H30 [0]; In XXXX 0>--<Atom C11 [1]; In XXXX 0>--<Atom H31 [4]; In XXXX 0>; type=<AngleType; k=33.000, theteq=107.800>> 
+<Angle <Atom H30 [0]; In XXXX 0>--<Atom C11 [1]; In XXXX 0>--<Atom H44 [43]; In XXXX 0>; type=<AngleType; k=33.000, theteq=107.800>> 
+<Angle <Atom C11 [1]; In XXXX 0>--<Atom C7 [3]; In XXXX 0>--<Atom O2 [2]; In XXXX 0>; type=<AngleType; k=50.000, theteq=109.500>> 
+<Angle <Atom C11 [1]; In XXXX 0>--<Atom C7 [3]; In XXXX 0>--<Atom C15 [5]; In XXXX 0>; type=<AngleType; k=58.350, theteq=112.700>> 
+<Angle <Atom C11 [1]; In XXXX 0>--<Atom C7 [3]; In XXXX 0>--<Atom H27 [6]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom O2 [2]; In XXXX 0>--<Atom C7 [3]; In XXXX 0>--<Atom C15 [5]; In XXXX 0>; type=<AngleType; k=50.000, theteq=109.500>> 
+<Angle <Atom O2 [2]; In XXXX 0>--<Atom C7 [3]; In XXXX 0>--<Atom H27 [6]; In XXXX 0>; type=<AngleType; k=35.000, theteq=109.500>> 
+<Angle <Atom C7 [3]; In XXXX 0>--<Atom C11 [1]; In XXXX 0>--<Atom H31 [4]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom C7 [3]; In XXXX 0>--<Atom C11 [1]; In XXXX 0>--<Atom H44 [43]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom C7 [3]; In XXXX 0>--<Atom O2 [2]; In XXXX 0>--<Atom H47 [46]; In XXXX 0>; type=<AngleType; k=55.000, theteq=108.500>> 
+<Angle <Atom C7 [3]; In XXXX 0>--<Atom C15 [5]; In XXXX 0>--<Atom O4 [7]; In XXXX 0>; type=<AngleType; k=50.000, theteq=109.500>> 
+<Angle <Atom C7 [3]; In XXXX 0>--<Atom C15 [5]; In XXXX 0>--<Atom H40 [8]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom C7 [3]; In XXXX 0>--<Atom C15 [5]; In XXXX 0>--<Atom H41 [9]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom H31 [4]; In XXXX 0>--<Atom C11 [1]; In XXXX 0>--<Atom H44 [43]; In XXXX 0>; type=<AngleType; k=33.000, theteq=107.800>> 
+<Angle <Atom C15 [5]; In XXXX 0>--<Atom C7 [3]; In XXXX 0>--<Atom H27 [6]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom C15 [5]; In XXXX 0>--<Atom O4 [7]; In XXXX 0>--<Atom C21 [10]; In XXXX 0>; type=<AngleType; k=75.000, theteq=111.000>> 
+<Angle <Atom O4 [7]; In XXXX 0>--<Atom C15 [5]; In XXXX 0>--<Atom H40 [8]; In XXXX 0>; type=<AngleType; k=35.000, theteq=109.500>> 
+<Angle <Atom O4 [7]; In XXXX 0>--<Atom C15 [5]; In XXXX 0>--<Atom H41 [9]; In XXXX 0>; type=<AngleType; k=35.000, theteq=109.500>> 
+<Angle <Atom O4 [7]; In XXXX 0>--<Atom C21 [10]; In XXXX 0>--<Atom C23 [11]; In XXXX 0>; type=<AngleType; k=70.000, theteq=120.000>> 
+<Angle <Atom O4 [7]; In XXXX 0>--<Atom C21 [10]; In XXXX 0>--<Atom C25 [12]; In XXXX 0>; type=<AngleType; k=70.000, theteq=120.000>> 
+<Angle <Atom H40 [8]; In XXXX 0>--<Atom C15 [5]; In XXXX 0>--<Atom H41 [9]; In XXXX 0>; type=<AngleType; k=33.000, theteq=107.800>> 
+<Angle <Atom C21 [10]; In XXXX 0>--<Atom C23 [11]; In XXXX 0>--<Atom C17 [13]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C21 [10]; In XXXX 0>--<Atom C23 [11]; In XXXX 0>--<Atom H47 [14]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C21 [10]; In XXXX 0>--<Atom C25 [12]; In XXXX 0>--<Atom C19 [15]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C21 [10]; In XXXX 0>--<Atom C25 [12]; In XXXX 0>--<Atom H49 [16]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C23 [11]; In XXXX 0>--<Atom C21 [10]; In XXXX 0>--<Atom C25 [12]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C23 [11]; In XXXX 0>--<Atom C17 [13]; In XXXX 0>--<Atom C9 [17]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C23 [11]; In XXXX 0>--<Atom C17 [13]; In XXXX 0>--<Atom H43 [18]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C25 [12]; In XXXX 0>--<Atom C19 [15]; In XXXX 0>--<Atom C9 [17]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C25 [12]; In XXXX 0>--<Atom C19 [15]; In XXXX 0>--<Atom H45 [19]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C17 [13]; In XXXX 0>--<Atom C23 [11]; In XXXX 0>--<Atom H47 [14]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C17 [13]; In XXXX 0>--<Atom C9 [17]; In XXXX 0>--<Atom C19 [15]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C17 [13]; In XXXX 0>--<Atom C9 [17]; In XXXX 0>--<Atom C5 [20]; In XXXX 0>; type=<AngleType; k=70.000, theteq=120.000>> 
+<Angle <Atom C19 [15]; In XXXX 0>--<Atom C25 [12]; In XXXX 0>--<Atom H49 [16]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C19 [15]; In XXXX 0>--<Atom C9 [17]; In XXXX 0>--<Atom C5 [20]; In XXXX 0>; type=<AngleType; k=70.000, theteq=120.000>> 
+<Angle <Atom C9 [17]; In XXXX 0>--<Atom C17 [13]; In XXXX 0>--<Atom H43 [18]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C9 [17]; In XXXX 0>--<Atom C19 [15]; In XXXX 0>--<Atom H45 [19]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C9 [17]; In XXXX 0>--<Atom C5 [20]; In XXXX 0>--<Atom C8 [21]; In XXXX 0>; type=<AngleType; k=40.000, theteq=109.500>> 
+<Angle <Atom C9 [17]; In XXXX 0>--<Atom C5 [20]; In XXXX 0>--<Atom H42 [41]; In XXXX 0>; type=<AngleType; k=35.000, theteq=109.500>> 
+<Angle <Atom C9 [17]; In XXXX 0>--<Atom C5 [20]; In XXXX 0>--<Atom H43 [42]; In XXXX 0>; type=<AngleType; k=35.000, theteq=109.500>> 
+<Angle <Atom C5 [20]; In XXXX 0>--<Atom C8 [21]; In XXXX 0>--<Atom C16 [22]; In XXXX 0>; type=<AngleType; k=70.000, theteq=120.000>> 
+<Angle <Atom C5 [20]; In XXXX 0>--<Atom C8 [21]; In XXXX 0>--<Atom C18 [23]; In XXXX 0>; type=<AngleType; k=70.000, theteq=120.000>> 
+<Angle <Atom C8 [21]; In XXXX 0>--<Atom C5 [20]; In XXXX 0>--<Atom H42 [41]; In XXXX 0>; type=<AngleType; k=35.000, theteq=109.500>> 
+<Angle <Atom C8 [21]; In XXXX 0>--<Atom C5 [20]; In XXXX 0>--<Atom H43 [42]; In XXXX 0>; type=<AngleType; k=35.000, theteq=109.500>> 
+<Angle <Atom C8 [21]; In XXXX 0>--<Atom C16 [22]; In XXXX 0>--<Atom C22 [24]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C8 [21]; In XXXX 0>--<Atom C16 [22]; In XXXX 0>--<Atom H42 [25]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C8 [21]; In XXXX 0>--<Atom C18 [23]; In XXXX 0>--<Atom C24 [26]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C8 [21]; In XXXX 0>--<Atom C18 [23]; In XXXX 0>--<Atom H44 [27]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C16 [22]; In XXXX 0>--<Atom C8 [21]; In XXXX 0>--<Atom C18 [23]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C16 [22]; In XXXX 0>--<Atom C22 [24]; In XXXX 0>--<Atom C20 [28]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C16 [22]; In XXXX 0>--<Atom C22 [24]; In XXXX 0>--<Atom H46 [29]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C18 [23]; In XXXX 0>--<Atom C24 [26]; In XXXX 0>--<Atom C20 [28]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C18 [23]; In XXXX 0>--<Atom C24 [26]; In XXXX 0>--<Atom H48 [30]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C22 [24]; In XXXX 0>--<Atom C16 [22]; In XXXX 0>--<Atom H42 [25]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C22 [24]; In XXXX 0>--<Atom C20 [28]; In XXXX 0>--<Atom C24 [26]; In XXXX 0>; type=<AngleType; k=63.000, theteq=120.000>> 
+<Angle <Atom C22 [24]; In XXXX 0>--<Atom C20 [28]; In XXXX 0>--<Atom O3 [31]; In XXXX 0>; type=<AngleType; k=70.000, theteq=120.000>> 
+<Angle <Atom C24 [26]; In XXXX 0>--<Atom C18 [23]; In XXXX 0>--<Atom H44 [27]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C24 [26]; In XXXX 0>--<Atom C20 [28]; In XXXX 0>--<Atom O3 [31]; In XXXX 0>; type=<AngleType; k=70.000, theteq=120.000>> 
+<Angle <Atom C20 [28]; In XXXX 0>--<Atom C22 [24]; In XXXX 0>--<Atom H46 [29]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C20 [28]; In XXXX 0>--<Atom C24 [26]; In XXXX 0>--<Atom H48 [30]; In XXXX 0>; type=<AngleType; k=35.000, theteq=120.000>> 
+<Angle <Atom C20 [28]; In XXXX 0>--<Atom O3 [31]; In XXXX 0>--<Atom C14 [32]; In XXXX 0>; type=<AngleType; k=75.000, theteq=111.000>> 
+<Angle <Atom O3 [31]; In XXXX 0>--<Atom C14 [32]; In XXXX 0>--<Atom C6 [33]; In XXXX 0>; type=<AngleType; k=50.000, theteq=109.500>> 
+<Angle <Atom O3 [31]; In XXXX 0>--<Atom C14 [32]; In XXXX 0>--<Atom H38 [34]; In XXXX 0>; type=<AngleType; k=35.000, theteq=109.500>> 
+<Angle <Atom O3 [31]; In XXXX 0>--<Atom C14 [32]; In XXXX 0>--<Atom H39 [35]; In XXXX 0>; type=<AngleType; k=35.000, theteq=109.500>> 
+<Angle <Atom C14 [32]; In XXXX 0>--<Atom C6 [33]; In XXXX 0>--<Atom O1 [36]; In XXXX 0>; type=<AngleType; k=50.000, theteq=109.500>> 
+<Angle <Atom C14 [32]; In XXXX 0>--<Atom C6 [33]; In XXXX 0>--<Atom C10 [37]; In XXXX 0>; type=<AngleType; k=58.350, theteq=112.700>> 
+<Angle <Atom C14 [32]; In XXXX 0>--<Atom C6 [33]; In XXXX 0>--<Atom H26 [38]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom C6 [33]; In XXXX 0>--<Atom C14 [32]; In XXXX 0>--<Atom H38 [34]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom C6 [33]; In XXXX 0>--<Atom C14 [32]; In XXXX 0>--<Atom H39 [35]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom C6 [33]; In XXXX 0>--<Atom O1 [36]; In XXXX 0>--<Atom H46 [45]; In XXXX 0>; type=<AngleType; k=55.000, theteq=108.500>> 
+<Angle <Atom C6 [33]; In XXXX 0>--<Atom C10 [37]; In XXXX 0>--<Atom H28 [39]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom C6 [33]; In XXXX 0>--<Atom C10 [37]; In XXXX 0>--<Atom H29 [40]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom C6 [33]; In XXXX 0>--<Atom C10 [37]; In XXXX 0>--<Atom H45 [44]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom H38 [34]; In XXXX 0>--<Atom C14 [32]; In XXXX 0>--<Atom H39 [35]; In XXXX 0>; type=<AngleType; k=33.000, theteq=107.800>> 
+<Angle <Atom O1 [36]; In XXXX 0>--<Atom C6 [33]; In XXXX 0>--<Atom C10 [37]; In XXXX 0>; type=<AngleType; k=50.000, theteq=109.500>> 
+<Angle <Atom O1 [36]; In XXXX 0>--<Atom C6 [33]; In XXXX 0>--<Atom H26 [38]; In XXXX 0>; type=<AngleType; k=35.000, theteq=109.500>> 
+<Angle <Atom C10 [37]; In XXXX 0>--<Atom C6 [33]; In XXXX 0>--<Atom H26 [38]; In XXXX 0>; type=<AngleType; k=37.500, theteq=110.700>> 
+<Angle <Atom H28 [39]; In XXXX 0>--<Atom C10 [37]; In XXXX 0>--<Atom H29 [40]; In XXXX 0>; type=<AngleType; k=33.000, theteq=107.800>> 
+<Angle <Atom H28 [39]; In XXXX 0>--<Atom C10 [37]; In XXXX 0>--<Atom H45 [44]; In XXXX 0>; type=<AngleType; k=33.000, theteq=107.800>> 
+<Angle <Atom H29 [40]; In XXXX 0>--<Atom C10 [37]; In XXXX 0>--<Atom H45 [44]; In XXXX 0>; type=<AngleType; k=33.000, theteq=107.800>> 
+<Angle <Atom H42 [41]; In XXXX 0>--<Atom C5 [20]; In XXXX 0>--<Atom H43 [42]; In XXXX 0>; type=<AngleType; k=33.000, theteq=107.800>> 
+Dihedrals:
+No urey bradley terms detected, will use angle_style harmonic
+RB Torsions detected, will use dihedral_style opls

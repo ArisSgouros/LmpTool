@@ -1,0 +1,68 @@
+dgebfa_mosdef.data
+The charges from the OPLS force field will be used..
+Impropers will not be generated..
+Reading LAMMPS data file "dgebfa_mosdef.data"..
+   atoms section..
+   bonds section..
+   angles section..
+   dihedrals section..
+   impropers section..
+Reading the SMART topology files from SMART_30-DGEBF_A.dat ..
+Matching the atom types from the "../../force_field/ff_oplsaa_foyer_2023_mod.xml" force field file..
+opls_140 1.00800 H
+opls_135 12.01100 C
+opls_154 15.9994 O
+opls_158 12.011 C
+opls_140 1.00800 H
+opls_182 12.01100 C
+opls_140 1.00800 H
+opls_180 15.9994 O
+opls_185 1.00800 H
+opls_185 1.00800 H
+opls_145 12.01100 C
+opls_145 12.01100 C
+opls_145 12.01100 C
+opls_145 12.01100 C
+opls_146 1.00800 H
+opls_145 12.01100 C
+opls_146 1.00800 H
+opls_145 12.01100 C
+opls_146 1.00800 H
+opls_146 1.00800 H
+opls_149 12.01100 C
+opls_145 12.01100 C
+opls_145 12.01100 C
+opls_145 12.01100 C
+opls_145 12.01100 C
+opls_146 1.00800 H
+opls_145 12.01100 C
+opls_146 1.00800 H
+opls_145 12.01100 C
+opls_146 1.00800 H
+opls_146 1.00800 H
+opls_180 15.9994 O
+opls_182 12.01100 C
+opls_158 12.011 C
+opls_185 1.00800 H
+opls_185 1.00800 H
+opls_154 15.9994 O
+opls_135 12.01100 C
+opls_140 1.00800 H
+opls_140 1.00800 H
+opls_140 1.00800 H
+opls_140 1.00800 H
+opls_140 1.00800 H
+opls_140 1.00800 H
+opls_140 1.00800 H
+opls_155 1.00800 H
+opls_155 1.00800 H
+Retriving the opls coefficients..
+   nonbonded coeffs..
+   bond coeffs..
+   angle coeffs..
+   dihedral coeffs..
+   improper coeffs..
+Generating the new lammps datafile with name dgebfa_opls_depl.data..
+Performing a charge summation test..
+   default = -0.7449999999999997
+   opls = -0.7449999999999997
