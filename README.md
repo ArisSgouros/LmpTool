@@ -21,4 +21,5 @@ The folder includes the following files and directories:
  - ThermoMerge          -> Merge multiple thermo files
  - ThermoStat           -> Export statistics of Lammps thermo outputs
  - MsdMol               -> Calculate the mean square displacement of molecules
+ - OplsDeployer         -> Deploy OPLS force field
  - Dev                  -> Miscellaneous code under development
