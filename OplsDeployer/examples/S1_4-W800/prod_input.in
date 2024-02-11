@@ -1,0 +1,58 @@
+#
+# Set the id of the simulation
+#
+variable       simID equal 2
+log            $(v_simID)_log
+#
+# Set the number of simulation steps
+#
+variable       runNPT equal 200000000
+variable       vDumpFreq equal 50000
+#
+# Set the values for the bonds and angles of SPC/E water
+# These are necesary for the initial geometry optimization
+#
+variable       wbond_id equal 1
+variable       wangle_id equal 1
+#
+# End of parameter definition
+#
+units          real
+atom_style     full
+boundary       p p p
+#
+variable       T equal 300
+variable       P equal 0
+#
+pair_style     lj/cut/coul/long 10.0 10.0
+kspace_style   pppm 0.0001
+pair_modify    mix arithmetic
+dielectric     1.0
+special_bonds  lj 0.000000 0.000000 1.000000 coul 0.000000 0.000000 1.000000
+bond_style     harmonic
+angle_style    harmonic
+dihedral_style opls
+#
+#read_data      $(v_simID)_POS.data
+read_restart   $(v_simID)_POS.rst
+#
+#
+thermo         1000
+thermo_style   custom step etotal ke pe ebond eangle edihed eimp evdwl ecoul elong temp press density cpu cpuremain
+thermo_modify  flush yes
+restart        ${vDumpFreq} $(v_simID)_restart_1.rst $(v_simID)_restart_2.rst
+group          gmobile union all
+##
+## Constrain the H-O bonds and H-O-H angles in water molecules
+timestep       1
+fix            fshake gmobile shake 0.0001 20 0 b ${wbond_id} a ${wangle_id}
+#
+# Production run
+#
+dump           d_equil gmobile custom ${vDumpFreq} $(v_simID)_prod.lammpstrj id mol type xu yu zu
+dump_modify    d_equil sort id
+fix            fnpt gmobile npt temp ${T} ${T} 100.0 iso ${P} ${P} 1000.0
+run            ${runNPT}
+#
+write_restart  $(v_simID+1)_POS.rst
+write_data     $(v_simID+1)_POS.data

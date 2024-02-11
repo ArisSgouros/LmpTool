@@ -1,0 +1,98 @@
+#
+# Set the id of the simulation
+#
+variable       simID equal 0
+log            $(v_simID)_log
+#
+# Set the number of simulation steps
+#
+variable       runNVT1 equal 10000
+variable       runNVT2 equal 10000
+variable       runNPT1 equal 40000
+variable       vDumpFreq equal 1000
+#
+# Set the values for the bonds and angles of SPC/E water
+# These are necesary for the initial geometry optimization
+#
+variable       wbond_id equal 1
+variable       wbond_len equal 1.0
+variable       wbond_coeff equal 100
+
+variable       wangle_id equal 1
+variable       wangle_theta equal 109.47
+variable       wangle_coeff equal 100
+#
+# End of parameter definition
+#
+units          real
+atom_style     full
+boundary       p p p
+#
+variable       T equal 300
+variable       P equal 0
+#
+pair_style     lj/cut/coul/long 10.0 10.0
+kspace_style   pppm 0.0001
+pair_modify    mix arithmetic
+dielectric     1.0
+special_bonds  lj 0.000000 0.000000 1.000000 coul 0.000000 0.000000 1.000000
+bond_style     harmonic
+angle_style    harmonic
+dihedral_style opls
+#
+read_data      ${simID}_POS.dat
+#
+thermo         1000
+thermo_style   custom step etotal ke pe ebond eangle edihed eimp evdwl ecoul elong temp press density cpu cpuremain
+thermo_modify  flush yes
+restart        10000 $(v_simID)_restart_1.rst $(v_simID)_restart_2.rst
+group          gmobile union all
+#
+# Initial relaxation
+#
+dump           d_opt gmobile custom 100 $(v_simID)_opt.lammpstrj id type xu yu zu
+dump_modify    d_opt sort id
+#
+variable a loop 10
+label loop
+   min_style      sd
+   bond_coeff     ${wbond_id} $(v_wbond_coeff*2^v_a) ${wbond_len}
+   angle_coeff    ${wangle_id} $(v_wangle_coeff*2^v_a) ${wangle_theta}
+   minimize       0.000000001 0.000000001 5000 10000
+   next           a
+jump           SELF loop
+write_data     $(v_simID)_opt.dat
+write_restart  $(v_simID)_opt.rst
+undump         d_opt
+#
+# NVT simulation
+#
+reset_timestep 0
+# Constrain the H-O bonds and H-O-H angles in water molecules
+timestep       1
+fix            fshake gmobile shake 0.0001 20 0 b ${wbond_id} a ${wangle_id}
+#
+# Initial temperature equilibration
+#
+dump           d_equil gmobile custom ${vDumpFreq} ${simID}_equil.lammpstrj id type xu yu zu
+dump_modify    d_equil sort id
+#
+fix            fvne gmobile nve
+fix            temprsc gmobile temp/rescale 100 ${T} ${T} 2 0.5
+run            ${runNVT1}
+unfix          temprsc
+unfix          fvne
+#
+fix            fnvt gmobile nvt temp ${T} ${T} 100.0
+run            ${runNVT2}
+unfix          fnvt
+#
+# Pressure equilibration
+#
+fix            1 gmobile npt temp ${T} ${T} 100.0 iso ${P} ${P} 1000.0
+run            ${runNPT1}
+#
+undump         d_equil
+#
+write_restart  $(v_simID+1)_POS.rst
+write_data     $(v_simID+1)_POS.dat

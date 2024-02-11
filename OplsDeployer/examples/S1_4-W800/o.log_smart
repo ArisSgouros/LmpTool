@@ -1,0 +1,73 @@
+
+Parsing command line arguments and building connectivity..
+
+Group           nmol            type            segs/mol        mols           
+1               200             SINGLE          1              
+SPCE           
+
+2               1               SINGLE          1              
+SPE            
+
+3               200             SINGLE          1              
+SPCE           
+
+4               1               SINGLE          1              
+SPE            
+
+5               200             SINGLE          1              
+SPCE           
+
+6               1               SINGLE          1              
+SPE            
+
+7               200             SINGLE          1              
+SPCE           
+
+8               1               SINGLE          1              
+SPE            
+
+
+Connectivity of Group 1..
+seg_ID          prev_seg        cur_seg         next_seg       
+1               void            SPCE            void           
+
+Connectivity of Group 2..
+seg_ID          prev_seg        cur_seg         next_seg       
+1               void            SPE             void           
+
+Connectivity of Group 3..
+seg_ID          prev_seg        cur_seg         next_seg       
+1               void            SPCE            void           
+
+Connectivity of Group 4..
+seg_ID          prev_seg        cur_seg         next_seg       
+1               void            SPE             void           
+
+Connectivity of Group 5..
+seg_ID          prev_seg        cur_seg         next_seg       
+1               void            SPCE            void           
+
+Connectivity of Group 6..
+seg_ID          prev_seg        cur_seg         next_seg       
+1               void            SPE             void           
+
+Connectivity of Group 7..
+seg_ID          prev_seg        cur_seg         next_seg       
+1               void            SPCE            void           
+
+Connectivity of Group 8..
+seg_ID          prev_seg        cur_seg         next_seg       
+1               void            SPE             void           
+
+Output file name: SMART_200-SPCE_1-SPE_200-SPCE_1-SPE_200-SPCE_1-SPE_200-SPCE_1-SPE.dat
+
+Generating SMART file from Group 1
+Generating SMART file from Group 2
+Generating SMART file from Group 3
+Generating SMART file from Group 4
+Generating SMART file from Group 5
+Generating SMART file from Group 6
+Generating SMART file from Group 7
+Generating SMART file from Group 8
+
+SUCCESS!
