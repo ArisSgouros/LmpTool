@@ -11,6 +11,7 @@ The folder includes the following files and directories:
  - CountDumpFrame       -> Count frames of .lammpstrj and .xyz files
  - DatafileMerge        -> Merge Lammps data files
  - DatafileReplCoeff    -> Replace the force-field coefficients
+ - DatafileSwapType     -> Swap atom/bond/angle/dihedral/improper types
  - DatafileRmvDuplCoeff -> Remove types with identical coefficients
  - DataToDump           -> Convert Lammps data to .lammpstrj or .xyz files
  - DumpConstAtom        -> Convert traj w/ nonconst atoms to vdf friendly format

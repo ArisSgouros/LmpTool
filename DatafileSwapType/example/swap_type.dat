@@ -1,0 +1,29 @@
+LAMMPS data file
+
+Masses
+
+1 5
+2 4
+4 2
+5 1
+
+Bond Coeffs
+
+2 3
+3 2
+
+Dihedral Coeffs
+
+1 2
+2 1
+
+Improper Coeffs
+
+1 10
+2 20
+
+Angle Coeffs
+
+1 3
+2 2
+3 1
