@@ -57,11 +57,27 @@ if __name__ == "__main__":
 
    g = open(data_file, 'r')
 
-   atoms = 0
-   bonds = 0
-   angles = 0
-   dihedrals = 0
-   impropers = 0
+   atoms = None
+   bonds = None
+   angles = None
+   dihedrals = None
+   impropers = None
+   atom_types = None
+   bond_types = None
+   angle_types = None
+   dihedral_types = None
+   improper_types = None
+   Pair_coeffs_start = None
+   Bond_coeffs_start = None
+   Angle_coeffs_start = None
+   Dihedral_coeffs_start = None
+   Improper_coeffs_start = None
+   Masses_start = None
+   Atoms_start = None
+   Bonds_start = None
+   Angles_start = None
+   Dihedrals_start = None
+   Impropers_start = None
 
    datafile_lines = []
    line_num = 0
@@ -83,7 +99,6 @@ if __name__ == "__main__":
          dihedrals = int(line_split[0])
       if "impropers" in line:
          impropers = int(line_split[0])
-
       if "atom types" in line:
          atom_types = int(line_split[0])
       if "bond types" in line:
@@ -184,94 +199,107 @@ if __name__ == "__main__":
    f.write(datafile_lines[0])
    f.write(datafile_lines[1])
    f.write('%d atoms\n' % atoms)
-   f.write('%d bonds\n' % bonds)
-   f.write('%d angles\n' % angles)
-   f.write('%d dihedrals\n' % dihedrals)
-   f.write('%d impropers\n' % impropers)
+   if bonds:
+      f.write('%d bonds\n' % bonds)
+   if angles:
+      f.write('%d angles\n' % angles)
+   if dihedrals:
+      f.write('%d dihedrals\n' % dihedrals)
+   if impropers:
+      f.write('%d impropers\n' % impropers)
    f.write('\n')
-   f.write('%d atom types\n' % atom_types)
-   f.write('%d bond types\n' % bond_types)
-   f.write('%d angle types\n' % angle_types)
-   f.write('%d dihedral types\n' % dihedral_types)
-   f.write('%d improper types\n' % improper_types)
+   if atom_types:
+      f.write('%d atom types\n' % atom_types)
+   if bond_types:
+      f.write('%d bond types\n' % bond_types)
+   if angle_types:
+      f.write('%d angle types\n' % angle_types)
+   if dihedral_types:
+      f.write('%d dihedral types\n' % dihedral_types)
+   if improper_types:
+      f.write('%d improper types\n' % improper_types)
    f.write('\n')
    f.write('%s %s xlo xhi\n' % (xlo, xhi))
    f.write('%s %s ylo yhi\n' % (ylo, yhi))
    f.write('%s %s zlo zhi\n' % (zlo, zhi))
 
-   f.write('\n')
-   f.write('Masses\n')
-   f.write('\n')
-   for ii in range(atom_types):
-      line = datafile_lines[Masses_start + ii]
-      type_ = line.split()[0]
-      if type_ in ptype_swap.keys():
-         line = ReplaceNthSubstring(line, ptype_swap[type_], 0)
-      f.write(line)
-
-   f.write('\n')
-   f.write('Atoms\n')
-   f.write('\n')
-   for ii in range(atoms):
-      line = datafile_lines[Atoms_start + ii]
-      nn = 2
-      type_ = line.split()[nn]
-      if type_ in ptype_swap.keys():
-         line = ReplaceNthSubstring(line, ptype_swap[type_], nn)
-      f.write(line)
-   f.write('\n')
-   f.write('Bonds\n')
-   f.write('\n')
-   for ii in range(bonds):
-      line = datafile_lines[Bonds_start + ii]
-      nn = 1
-      type_ = line.split()[nn]
-      if type_ in btype_swap.keys():
-         line = ReplaceNthSubstring(line, btype_swap[type_], nn)
-      f.write(line)
-   f.write('\n')
-   f.write('Angles\n')
-   f.write('\n')
-   for ii in range(angles):
-      line = datafile_lines[Angles_start + ii]
-      nn = 1
-      type_ = line.split()[nn]
-      if type_ in atype_swap.keys():
-         line = ReplaceNthSubstring(line, atype_swap[type_], nn)
-      f.write(line)
-   f.write('\n')
-   f.write('Dihedrals\n')
-   f.write('\n')
-   for ii in range(dihedrals):
-      line = datafile_lines[Dihedrals_start + ii]
-      nn = 1
-      type_ = line.split()[nn]
-      if type_ in dtype_swap.keys():
-         line = ReplaceNthSubstring(line, dtype_swap[type_], nn)
-      f.write(line)
-   f.write('\n')
-   f.write('Impropers\n')
-   f.write('\n')
-   for ii in range(impropers):
-      line = datafile_lines[Impropers_start + ii]
-      nn = 1
-      type_ = line.split()[nn]
-      if type_ in itype_swap.keys():
-         line = ReplaceNthSubstring(line, itype_swap[type_], nn)
-      f.write(line)
-
-   f.write('\n')
-   f.write('Pair Coeffs\n')
-   f.write('\n')
-   for ii in range(atom_types):
-      line = datafile_lines[Pair_coeffs_start + ii]
-      nn = 0
-      type_ = line.split()[nn]
-      if type_ in ptype_swap.keys():
-         line = ReplaceNthSubstring(line, ptype_swap[type_], nn)
-      f.write(line)
-
-   if bonds:
+   if Masses_start:
+      f.write('\n')
+      f.write('Masses\n')
+      f.write('\n')
+      for ii in range(atom_types):
+         line = datafile_lines[Masses_start + ii]
+         type_ = line.split()[0]
+         if type_ in ptype_swap.keys():
+            line = ReplaceNthSubstring(line, ptype_swap[type_], 0)
+         f.write(line)
+   if Atoms_start:
+      f.write('\n')
+      f.write('Atoms\n')
+      f.write('\n')
+      for ii in range(atoms):
+         line = datafile_lines[Atoms_start + ii]
+         nn = 2
+         type_ = line.split()[nn]
+         if type_ in ptype_swap.keys():
+            line = ReplaceNthSubstring(line, ptype_swap[type_], nn)
+         f.write(line)
+   if Bonds_start:
+      f.write('\n')
+      f.write('Bonds\n')
+      f.write('\n')
+      for ii in range(bonds):
+         line = datafile_lines[Bonds_start + ii]
+         nn = 1
+         type_ = line.split()[nn]
+         if type_ in btype_swap.keys():
+            line = ReplaceNthSubstring(line, btype_swap[type_], nn)
+         f.write(line)
+   if Angles_start:
+      f.write('\n')
+      f.write('Angles\n')
+      f.write('\n')
+      for ii in range(angles):
+         line = datafile_lines[Angles_start + ii]
+         nn = 1
+         type_ = line.split()[nn]
+         if type_ in atype_swap.keys():
+            line = ReplaceNthSubstring(line, atype_swap[type_], nn)
+         f.write(line)
+   if Dihedrals_start:
+      f.write('\n')
+      f.write('Dihedrals\n')
+      f.write('\n')
+      for ii in range(dihedrals):
+         line = datafile_lines[Dihedrals_start + ii]
+         nn = 1
+         type_ = line.split()[nn]
+         if type_ in dtype_swap.keys():
+            line = ReplaceNthSubstring(line, dtype_swap[type_], nn)
+         f.write(line)
+   if Impropers_start:
+      f.write('\n')
+      f.write('Impropers\n')
+      f.write('\n')
+      for ii in range(impropers):
+         line = datafile_lines[Impropers_start + ii]
+         nn = 1
+         type_ = line.split()[nn]
+         if type_ in itype_swap.keys():
+            line = ReplaceNthSubstring(line, itype_swap[type_], nn)
+         f.write(line)
+   if Pair_coeffs_start:
+      f.write('\n')
+      f.write('Pair Coeffs\n')
+      f.write('\n')
+      for ii in range(atom_types):
+         line = datafile_lines[Pair_coeffs_start + ii]
+         nn = 0
+         type_ = line.split()[nn]
+         if type_ in ptype_swap.keys():
+            line = ReplaceNthSubstring(line, ptype_swap[type_], nn)
+         f.write(line)
+   if Bond_coeffs_start:
       f.write('\n')
       f.write('Bond Coeffs\n')
       f.write('\n')
@@ -282,8 +310,7 @@ if __name__ == "__main__":
          if type_ in btype_swap.keys():
             line = ReplaceNthSubstring(line, btype_swap[type_], nn)
          f.write(line)
-
-   if angles:
+   if Angle_coeffs_start:
       f.write('\n')
       f.write('Angle Coeffs\n')
       f.write('\n')
@@ -294,8 +321,7 @@ if __name__ == "__main__":
          if type_ in atype_swap.keys():
             line = ReplaceNthSubstring(line, atype_swap[type_], nn)
          f.write(line)
-
-   if dihedrals:
+   if Dihedral_coeffs_start:
       f.write('\n')
       f.write('Dihedral Coeffs\n')
       f.write('\n')
@@ -306,8 +332,7 @@ if __name__ == "__main__":
          if type_ in dtype_swap.keys():
             line = ReplaceNthSubstring(line, dtype_swap[type_], nn)
          f.write(line)
-
-   if impropers:
+   if Improper_coeffs_start:
       f.write('\n')
       f.write('Improper Coeffs\n')
       f.write('\n')
