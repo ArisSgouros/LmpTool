@@ -45,9 +45,9 @@ def swap_coeffs(swap_file_lines, type_start_swap):
    return type_swap
 
 def ReplaceNthSubstring(string, substring, nn):
-   tmp = string.split(" ")
+   tmp = string.split()
    tmp[nn] = substring
-   return " ".join(tmp)
+   return " ".join(tmp) + "\n"
 
 if __name__ == "__main__":
    args = parser.parse_args()
