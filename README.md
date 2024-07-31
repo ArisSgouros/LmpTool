@@ -19,6 +19,7 @@ The folder includes the following files and directories:
  - DumpSortCol          -> Sort integer columns of dump files
  - DumpTypeStrip        -> Remove atoms with specific types from dump files
  - ProfStat             -> Export statistics of Lammps profiles
+ - SheetToCnt           -> Fold 2D sheets to CNTs
  - ThermoMerge          -> Merge multiple thermo files
  - ThermoStat           -> Export statistics of Lammps thermo outputs
  - MsdMol               -> Calculate the mean square displacement of molecules
