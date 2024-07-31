@@ -116,9 +116,11 @@ if __name__ == "__main__":
   rr_cnt_list = []
   for rr in rr_list:
     theta = rr[side]/radius
+    dr_ref = rr[normal]-norm_ref
     rr_cnt = rr
-    rr_cnt[normal] = radius*np.cos(theta) + norm_ref
-    rr_cnt[side] = radius*np.sin(theta)
+    radius_ref = radius + dr_ref
+    rr_cnt[normal] = radius_ref*np.cos(theta) + norm_ref
+    rr_cnt[side] = radius_ref*np.sin(theta)
     rr_cnt_list.append(rr_cnt)
 
   # export data out
