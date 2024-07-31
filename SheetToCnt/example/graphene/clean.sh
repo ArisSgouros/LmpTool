@@ -1,2 +1,2 @@
 #!/bin/bash
-rm dump_ev*
+rm o.*
