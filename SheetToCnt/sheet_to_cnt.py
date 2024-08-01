@@ -27,15 +27,12 @@ import os
 import argparse
 import numpy as np
 
-kColX = 4
-kColY = 5
-kColZ = 6
-
 parser = argparse.ArgumentParser(description='Fold sheet to cnt')
 parser.add_argument('data_file_in', type=str, help='Path of the lammps data file')
-parser.add_argument('data_file_out', type=str, help='Path of the lammps data file')
-parser.add_argument('side', type=str, help='x, y or z')
-parser.add_argument('normal', type=str, help='x, y or z')
+parser.add_argument('-data_file_out', default='o.pos.data', type=str, help='Path of the lammps data file')
+parser.add_argument('-dim_roll', type=str, default='x', help='x, y or z')
+parser.add_argument('-dim_norm', type=str, default='z', help='x, y or z')
+parser.add_argument('-atomtype', type=str, default='full', help='Set the atomtype in the Lammps data file (e.g., full, atomic, etc.)')
 
 dim2int = {"x":0, "y":1, "z":2}
 
@@ -43,13 +40,25 @@ if __name__ == "__main__":
   args = parser.parse_args()
   data_file_in = args.data_file_in
   data_file_out = args.data_file_out
-  side = dim2int[args.side]
-  normal = dim2int[args.normal]
+  dim_roll = dim2int[args.dim_roll]
+  dim_norm = dim2int[args.dim_norm]
+  atomtype     = args.atomtype
 
-  print("data_in: ", data_file_in)
-  print("data_out: ", data_file_out)
-  print("side: ", side)
-  print("normal: ", normal)
+  # Print
+  print("data_in  : ", data_file_in)
+  print("data_out : ", data_file_out)
+  print("dim_roll : ", dim_roll)
+  print("dim_norm : ", dim_norm)
+  print("atomtype : ", atomtype)
+
+  # Deal with the format of the Lammps data file
+  if atomtype == 'full':
+    kColX = 4
+    kColY = 5
+    kColZ = 6
+  else:
+    print('unsupported format of Lammps data files for the atom type ' + atomtype)
+    sys.exit()
 
   # Read data file
   lines = []
@@ -97,33 +106,33 @@ if __name__ == "__main__":
      xx = float(lsplit[kColX])
      yy = float(lsplit[kColY])
      zz = float(lsplit[kColZ])
-     
      rr_list.append([xx, yy, zz])
 
   # calculate the reference normal position of the sheet
   norm_ref = 0.0
   for rr in rr_list:
-    norm_ref += rr[normal]
+    norm_ref += rr[dim_norm]
   norm_ref /= n_atom
   print("norm_ref: ", norm_ref)
 
   # calculate the length of the sheet along the folding direction
-  length = LL[side]
+  # and the radius of the NP
+  length = LL[dim_roll]
   print("length: ", length)
-
   radius = length / (2.0*np.pi)
 
+  # apply the deformation
   rr_cnt_list = []
   for rr in rr_list:
-    theta = rr[side]/radius
-    dr_ref = rr[normal]-norm_ref
+    theta = rr[dim_roll]/radius
+    dr_ref = rr[dim_norm]-norm_ref
     rr_cnt = rr
     radius_ref = radius + dr_ref
-    rr_cnt[normal] = radius_ref*np.cos(theta) + norm_ref
-    rr_cnt[side] = radius_ref*np.sin(theta)
+    rr_cnt[dim_norm] = radius_ref*np.cos(theta) + norm_ref
+    rr_cnt[dim_roll] = radius_ref*np.sin(theta)
     rr_cnt_list.append(rr_cnt)
 
-  # export data out
+  # export data file
   ii = 0
   for rr in rr_cnt_list:
     line = lines[line_atom+ii]
@@ -135,12 +144,11 @@ if __name__ == "__main__":
     print(jline)
     lines[line_atom+ii] = jline + "\n"
     ii += 1
-    
   with open(data_file_out, 'w') as g:
     for line in lines:
        g.write(line)
 
-  # export VMD
+  # export .lammpstrj
   foo = open(data_file_out+".lammpstrj", "w")
   foo.write("ITEM: TIMESTEP\n")
   foo.write("0\n")
@@ -151,11 +159,9 @@ if __name__ == "__main__":
   foo.write("%f %f\n" % (Llo[1], Lhi[1]))
   foo.write("%f %f\n" % (Llo[2], Lhi[2]))
   foo.write("ITEM: ATOMS id type xu yu zu\n")
-
   ii = 1
   type_ = 1
   for rr in rr_cnt_list:
     foo.write("%d %d %f %f %f\n" % (ii, type_, rr[0], rr[1], rr[2]))
     ii += 1
   foo.close()
-
