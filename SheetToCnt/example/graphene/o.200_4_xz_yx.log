@@ -1,7 +1,8 @@
-data_in:  o.200_4_xz.dat
-data_out:  o.200_4_xz_yx.dat
-side:  0
-normal:  1
+data_in  :  o.200_4_xz.dat
+data_out :  o.200_4_xz_yx.dat
+dim_roll :  0
+dim_norm :  1
+atomtype :  full
 norm_ref:  1.1284237433351052e-14
 length:  491.9024294
 1 1 1 1.000000000 1.2297055019324805 78.27904487490733 2.7120002302858963 # C

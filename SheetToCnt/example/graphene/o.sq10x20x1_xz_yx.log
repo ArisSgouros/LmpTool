@@ -1,7 +1,8 @@
-data_in:  o.sq10x20x1_xz.dat
-data_out:  o.sq10x20x1_xz_yx.dat
-side:  1
-normal:  0
+data_in  :  o.sq10x20x1_xz.dat
+data_out :  o.sq10x20x1_xz_yx.dat
+dim_roll :  1
+dim_norm :  0
+atomtype :  full
 norm_ref:  -3.3306690738754695e-18
 length:  20.0
 1 1 1 0 3.183098861837907 0.0 1.5915494309189535
