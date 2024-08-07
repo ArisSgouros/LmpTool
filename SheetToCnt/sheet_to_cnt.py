@@ -141,7 +141,6 @@ if __name__ == "__main__":
     lsplit[kColY] = str(rr[1])
     lsplit[kColZ] = str(rr[2])
     jline =  " ".join(lsplit)
-    print(jline)
     lines[line_atom+ii] = jline + "\n"
     ii += 1
   with open(data_file_out, 'w') as g:
