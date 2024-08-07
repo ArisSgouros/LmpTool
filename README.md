@@ -13,6 +13,7 @@ The folder includes the following files and directories:
  - DatafileReplCoeff    -> Replace the force-field coefficients
  - DatafileSwapType     -> Swap atom/bond/angle/dihedral/improper types
  - DatafileRmvDuplCoeff -> Remove types with identical coefficients
+ - DatafileTranspose    -> Transpose dimensions of lammps datafiles
  - DataToDump           -> Convert Lammps data to .lammpstrj or .xyz files
  - DumpConstAtom        -> Convert traj w/ nonconst atoms to vdf friendly format
  - DumpDecimator        -> Reduce the frame frequency of lammps dump files
