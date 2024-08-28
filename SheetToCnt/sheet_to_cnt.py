@@ -33,6 +33,7 @@ parser.add_argument('-data_file_out', default='o.pos.data', type=str, help='Path
 parser.add_argument('-dim_roll', type=str, default='x', help='x, y or z')
 parser.add_argument('-dim_norm', type=str, default='z', help='x, y or z')
 parser.add_argument('-atomtype', type=str, default='full', help='Set the atomtype in the Lammps data file (e.g., full, atomic, etc.)')
+parser.add_argument('-adjust_norm', type=float, default='30.0', help='Adjust the normal direction of the box to avoid overlap')
 
 dim2int = {"x":0, "y":1, "z":2}
 
@@ -42,14 +43,16 @@ if __name__ == "__main__":
   data_file_out = args.data_file_out
   dim_roll = dim2int[args.dim_roll]
   dim_norm = dim2int[args.dim_norm]
-  atomtype     = args.atomtype
+  atomtype = args.atomtype
+  adjust_norm = args.adjust_norm
 
   # Print
-  print("data_in  : ", data_file_in)
-  print("data_out : ", data_file_out)
-  print("dim_roll : ", dim_roll)
-  print("dim_norm : ", dim_norm)
-  print("atomtype : ", atomtype)
+  print("data_in     : ", data_file_in)
+  print("data_out    : ", data_file_out)
+  print("dim_roll    : ", dim_roll)
+  print("dim_norm    : ", dim_norm)
+  print("atomtype    : ", atomtype)
+  print("adjust_norm : 2*r + ", adjust_norm)
 
   # Deal with the format of the Lammps data file
   if atomtype == 'full':
@@ -87,6 +90,7 @@ if __name__ == "__main__":
         Llo[0] = float(line_split[0])
         Lhi[0] = float(line_split[1])
         LL[0] = Lhi[0] - Llo[0]
+        line_box = line_i
       if "ylo yhi" in line:
         Llo[1] = float(line_split[0])
         Lhi[1] = float(line_split[1])
@@ -132,7 +136,20 @@ if __name__ == "__main__":
     rr_cnt[dim_roll] = radius_ref*np.sin(theta)
     rr_cnt_list.append(rr_cnt)
 
-  # export data file
+  if adjust_norm > 1e-5:
+    box_dim_norm_new = 2.0*radius + adjust_norm
+    scale_norm = box_dim_norm_new/LL[dim_norm]
+    LL[dim_norm] *= scale_norm
+    Llo[dim_norm] *= scale_norm
+    Lhi[dim_norm] *= scale_norm
+
+
+  # update data file lines
+
+  lines[line_box + 0] = "%.9f %.9f xlo xhi\n" % (Llo[0], Lhi[0])
+  lines[line_box + 1] = "%.9f %.9f ylo yhi\n" % (Llo[1], Lhi[1])
+  lines[line_box + 2] = "%.9f %.9f zlo zhi\n" % (Llo[2], Lhi[2])
+
   ii = 0
   for rr in rr_cnt_list:
     line = lines[line_atom+ii]
@@ -143,6 +160,8 @@ if __name__ == "__main__":
     jline =  " ".join(lsplit)
     lines[line_atom+ii] = jline + "\n"
     ii += 1
+
+  # export data file
   with open(data_file_out, 'w') as g:
     for line in lines:
        g.write(line)
