@@ -56,6 +56,7 @@ if __name__ == "__main__":
 
   # Deal with the format of the Lammps data file
   if atomtype == 'full':
+    kType = 2
     kColX = 4
     kColY = 5
     kColZ = 6
@@ -105,12 +106,15 @@ if __name__ == "__main__":
 
   # Read the atom coordinates
   rr_list = []
+  type_list = []
   for ii in range(n_atom):
      lsplit = lines[line_atom+ii].split()
+     type_ = int(lsplit[kType])
      xx = float(lsplit[kColX])
      yy = float(lsplit[kColY])
      zz = float(lsplit[kColZ])
      rr_list.append([xx, yy, zz])
+     type_list.append(type_)
 
   # calculate the reference normal position of the sheet
   norm_ref = 0.0
@@ -179,7 +183,9 @@ if __name__ == "__main__":
   foo.write("ITEM: ATOMS id type xu yu zu\n")
   ii = 1
   type_ = 1
-  for rr in rr_cnt_list:
+  for ii in range(len(rr_cnt_list)):
+    rr = rr_cnt_list[ii]
+    type_ = type_list[ii]
     foo.write("%d %d %f %f %f\n" % (ii, type_, rr[0], rr[1], rr[2]))
     ii += 1
   foo.close()
