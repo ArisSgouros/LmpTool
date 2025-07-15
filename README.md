@@ -9,9 +9,11 @@ The folder includes the following files and directories:
  - README               -> current file
  - LICENSE              -> MIT LICENSE
  - CountDumpFrame       -> Count frames of .lammpstrj and .xyz files
+ - DatafileDeform       -> Deform lammps datafiles
  - DatafileMerge        -> Merge Lammps data files
  - DatafileReplCoeff    -> Replace the force-field coefficients
  - DatafileSwapType     -> Swap atom/bond/angle/dihedral/improper types
+ - DatafileRescale      -> Rescale lammps datafiles
  - DatafileRmvDuplCoeff -> Remove types with identical coefficients
  - DatafileTranspose    -> Transpose dimensions of lammps datafiles
  - DataToDump           -> Convert Lammps data to .lammpstrj or .xyz files
