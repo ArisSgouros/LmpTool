@@ -21,6 +21,8 @@ The folder includes the following files and directories:
  - DumpDecimator        -> Reduce the frame frequency of lammps dump files
  - DumpSortCol          -> Sort integer columns of dump files
  - DumpTypeStrip        -> Remove atoms with specific types from dump files
+ - ExtXyz               -> Parse/export extXyz files
+ - ParseQeOutput        -> Parse output files from Quantum Espresso
  - ProfStat             -> Export statistics of Lammps profiles
  - SheetToCnt           -> Fold 2D sheets to CNTs
  - ThermoMerge          -> Merge multiple thermo files
