@@ -4,8 +4,12 @@ import sys
 # Add the parent directory to sys.path
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 sys.path.insert(0, parent_dir)
+from parse_qe_output import parse_qe_output
 
-from parse_qe_output import write_xyz_file, parse_qe_output
+# Add the path of extxyz
+extxyz_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../ExtXyz/'))
+sys.path.insert(0, extxyz_dir)
+from extxyz import write_xyz_file
 
 for [case_, file_qe] in [["01", "i.MoSSe_3x3_01_vcrelax.out"],
                          ["02", "i.MoSSe_3x3_02_relax.out"],
