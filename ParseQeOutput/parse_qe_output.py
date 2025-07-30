@@ -181,6 +181,9 @@ def parse_qe_output(file_path, xyzfmt = 'ase', debug = False):
            line = lines[line_atomic_positions + ii]
            if "End final coordinates" in line:
               break
+           if not line.strip(): # Check if empty line
+              print("Warning: these are not final coordinates")
+              break
 
            lsplit = line.split()
 
