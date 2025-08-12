@@ -13,7 +13,8 @@ from extxyz import write_xyz_file
 
 for [case_, file_qe] in [["01", "i.MoSSe_3x3_01_vcrelax.out"],
                          ["02", "i.MoSSe_3x3_02_relax.out"],
-                         ["03", "i.MoSSe_3x3_03_scf.out"],
+                         ["03_in", "i.MoSSe_3x3_03_scf.in"],
+                         ["03_out", "i.MoSSe_3x3_03_scf.out"],
                          ["04", "i.MoSSe_3x3_04_scf_no_force_no_stress.out"]]:
 
    print()
