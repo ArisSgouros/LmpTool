@@ -9,7 +9,7 @@
 #		  configuration of the atoms and simulation cell.  
 #
 #
-#   potential.mod    (must be modified for different pair styles)
+#   ../potential/potential.mod    (must be modified for different pair styles)
 # 		     Define pair style and other attributes 
 #		     not stored in restart file
 #
@@ -44,7 +44,7 @@
 #
 
 include init.mod
-include potential.mod
+include ../potential/potential.mod
 
 # Compute initial state
 fix 3 all box/relax  aniso 0.0

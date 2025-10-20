@@ -7,7 +7,10 @@ LAMMPS (2 Aug 2023 - Update 3)
 #
 #   init.mod      (must be modified for different crystal structures)
 # 	       	  Define units, deformation parameters and initial
-#		  configuration of the atoms and simulation Neighbor list info ...
+#		  configuration of the atoms and simulation cell.
+#
+#
+#  Neighbor list info ...
   update: every = 1 steps, delay = 0 steps, check = yes
   max neighbors/atom: 2000, page size: 100000
   master list distance cutoff = 4.77118
@@ -30,9 +33,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
          2   0             -832.6272      -0.016514738   -0.016514738   -0.016514738   -0.016514738   -4.8086135e-11  1.0021046e-10 -4.2157868e-11  10.8619        16.292849      21.723799      3844.4889    
          3   0             -832.6272      -1.8901541e-06 -1.8901704e-06 -1.8901198e-06 -1.8901721e-06  1.651315e-10   2.6639791e-11 -3.1664045e-10  10.8619        16.292849      21.723799      3844.4888    
          4   0             -832.6272      -4.1060377e-11 -2.2709669e-11 -8.800783e-11  -1.2463631e-11  5.9162573e-10  1.2434231e-10 -2.2833446e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.0004601 on 1 procs for 4 steps with 192 atoms
+Loop time of 0.000493991 on 1 procs for 4 steps with 192 atoms
 
-106.3% CPU use with 1 MPI tasks x no OpenMP threads
+105.5% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -46,12 +49,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.00038454 | 0.00038454 | 0.00038454 |   0.0 | 83.58
+Pair    | 0.00041183 | 0.00041183 | 0.00041183 |   0.0 | 83.37
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 8.747e-06  | 8.747e-06  | 8.747e-06  |   0.0 |  1.90
-Output  | 1.2973e-05 | 1.2973e-05 | 1.2973e-05 |   0.0 |  2.82
+Comm    | 8.902e-06  | 8.902e-06  | 8.902e-06  |   0.0 |  1.80
+Output  | 1.4456e-05 | 1.4456e-05 | 1.4456e-05 |   0.0 |  2.93
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 5.384e-05  |            |       | 11.70
+Other   |            | 5.88e-05   |            |       | 11.90
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -81,7 +84,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.860939 16.291425 21.7219) with tilt (0 0 0)
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.860939 16.291425 21.7219) with tilt (0 0 0)
@@ -152,9 +155,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272       1.0142306      1.5142465      0.76422271     0.76422271    -4.4905095e-09 -1.8399489e-09 -2.2251955e-09  10.861889      16.292849      21.723799      3844.485     
         52   0             -832.6272       1.0142306      1.5142465      0.76422271     0.76422271     1.8900632e-09  1.1521311e-09  7.8722808e-10  10.861889      16.292849      21.723799      3844.485     
         53   0             -832.6272       1.0142306      1.5142465      0.76422271     0.76422271    -1.5928094e-09 -1.3240747e-09 -5.2517772e-10  10.861889      16.292849      21.723799      3844.485     
-Loop time of 0.00490472 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00501862 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+0.0% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -168,12 +171,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0044774  | 0.0044774  | 0.0044774  |   0.0 | 91.29
+Pair    | 0.0045949  | 0.0045949  | 0.0045949  |   0.0 | 91.56
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.5032e-05 | 9.5032e-05 | 9.5032e-05 |   0.0 |  1.94
-Output  | 0.00019023 | 0.00019023 | 0.00019023 |   0.0 |  3.88
+Comm    | 9.9144e-05 | 9.9144e-05 | 9.9144e-05 |   0.0 |  1.98
+Output  | 0.00017873 | 0.00017873 | 0.00017873 |   0.0 |  3.56
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001421  |            |       |  2.90
+Other   |            | 0.0001459  |            |       |  2.91
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -202,7 +205,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.860961 16.291425 21.7219) with tilt (0 0 0)
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.860961 16.291425 21.7219) with tilt (0 0 0)
@@ -273,9 +276,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.014227      -1.5142431     -0.76421898    -0.76421898    -3.6930792e-09 -1.0940558e-09 -7.2171431e-10  10.86191       16.292849      21.723799      3844.4927    
         52   0             -832.6272      -1.014227      -1.5142431     -0.76421898    -0.76421898     1.3156436e-09  6.1636973e-10 -9.8122028e-11  10.86191       16.292849      21.723799      3844.4927    
         53   0             -832.6272      -1.014227      -1.5142431     -0.76421898    -0.76421898    -1.0522799e-09 -6.8900393e-10  4.4758276e-10  10.86191       16.292849      21.723799      3844.4927    
-Loop time of 0.00565797 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00514948 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+17.3% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -289,12 +292,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0050262  | 0.0050262  | 0.0050262  |   0.0 | 88.83
+Pair    | 0.0047216  | 0.0047216  | 0.0047216  |   0.0 | 91.69
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00011895 | 0.00011895 | 0.00011895 |   0.0 |  2.10
-Output  | 0.00033465 | 0.00033465 | 0.00033465 |   0.0 |  5.91
+Comm    | 9.8674e-05 | 9.8674e-05 | 9.8674e-05 |   0.0 |  1.92
+Output  | 0.00018225 | 0.00018225 | 0.00018225 |   0.0 |  3.54
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001782  |            |       |  3.15
+Other   |            | 0.000147   |            |       |  2.85
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -323,7 +326,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291408 21.7219) with tilt (0 0 0)
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291408 21.7219) with tilt (0 0 0)
@@ -393,9 +396,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272       1.0142306      0.76422271     1.5142465      0.76422271    -3.8272457e-09 -1.042488e-09  -1.9580353e-09  10.8619        16.292833      21.723799      3844.485     
         52   0             -832.6272       1.0142306      0.76422271     1.5142465      0.76422271     1.4689807e-09  5.9325794e-10  7.0174446e-10  10.8619        16.292833      21.723799      3844.485     
         53   0             -832.6272       1.0142306      0.76422271     1.5142465      0.76422271    -1.1202099e-09 -6.9666955e-10 -4.9426076e-10  10.8619        16.292833      21.723799      3844.485     
-Loop time of 0.00520701 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00497752 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+52.7% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -409,12 +412,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0047049  | 0.0047049  | 0.0047049  |   0.0 | 90.36
+Pair    | 0.004553   | 0.004553   | 0.004553   |   0.0 | 91.47
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.000102   | 0.000102   | 0.000102   |   0.0 |  1.96
-Output  | 0.00025036 | 0.00025036 | 0.00025036 |   0.0 |  4.81
+Comm    | 9.6859e-05 | 9.6859e-05 | 9.6859e-05 |   0.0 |  1.95
+Output  | 0.00017946 | 0.00017946 | 0.00017946 |   0.0 |  3.61
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001497  |            |       |  2.88
+Other   |            | 0.0001482  |            |       |  2.98
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -442,8 +445,8 @@ Reading restart file ...
   1 by 1 by 1 MPI processor grid
   pair style sw stores no restart info
   192 atoms
-  read_restart CPU = 0.003 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+  read_restart CPU = 0.000 seconds
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291441 21.7219) with tilt (0 0 0)
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291441 21.7219) with tilt (0 0 0)
@@ -513,9 +516,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.014227      -0.76421898    -1.5142431     -0.76421898    -3.5255055e-09 -1.6863056e-10 -2.6310354e-09  10.8619        16.292866      21.723799      3844.4927    
         52   0             -832.6272      -1.014227      -0.76421898    -1.5142431     -0.76421898     1.3286216e-09 -8.2230906e-11  1.2424046e-09  10.8619        16.292866      21.723799      3844.4927    
         53   0             -832.6272      -1.014227      -0.76421898    -1.5142431     -0.76421898    -9.2633121e-10  1.8671993e-10 -1.2177242e-09  10.8619        16.292866      21.723799      3844.4927    
-Loop time of 0.00519165 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00579286 on 1 procs for 49 steps with 192 atoms
 
-105.9% CPU use with 1 MPI tasks x no OpenMP threads
+105.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -529,12 +532,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0047601  | 0.0047601  | 0.0047601  |   0.0 | 91.69
+Pair    | 0.0052333  | 0.0052333  | 0.0052333  |   0.0 | 90.34
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.6567e-05 | 9.6567e-05 | 9.6567e-05 |   0.0 |  1.86
-Output  | 0.00018689 | 0.00018689 | 0.00018689 |   0.0 |  3.60
+Comm    | 0.00011581 | 0.00011581 | 0.00011581 |   0.0 |  2.00
+Output  | 0.00024169 | 0.00024169 | 0.00024169 |   0.0 |  4.17
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001481  |            |       |  2.85
+Other   |            | 0.000202   |            |       |  3.49
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -563,7 +566,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291425 21.721878) with tilt (0 0 0)
 Neighbor list info ...
@@ -632,9 +635,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465     -2.7780924e-09 -2.850997e-10  -1.3295516e-09  10.8619        16.292849      21.723777      3844.485     
         52   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465      3.9238449e-10  1.2069883e-10  3.1407184e-10  10.8619        16.292849      21.723777      3844.485     
         53   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465      5.3624227e-10 -6.1880347e-11  7.4068178e-12  10.8619        16.292849      21.723777      3844.485     
-Loop time of 0.00512205 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00535549 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+105.4% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -648,12 +651,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046914  | 0.0046914  | 0.0046914  |   0.0 | 91.59
+Pair    | 0.0048938  | 0.0048938  | 0.0048938  |   0.0 | 91.38
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.5363e-05 | 9.5363e-05 | 9.5363e-05 |   0.0 |  1.86
-Output  | 0.00018638 | 0.00018638 | 0.00018638 |   0.0 |  3.64
+Comm    | 0.00010019 | 0.00010019 | 0.00010019 |   0.0 |  1.87
+Output  | 0.00020112 | 0.00020112 | 0.00020112 |   0.0 |  3.76
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.000149   |            |       |  2.91
+Other   |            | 0.0001603  |            |       |  2.99
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -682,7 +685,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291425 21.721921) with tilt (0 0 0)
 Neighbor list info ...
@@ -751,9 +754,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.014227      -0.76421898    -0.76421898    -1.5142431     -2.1295809e-09  4.2564358e-11 -3.2225905e-09  10.8619        16.292849      21.723821      3844.4927    
         52   0             -832.6272      -1.014227      -0.76421898    -0.76421898    -1.5142431      4.6185856e-10 -2.7769467e-10  1.3740354e-09  10.8619        16.292849      21.723821      3844.4927    
         53   0             -832.6272      -1.014227      -0.76421898    -0.76421898    -1.5142431      3.8683527e-11  5.5683673e-10 -1.1422135e-09  10.8619        16.292849      21.723821      3844.4927    
-Loop time of 0.00515423 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00514039 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+105.4% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -767,12 +770,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046781  | 0.0046781  | 0.0046781  |   0.0 | 90.76
+Pair    | 0.0046638  | 0.0046638  | 0.0046638  |   0.0 | 90.73
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010886 | 0.00010886 | 0.00010886 |   0.0 |  2.11
-Output  | 0.00020888 | 0.00020888 | 0.00020888 |   0.0 |  4.05
+Comm    | 9.7428e-05 | 9.7428e-05 | 9.7428e-05 |   0.0 |  1.90
+Output  | 0.00022241 | 0.00022241 | 0.00022241 |   0.0 |  4.33
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001583  |            |       |  3.07
+Other   |            | 0.0001568  |            |       |  3.05
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -801,7 +804,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291425 21.7219) with tilt (0 0 -2.1723799e-05)
 Neighbor list info ...
@@ -870,9 +873,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8099952e-07 -1.4277705e-07 -5.7716005e-07  1.7693855e-07 -3.2351694e-09  1.341159e-09   0.56449336     10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8098508e-07 -1.4275483e-07 -5.7714996e-07  1.7694954e-07  1.1580941e-09 -1.0965366e-09  0.56449337     10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8098486e-07 -1.4276615e-07 -5.7714038e-07  1.7695196e-07 -8.721517e-10   1.5566211e-09  0.56449337     10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00525357 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.0053288 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+105.4% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -886,12 +889,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0047804  | 0.0047804  | 0.0047804  |   0.0 | 90.99
+Pair    | 0.0048507  | 0.0048507  | 0.0048507  |   0.0 | 91.03
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010432 | 0.00010432 | 0.00010432 |   0.0 |  1.99
-Output  | 0.00022108 | 0.00022108 | 0.00022108 |   0.0 |  4.21
+Comm    | 0.00010573 | 0.00010573 | 0.00010573 |   0.0 |  1.98
+Output  | 0.00021841 | 0.00021841 | 0.00021841 |   0.0 |  4.10
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001478  |            |       |  2.81
+Other   |            | 0.000154   |            |       |  2.89
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -920,7 +923,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291425 21.7219) with tilt (0 0 2.1723799e-05)
 Neighbor list info ...
@@ -989,9 +992,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8096861e-07 -1.4274565e-07 -5.7713119e-07  1.76971e-07   -3.8312927e-09 -2.3665579e-09 -0.56449337     10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8099106e-07 -1.4277097e-07 -5.7714927e-07  1.7694706e-07  1.6320363e-09  1.444377e-09  -0.56449337     10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8094673e-07 -1.4272266e-07 -5.771051e-07   1.7698757e-07 -1.407351e-09  -1.6322069e-09 -0.56449337     10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00490182 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00518859 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+105.4% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1005,12 +1008,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0044837  | 0.0044837  | 0.0044837  |   0.0 | 91.47
+Pair    | 0.0047629  | 0.0047629  | 0.0047629  |   0.0 | 91.80
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010017 | 0.00010017 | 0.00010017 |   0.0 |  2.04
-Output  | 0.00017809 | 0.00017809 | 0.00017809 |   0.0 |  3.63
+Comm    | 9.7444e-05 | 9.7444e-05 | 9.7444e-05 |   0.0 |  1.88
+Output  | 0.00017971 | 0.00017971 | 0.00017971 |   0.0 |  3.46
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001399  |            |       |  2.85
+Other   |            | 0.0001485  |            |       |  2.86
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1039,7 +1042,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291425 21.7219) with tilt (0 -2.1723799e-05 0)
 Neighbor list info ...
@@ -1108,9 +1111,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8100832e-07 -5.7704021e-07 -1.429088e-07   1.7692406e-07 -2.8386548e-09  0.56449337    -1.8783014e-09  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8095496e-07 -5.7698773e-07 -1.4285143e-07  1.7697427e-07  4.6089052e-10  0.56449337     6.2461757e-10  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8100922e-07 -5.7704716e-07 -1.4291567e-07  1.7693516e-07  3.1476332e-10  0.56449337    -4.0959518e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00511643 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00499056 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+105.5% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1124,12 +1127,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046439  | 0.0046439  | 0.0046439  |   0.0 | 90.77
+Pair    | 0.0045665  | 0.0045665  | 0.0045665  |   0.0 | 91.50
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.367e-05  | 9.367e-05  | 9.367e-05  |   0.0 |  1.83
-Output  | 0.00023374 | 0.00023374 | 0.00023374 |   0.0 |  4.57
+Comm    | 9.5595e-05 | 9.5595e-05 | 9.5595e-05 |   0.0 |  1.92
+Output  | 0.00018249 | 0.00018249 | 0.00018249 |   0.0 |  3.66
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001451  |            |       |  2.84
+Other   |            | 0.000146   |            |       |  2.93
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1158,7 +1161,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291425 21.7219) with tilt (0 2.1723799e-05 0)
 Neighbor list info ...
@@ -1227,9 +1230,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.809491e-07  -5.7699425e-07 -1.4284811e-07  1.7699507e-07 -2.3609022e-09 -0.56449337    -2.5034827e-09  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8096692e-07 -5.7700248e-07 -1.4285984e-07  1.7696155e-07  8.1201816e-10 -0.56449337     1.3052004e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8099681e-07 -5.7703793e-07 -1.4289114e-07  1.7693863e-07 -5.3062906e-10 -0.56449337    -1.3374284e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00516326 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00534161 on 1 procs for 49 steps with 192 atoms
 
-106.2% CPU use with 1 MPI tasks x no OpenMP threads
+105.5% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1243,12 +1246,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0047219  | 0.0047219  | 0.0047219  |   0.0 | 91.45
+Pair    | 0.0048674  | 0.0048674  | 0.0048674  |   0.0 | 91.12
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010126 | 0.00010126 | 0.00010126 |   0.0 |  1.96
-Output  | 0.00019469 | 0.00019469 | 0.00019469 |   0.0 |  3.77
+Comm    | 9.9179e-05 | 9.9179e-05 | 9.9179e-05 |   0.0 |  1.86
+Output  | 0.00020812 | 0.00020812 | 0.00020812 |   0.0 |  3.90
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001454  |            |       |  2.82
+Other   |            | 0.0001669  |            |       |  3.12
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1277,7 +1280,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291425 21.7219) with tilt (-1.6292849e-05 0 0)
 Neighbor list info ...
@@ -1346,9 +1349,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8100775e-07 -5.7703956e-07  1.7680329e-07 -1.42787e-07    0.56449336     6.0769633e-10 -1.413015e-09   10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8100223e-07 -5.7703497e-07  1.7680725e-07 -1.4277897e-07  0.56449337    -4.0206468e-10  8.5527611e-10  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8100651e-07 -5.770422e-07   1.7680846e-07 -1.4278581e-07  0.56449336     3.7493382e-10 -9.2828433e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00502281 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00487383 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+105.4% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1362,12 +1365,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045833  | 0.0045833  | 0.0045833  |   0.0 | 91.25
+Pair    | 0.0044578  | 0.0044578  | 0.0044578  |   0.0 | 91.46
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.3654e-05 | 9.3654e-05 | 9.3654e-05 |   0.0 |  1.86
-Output  | 0.00020365 | 0.00020365 | 0.00020365 |   0.0 |  4.05
+Comm    | 9.4521e-05 | 9.4521e-05 | 9.4521e-05 |   0.0 |  1.94
+Output  | 0.0001779  | 0.0001779  | 0.0001779  |   0.0 |  3.65
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001422  |            |       |  2.83
+Other   |            | 0.0001436  |            |       |  2.95
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1396,7 +1399,7 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-Reading sw potential file Si.sw with DATE: 2007-06-11
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291425 21.7219) with tilt (1.6292849e-05 0 0)
 Neighbor list info ...
@@ -1465,9 +1468,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8097076e-07 -5.7700779e-07  1.7684664e-07 -1.4275112e-07 -0.56449338    -7.5016158e-09 -1.3533626e-08  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8097662e-07 -5.7701383e-07  1.7683977e-07 -1.4275581e-07 -0.56449336     2.3426003e-09  3.9682637e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8096918e-07 -5.7700742e-07  1.7684415e-07 -1.4274426e-07 -0.56449337    -1.1104243e-09 -1.5810251e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00491523 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00500535 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+105.4% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1481,12 +1484,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0044957  | 0.0044957  | 0.0044957  |   0.0 | 91.46
+Pair    | 0.0045724  | 0.0045724  | 0.0045724  |   0.0 | 91.35
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.4806e-05 | 9.4806e-05 | 9.4806e-05 |   0.0 |  1.93
-Output  | 0.00018064 | 0.00018064 | 0.00018064 |   0.0 |  3.68
+Comm    | 9.9536e-05 | 9.9536e-05 | 9.9536e-05 |   0.0 |  1.99
+Output  | 0.00018462 | 0.00018462 | 0.00018462 |   0.0 |  3.69
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001441  |            |       |  2.93
+Other   |            | 0.0001488  |            |       |  2.97
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1536,7 +1539,13 @@ Shear Modulus 1 = 56.4493366925819 GPa
 Shear Modulus 2 = 37.5011974824554 GPa
 Poisson Ratio = 0.335410300248826
 Total wall time: 0:00:00
-9791976 6.9492903e-11
+ 1 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = force tolerance
+  Energy initial, next-to-last, final = 
+     -832.627199813422  -832.627199983438  -832.627199983438
+  Force two-norm initial, final = 0.0029791976 6.9492903e-11
   Force max component initial, final = 0.00032755706 9.8020295e-12
   Final line search alpha, max atom move = 1 9.8020295e-12
   Iterations, force evaluations = 49 98
@@ -1544,12 +1553,12 @@ Total wall time: 0:00:00
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046439  | 0.0046439  | 0.0046439  |   0.0 | 90.77
+Pair    | 0.0045665  | 0.0045665  | 0.0045665  |   0.0 | 91.50
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.367e-05  | 9.367e-05  | 9.367e-05  |   0.0 |  1.83
-Output  | 0.00023374 | 0.00023374 | 0.00023374 |   0.0 |  4.57
+Comm    | 9.5595e-05 | 9.5595e-05 | 9.5595e-05 |   0.0 |  1.92
+Output  | 0.00018249 | 0.00018249 | 0.00018249 |   0.0 |  3.66
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001451  |            |       |  2.84
+Other   |            | 0.000146   |            |       |  2.93
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1630,14 +1639,14 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-include potential.mod
+include ../potential/potential.mod
 # NOTE: This script can be modified for different pair styles
 # See in.elastic for more info.
 
 # Choose potential
 pair_style	sw
-pair_coeff * * Si.sw Si
-Reading sw potential file Si.sw with DATE: 2007-06-11
+pair_coeff * * ../potential/Si.sw Si
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 
 # Setup neighbor style
 neighbor 1.0 nsq
@@ -1745,9 +1754,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.809491e-07  -5.7699425e-07 -1.4284811e-07  1.7699507e-07 -2.3609022e-09 -0.56449337    -2.5034827e-09  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8096692e-07 -5.7700248e-07 -1.4285984e-07  1.7696155e-07  8.1201816e-10 -0.56449337     1.3052004e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8099681e-07 -5.7703793e-07 -1.4289114e-07  1.7693863e-07 -5.3062906e-10 -0.56449337    -1.3374284e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00516326 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00534161 on 1 procs for 49 steps with 192 atoms
 
-106.2% CPU use with 1 MPI tasks x no OpenMP threads
+105.5% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1761,12 +1770,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0047219  | 0.0047219  | 0.0047219  |   0.0 | 91.45
+Pair    | 0.0048674  | 0.0048674  | 0.0048674  |   0.0 | 91.12
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010126 | 0.00010126 | 0.00010126 |   0.0 |  1.96
-Output  | 0.00019469 | 0.00019469 | 0.00019469 |   0.0 |  3.77
+Comm    | 9.9179e-05 | 9.9179e-05 | 9.9179e-05 |   0.0 |  1.86
+Output  | 0.00020812 | 0.00020812 | 0.00020812 |   0.0 |  3.90
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001454  |            |       |  2.82
+Other   |            | 0.0001669  |            |       |  3.12
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1901,14 +1910,14 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-include potential.mod
+include ../potential/potential.mod
 # NOTE: This script can be modified for different pair styles
 # See in.elastic for more info.
 
 # Choose potential
 pair_style	sw
-pair_coeff * * Si.sw Si
-Reading sw potential file Si.sw with DATE: 2007-06-11
+pair_coeff * * ../potential/Si.sw Si
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 
 # Setup neighbor style
 neighbor 1.0 nsq
@@ -2016,9 +2025,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8100775e-07 -5.7703956e-07  1.7680329e-07 -1.42787e-07    0.56449336     6.0769633e-10 -1.413015e-09   10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8100223e-07 -5.7703497e-07  1.7680725e-07 -1.4277897e-07  0.56449337    -4.0206468e-10  8.5527611e-10  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8100651e-07 -5.770422e-07   1.7680846e-07 -1.4278581e-07  0.56449336     3.7493382e-10 -9.2828433e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00502281 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00487383 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+105.4% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -2032,12 +2041,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045833  | 0.0045833  | 0.0045833  |   0.0 | 91.25
+Pair    | 0.0044578  | 0.0044578  | 0.0044578  |   0.0 | 91.46
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.3654e-05 | 9.3654e-05 | 9.3654e-05 |   0.0 |  1.86
-Output  | 0.00020365 | 0.00020365 | 0.00020365 |   0.0 |  4.05
+Comm    | 9.4521e-05 | 9.4521e-05 | 9.4521e-05 |   0.0 |  1.94
+Output  | 0.0001779  | 0.0001779  | 0.0001779  |   0.0 |  3.65
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001422  |            |       |  2.83
+Other   |            | 0.0001436  |            |       |  2.95
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -2118,14 +2127,14 @@ Reading restart file ...
   pair style sw stores no restart info
   192 atoms
   read_restart CPU = 0.000 seconds
-include potential.mod
+include ../potential/potential.mod
 # NOTE: This script can be modified for different pair styles
 # See in.elastic for more info.
 
 # Choose potential
 pair_style	sw
-pair_coeff * * Si.sw Si
-Reading sw potential file Si.sw with DATE: 2007-06-11
+pair_coeff * * ../potential/Si.sw Si
+Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
 
 # Setup neighbor style
 neighbor 1.0 nsq
@@ -2233,9 +2242,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8097076e-07 -5.7700779e-07  1.7684664e-07 -1.4275112e-07 -0.56449338    -7.5016158e-09 -1.3533626e-08  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8097662e-07 -5.7701383e-07  1.7683977e-07 -1.4275581e-07 -0.56449336     2.3426003e-09  3.9682637e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8096918e-07 -5.7700742e-07  1.7684415e-07 -1.4274426e-07 -0.56449337    -1.1104243e-09 -1.5810251e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00491523 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00500535 on 1 procs for 49 steps with 192 atoms
 
-106.1% CPU use with 1 MPI tasks x no OpenMP threads
+105.4% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -2249,12 +2258,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0044957  | 0.0044957  | 0.0044957  |   0.0 | 91.46
+Pair    | 0.0045724  | 0.0045724  | 0.0045724  |   0.0 | 91.35
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.4806e-05 | 9.4806e-05 | 9.4806e-05 |   0.0 |  1.93
-Output  | 0.00018064 | 0.00018064 | 0.00018064 |   0.0 |  3.68
+Comm    | 9.9536e-05 | 9.9536e-05 | 9.9536e-05 |   0.0 |  1.99
+Output  | 0.00018462 | 0.00018462 | 0.00018462 |   0.0 |  3.69
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001441  |            |       |  2.93
+Other   |            | 0.0001488  |            |       |  2.97
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0

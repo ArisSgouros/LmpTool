@@ -21,7 +21,7 @@ if "${dir} == 6" then &
 clear
 box tilt large
 read_restart restart.equil
-include potential.mod
+include ../potential/potential.mod
 
 # Negative deformation
 
@@ -82,7 +82,7 @@ print "delta/len0 = ${TEST} $(v_TEST)"
 clear
 box tilt large
 read_restart restart.equil
-include potential.mod
+include ../potential/potential.mod
 
 # Positive deformation
 
