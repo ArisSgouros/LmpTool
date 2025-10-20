@@ -70,6 +70,10 @@ variable ly0 equal ${tmp}
 variable tmp equal lz
 variable lz0 equal ${tmp}
 
+variable tag string "ref"
+write_data o.pos_${tag}.data
+print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
+
 # These formulas define the derivatives w.r.t. strain components
 # Constants uses $, variables use v_ 
 variable d1 equal -(v_pxx1-${pxx0})/(v_delta/v_len0)*${cfac}
@@ -78,6 +82,9 @@ variable d3 equal -(v_pzz1-${pzz0})/(v_delta/v_len0)*${cfac}
 variable d4 equal -(v_pyz1-${pyz0})/(v_delta/v_len0)*${cfac}
 variable d5 equal -(v_pxz1-${pxz0})/(v_delta/v_len0)*${cfac}
 variable d6 equal -(v_pxy1-${pxy0})/(v_delta/v_len0)*${cfac}
+
+
+variable TEST equal (v_delta/v_len0)
 
 displace_atoms all random ${atomjiggle} ${atomjiggle} ${atomjiggle} 87287 units box
 

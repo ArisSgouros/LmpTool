@@ -46,6 +46,10 @@ if "${dir} == 6" then &
 
 minimize ${etol} ${ftol} ${maxiter} ${maxeval}
 
+variable tag string "${dir}-"
+write_data o.pos_${tag}.data
+print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
+
 # Obtain new stress tensor
  
 variable tmp equal pxx
@@ -69,6 +73,9 @@ variable C3neg equal ${d3}
 variable C4neg equal ${d4}
 variable C5neg equal ${d5}
 variable C6neg equal ${d6}
+
+print "delta/len0 = ${TEST} $(v_TEST)"
+
 
 # Reset box and simulation parameters
 
@@ -100,6 +107,10 @@ if "${dir} == 6" then &
 
 minimize ${etol} ${ftol} ${maxiter} ${maxeval}
 
+variable tag string "${dir}+"
+write_data o.pos_${tag}.data
+print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
+
 # Obtain new stress tensor
  
 variable tmp equal pe
@@ -127,6 +138,8 @@ variable C3pos equal ${d3}
 variable C4pos equal ${d4}
 variable C5pos equal ${d5}
 variable C6pos equal ${d6}
+
+print "delta/len0 = ${TEST} $(v_TEST)"
 
 # Combine positive and negative 
 

@@ -73,16 +73,20 @@ for ival in range(nvals):
     c[i1,i2] = float(words[valpos])
     c[i2,i1] = c[i1,i2]
 
-print("\nC tensor [stress units]\n")
+print("\nStiffness tensor [stress units]\n")
 for i in range(6):
     for j in range(6):
         print("%10.8g " % c[i][j], end="")
     print()
 
 # export to json
-cc = {'c11': c[0][0], 'c22': c[1][1],'c66': c[5][5],'c26': c[1][5],'c16': c[0][5],'c12': c[0][1]}
-with open('o.stiffness.json', 'w') as foo: 
-    json.dump(cc, foo)
+stiffness = {}
+for i in range(6):
+    for j in range(6):
+        index = "%d%d" %(i, j)
+        stiffness[index] = c[i][j]
+with open('o.stiffness_lmp.json', 'w') as foo: 
+    json.dump(stiffness, foo, indent=2)
 
 # apply factor of 2 to columns of off-diagonal elements
 
@@ -98,13 +102,17 @@ for i in range(6):
     for j in range(3,6):
         s[i][j] *= 0.5
 
-print("\nS tensor [1/(stress units)]\n")
+print("\nCompliance tensor [1/(stress units)]\n")
 for i in range(6):
     for j in range(6):
         print("%10.8g " % s[i][j], end="")
     print()
 
 # export to json
-ss = {'s11': s[0][0], 's22': s[1][1],'s66': s[5][5],'s26': s[1][5],'s16': s[0][5],'s12': s[0][1]}
-with open('o.compliance.json', 'w') as foo: 
-    json.dump(ss, foo)
+compliance = {}
+for i in range(6):
+    for j in range(6):
+        index = "%d%d" %(i, j)
+        compliance[index] = s[i][j]
+with open('o.compliance_lmp.json', 'w') as foo: 
+    json.dump(compliance, foo, indent=2)
