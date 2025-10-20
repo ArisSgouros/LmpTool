@@ -13,10 +13,12 @@ from numpy import zeros
 from numpy.linalg import inv
 import sys
 import json
+import argparse
 
-file_lammps_log = 'log.lammps'
-if len(sys.argv) == 2:
-    file_lammps_log = sys.argv[1]
+parser = argparse.ArgumentParser(description="Parse stiffness matrix from lammps")
+parser.add_argument("--log", default="log.lammps", help="Lammps log file")
+parser.add_argument("--epsilon", type=float, default=1e-6, help="Strain magnitude used in deformation (default: 1e-6)")
+args = parser.parse_args()
 
 # define logfile layout
 
@@ -51,7 +53,7 @@ cindices[20] = (4,5)
 
 # open logfile
 
-with open(file_lammps_log,'r') as logfile:
+with open(args.log,'r') as logfile:
     txt = logfile.read()
 
 # search for 21 elastic constants
@@ -83,9 +85,9 @@ for i in range(6):
 stiffness = {}
 for i in range(6):
     for j in range(6):
-        index = "%d%d" %(i, j)
+        index = "%d%d" %(i+1, j+1)
         stiffness[index] = c[i][j]
-with open('o.stiffness_lmp.json', 'w') as foo: 
+with open('o.stiffness_lmp_%.1e.json'%(args.epsilon), 'w') as foo: 
     json.dump(stiffness, foo, indent=2)
 
 # apply factor of 2 to columns of off-diagonal elements
@@ -112,7 +114,7 @@ for i in range(6):
 compliance = {}
 for i in range(6):
     for j in range(6):
-        index = "%d%d" %(i, j)
+        index = "%d%d" %(i+1, j+1)
         compliance[index] = s[i][j]
-with open('o.compliance_lmp.json', 'w') as foo: 
+with open('o.compliance_lmp_%.1e.json'%(args.epsilon), 'w') as foo: 
     json.dump(compliance, foo, indent=2)
