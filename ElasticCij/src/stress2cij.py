@@ -8,8 +8,8 @@ def load_stress(prefix: str, index: int, sign: str) -> np.ndarray:
     """Load a 6-component stress vector for a given deformation index and sign."""
     fname = f"{prefix}{index}{sign}.json"
     if not os.path.exists(fname):
-        print(f"Warning: {fname} not found.")
-        return np.full(6, np.nan)
+        print(f"Error: {fname} not found.")
+        quit()
     with open(fname, "r") as f:
         data = json.load(f)
     return np.array([float(data[str(i)]) for i in range(1, 7)], dtype=float)
@@ -33,10 +33,11 @@ def main():
             key = f"{i+1}{j+1}"
             stiffness[key] = (stress_minus[i][j] - stress_plus[i][j]) / (2.0 * args.epsilon)
 
-    with open("o.stiffness_this.json", "w") as f:
+    file_stiffness = 'o.stiffness.json'
+    with open(file_stiffness, 'w') as f: 
         json.dump(stiffness, f, indent=2)
 
-    print(f"Stiffness matrix written to o.stiffness_this.json (ε = {args.epsilon:g})")
+    print(f"Stiffness matrix written to {file_stiffness} (ε = {args.epsilon:g})")
 
 if __name__ == "__main__":
     main()
