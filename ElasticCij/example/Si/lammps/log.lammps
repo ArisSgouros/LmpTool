@@ -33,7 +33,7 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
          2   0             -832.6272      -0.016514738   -0.016514738   -0.016514738   -0.016514738   -4.8086135e-11  1.0021046e-10 -4.2157868e-11  10.8619        16.292849      21.723799      3844.4889    
          3   0             -832.6272      -1.8901541e-06 -1.8901704e-06 -1.8901198e-06 -1.8901721e-06  1.651315e-10   2.6639791e-11 -3.1664045e-10  10.8619        16.292849      21.723799      3844.4888    
          4   0             -832.6272      -4.1060377e-11 -2.2709669e-11 -8.800783e-11  -1.2463631e-11  5.9162573e-10  1.2434231e-10 -2.2833446e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.000493991 on 1 procs for 4 steps with 192 atoms
+Loop time of 0.000482566 on 1 procs for 4 steps with 192 atoms
 
 105.5% CPU use with 1 MPI tasks x no OpenMP threads
 
@@ -49,12 +49,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.00041183 | 0.00041183 | 0.00041183 |   0.0 | 83.37
+Pair    | 0.00040416 | 0.00040416 | 0.00040416 |   0.0 | 83.75
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 8.902e-06  | 8.902e-06  | 8.902e-06  |   0.0 |  1.80
-Output  | 1.4456e-05 | 1.4456e-05 | 1.4456e-05 |   0.0 |  2.93
+Comm    | 9.182e-06  | 9.182e-06  | 9.182e-06  |   0.0 |  1.90
+Output  | 1.3555e-05 | 1.3555e-05 | 1.3555e-05 |   0.0 |  2.81
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 5.88e-05   |            |       | 11.90
+Other   |            | 5.567e-05  |            |       | 11.54
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -155,9 +155,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272       1.0142306      1.5142465      0.76422271     0.76422271    -4.4905095e-09 -1.8399489e-09 -2.2251955e-09  10.861889      16.292849      21.723799      3844.485     
         52   0             -832.6272       1.0142306      1.5142465      0.76422271     0.76422271     1.8900632e-09  1.1521311e-09  7.8722808e-10  10.861889      16.292849      21.723799      3844.485     
         53   0             -832.6272       1.0142306      1.5142465      0.76422271     0.76422271    -1.5928094e-09 -1.3240747e-09 -5.2517772e-10  10.861889      16.292849      21.723799      3844.485     
-Loop time of 0.00501862 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.0049598 on 1 procs for 49 steps with 192 atoms
 
-0.0% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -171,12 +171,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045949  | 0.0045949  | 0.0045949  |   0.0 | 91.56
+Pair    | 0.0045334  | 0.0045334  | 0.0045334  |   0.0 | 91.40
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.9144e-05 | 9.9144e-05 | 9.9144e-05 |   0.0 |  1.98
-Output  | 0.00017873 | 0.00017873 | 0.00017873 |   0.0 |  3.56
+Comm    | 9.8067e-05 | 9.8067e-05 | 9.8067e-05 |   0.0 |  1.98
+Output  | 0.00018101 | 0.00018101 | 0.00018101 |   0.0 |  3.65
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001459  |            |       |  2.91
+Other   |            | 0.0001473  |            |       |  2.97
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -276,9 +276,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.014227      -1.5142431     -0.76421898    -0.76421898    -3.6930792e-09 -1.0940558e-09 -7.2171431e-10  10.86191       16.292849      21.723799      3844.4927    
         52   0             -832.6272      -1.014227      -1.5142431     -0.76421898    -0.76421898     1.3156436e-09  6.1636973e-10 -9.8122028e-11  10.86191       16.292849      21.723799      3844.4927    
         53   0             -832.6272      -1.014227      -1.5142431     -0.76421898    -0.76421898    -1.0522799e-09 -6.8900393e-10  4.4758276e-10  10.86191       16.292849      21.723799      3844.4927    
-Loop time of 0.00514948 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.0050453 on 1 procs for 49 steps with 192 atoms
 
-17.3% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -292,12 +292,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0047216  | 0.0047216  | 0.0047216  |   0.0 | 91.69
+Pair    | 0.0046115  | 0.0046115  | 0.0046115  |   0.0 | 91.40
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.8674e-05 | 9.8674e-05 | 9.8674e-05 |   0.0 |  1.92
-Output  | 0.00018225 | 0.00018225 | 0.00018225 |   0.0 |  3.54
+Comm    | 0.00010127 | 0.00010127 | 0.00010127 |   0.0 |  2.01
+Output  | 0.00018432 | 0.00018432 | 0.00018432 |   0.0 |  3.65
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.000147   |            |       |  2.85
+Other   |            | 0.0001482  |            |       |  2.94
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -396,9 +396,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272       1.0142306      0.76422271     1.5142465      0.76422271    -3.8272457e-09 -1.042488e-09  -1.9580353e-09  10.8619        16.292833      21.723799      3844.485     
         52   0             -832.6272       1.0142306      0.76422271     1.5142465      0.76422271     1.4689807e-09  5.9325794e-10  7.0174446e-10  10.8619        16.292833      21.723799      3844.485     
         53   0             -832.6272       1.0142306      0.76422271     1.5142465      0.76422271    -1.1202099e-09 -6.9666955e-10 -4.9426076e-10  10.8619        16.292833      21.723799      3844.485     
-Loop time of 0.00497752 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00501898 on 1 procs for 49 steps with 192 atoms
 
-52.7% CPU use with 1 MPI tasks x no OpenMP threads
+105.3% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -412,12 +412,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.004553   | 0.004553   | 0.004553   |   0.0 | 91.47
+Pair    | 0.0045771  | 0.0045771  | 0.0045771  |   0.0 | 91.20
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.6859e-05 | 9.6859e-05 | 9.6859e-05 |   0.0 |  1.95
-Output  | 0.00017946 | 0.00017946 | 0.00017946 |   0.0 |  3.61
+Comm    | 0.00011393 | 0.00011393 | 0.00011393 |   0.0 |  2.27
+Output  | 0.00018398 | 0.00018398 | 0.00018398 |   0.0 |  3.67
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001482  |            |       |  2.98
+Other   |            | 0.000144   |            |       |  2.87
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -516,9 +516,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.014227      -0.76421898    -1.5142431     -0.76421898    -3.5255055e-09 -1.6863056e-10 -2.6310354e-09  10.8619        16.292866      21.723799      3844.4927    
         52   0             -832.6272      -1.014227      -0.76421898    -1.5142431     -0.76421898     1.3286216e-09 -8.2230906e-11  1.2424046e-09  10.8619        16.292866      21.723799      3844.4927    
         53   0             -832.6272      -1.014227      -0.76421898    -1.5142431     -0.76421898    -9.2633121e-10  1.8671993e-10 -1.2177242e-09  10.8619        16.292866      21.723799      3844.4927    
-Loop time of 0.00579286 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00491154 on 1 procs for 49 steps with 192 atoms
 
-105.1% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -532,12 +532,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0052333  | 0.0052333  | 0.0052333  |   0.0 | 90.34
+Pair    | 0.0045001  | 0.0045001  | 0.0045001  |   0.0 | 91.62
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00011581 | 0.00011581 | 0.00011581 |   0.0 |  2.00
-Output  | 0.00024169 | 0.00024169 | 0.00024169 |   0.0 |  4.17
+Comm    | 9.8395e-05 | 9.8395e-05 | 9.8395e-05 |   0.0 |  2.00
+Output  | 0.00017145 | 0.00017145 | 0.00017145 |   0.0 |  3.49
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.000202   |            |       |  3.49
+Other   |            | 0.0001416  |            |       |  2.88
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -635,9 +635,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465     -2.7780924e-09 -2.850997e-10  -1.3295516e-09  10.8619        16.292849      21.723777      3844.485     
         52   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465      3.9238449e-10  1.2069883e-10  3.1407184e-10  10.8619        16.292849      21.723777      3844.485     
         53   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465      5.3624227e-10 -6.1880347e-11  7.4068178e-12  10.8619        16.292849      21.723777      3844.485     
-Loop time of 0.00535549 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.0050222 on 1 procs for 49 steps with 192 atoms
 
-105.4% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -651,12 +651,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0048938  | 0.0048938  | 0.0048938  |   0.0 | 91.38
+Pair    | 0.004579   | 0.004579   | 0.004579   |   0.0 | 91.17
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010019 | 0.00010019 | 0.00010019 |   0.0 |  1.87
-Output  | 0.00020112 | 0.00020112 | 0.00020112 |   0.0 |  3.76
+Comm    | 0.00010277 | 0.00010277 | 0.00010277 |   0.0 |  2.05
+Output  | 0.00019281 | 0.00019281 | 0.00019281 |   0.0 |  3.84
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001603  |            |       |  2.99
+Other   |            | 0.0001476  |            |       |  2.94
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -754,9 +754,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.014227      -0.76421898    -0.76421898    -1.5142431     -2.1295809e-09  4.2564358e-11 -3.2225905e-09  10.8619        16.292849      21.723821      3844.4927    
         52   0             -832.6272      -1.014227      -0.76421898    -0.76421898    -1.5142431      4.6185856e-10 -2.7769467e-10  1.3740354e-09  10.8619        16.292849      21.723821      3844.4927    
         53   0             -832.6272      -1.014227      -0.76421898    -0.76421898    -1.5142431      3.8683527e-11  5.5683673e-10 -1.1422135e-09  10.8619        16.292849      21.723821      3844.4927    
-Loop time of 0.00514039 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00538504 on 1 procs for 49 steps with 192 atoms
 
-105.4% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -770,12 +770,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046638  | 0.0046638  | 0.0046638  |   0.0 | 90.73
+Pair    | 0.0049022  | 0.0049022  | 0.0049022  |   0.0 | 91.03
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.7428e-05 | 9.7428e-05 | 9.7428e-05 |   0.0 |  1.90
-Output  | 0.00022241 | 0.00022241 | 0.00022241 |   0.0 |  4.33
+Comm    | 0.00011668 | 0.00011668 | 0.00011668 |   0.0 |  2.17
+Output  | 0.00020168 | 0.00020168 | 0.00020168 |   0.0 |  3.75
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001568  |            |       |  3.05
+Other   |            | 0.0001645  |            |       |  3.06
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -873,9 +873,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8099952e-07 -1.4277705e-07 -5.7716005e-07  1.7693855e-07 -3.2351694e-09  1.341159e-09   0.56449336     10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8098508e-07 -1.4275483e-07 -5.7714996e-07  1.7694954e-07  1.1580941e-09 -1.0965366e-09  0.56449337     10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8098486e-07 -1.4276615e-07 -5.7714038e-07  1.7695196e-07 -8.721517e-10   1.5566211e-09  0.56449337     10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.0053288 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00513422 on 1 procs for 49 steps with 192 atoms
 
-105.4% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -889,12 +889,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0048507  | 0.0048507  | 0.0048507  |   0.0 | 91.03
+Pair    | 0.0046732  | 0.0046732  | 0.0046732  |   0.0 | 91.02
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010573 | 0.00010573 | 0.00010573 |   0.0 |  1.98
-Output  | 0.00021841 | 0.00021841 | 0.00021841 |   0.0 |  4.10
+Comm    | 0.00010044 | 0.00010044 | 0.00010044 |   0.0 |  1.96
+Output  | 0.00020864 | 0.00020864 | 0.00020864 |   0.0 |  4.06
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.000154   |            |       |  2.89
+Other   |            | 0.0001519  |            |       |  2.96
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -992,9 +992,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8096861e-07 -1.4274565e-07 -5.7713119e-07  1.76971e-07   -3.8312927e-09 -2.3665579e-09 -0.56449337     10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8099106e-07 -1.4277097e-07 -5.7714927e-07  1.7694706e-07  1.6320363e-09  1.444377e-09  -0.56449337     10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8094673e-07 -1.4272266e-07 -5.771051e-07   1.7698757e-07 -1.407351e-09  -1.6322069e-09 -0.56449337     10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00518859 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00506949 on 1 procs for 49 steps with 192 atoms
 
-105.4% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1008,12 +1008,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0047629  | 0.0047629  | 0.0047629  |   0.0 | 91.80
+Pair    | 0.0046175  | 0.0046175  | 0.0046175  |   0.0 | 91.08
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.7444e-05 | 9.7444e-05 | 9.7444e-05 |   0.0 |  1.88
-Output  | 0.00017971 | 0.00017971 | 0.00017971 |   0.0 |  3.46
+Comm    | 0.00010732 | 0.00010732 | 0.00010732 |   0.0 |  2.12
+Output  | 0.00019593 | 0.00019593 | 0.00019593 |   0.0 |  3.86
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001485  |            |       |  2.86
+Other   |            | 0.0001488  |            |       |  2.93
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1111,9 +1111,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8100832e-07 -5.7704021e-07 -1.429088e-07   1.7692406e-07 -2.8386548e-09  0.56449337    -1.8783014e-09  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8095496e-07 -5.7698773e-07 -1.4285143e-07  1.7697427e-07  4.6089052e-10  0.56449337     6.2461757e-10  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8100922e-07 -5.7704716e-07 -1.4291567e-07  1.7693516e-07  3.1476332e-10  0.56449337    -4.0959518e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00499056 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00606023 on 1 procs for 49 steps with 192 atoms
 
-105.5% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1127,12 +1127,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045665  | 0.0045665  | 0.0045665  |   0.0 | 91.50
+Pair    | 0.0054066  | 0.0054066  | 0.0054066  |   0.0 | 89.21
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.5595e-05 | 9.5595e-05 | 9.5595e-05 |   0.0 |  1.92
-Output  | 0.00018249 | 0.00018249 | 0.00018249 |   0.0 |  3.66
+Comm    | 0.00013067 | 0.00013067 | 0.00013067 |   0.0 |  2.16
+Output  | 0.00032665 | 0.00032665 | 0.00032665 |   0.0 |  5.39
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.000146   |            |       |  2.93
+Other   |            | 0.0001963  |            |       |  3.24
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1230,9 +1230,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.809491e-07  -5.7699425e-07 -1.4284811e-07  1.7699507e-07 -2.3609022e-09 -0.56449337    -2.5034827e-09  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8096692e-07 -5.7700248e-07 -1.4285984e-07  1.7696155e-07  8.1201816e-10 -0.56449337     1.3052004e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8099681e-07 -5.7703793e-07 -1.4289114e-07  1.7693863e-07 -5.3062906e-10 -0.56449337    -1.3374284e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00534161 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00529399 on 1 procs for 49 steps with 192 atoms
 
-105.5% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1246,12 +1246,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0048674  | 0.0048674  | 0.0048674  |   0.0 | 91.12
+Pair    | 0.0048267  | 0.0048267  | 0.0048267  |   0.0 | 91.17
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.9179e-05 | 9.9179e-05 | 9.9179e-05 |   0.0 |  1.86
-Output  | 0.00020812 | 0.00020812 | 0.00020812 |   0.0 |  3.90
+Comm    | 0.00010308 | 0.00010308 | 0.00010308 |   0.0 |  1.95
+Output  | 0.00020552 | 0.00020552 | 0.00020552 |   0.0 |  3.88
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001669  |            |       |  3.12
+Other   |            | 0.0001587  |            |       |  3.00
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1349,9 +1349,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8100775e-07 -5.7703956e-07  1.7680329e-07 -1.42787e-07    0.56449336     6.0769633e-10 -1.413015e-09   10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8100223e-07 -5.7703497e-07  1.7680725e-07 -1.4277897e-07  0.56449337    -4.0206468e-10  8.5527611e-10  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8100651e-07 -5.770422e-07   1.7680846e-07 -1.4278581e-07  0.56449336     3.7493382e-10 -9.2828433e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00487383 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00565416 on 1 procs for 49 steps with 192 atoms
 
-105.4% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1365,12 +1365,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0044578  | 0.0044578  | 0.0044578  |   0.0 | 91.46
+Pair    | 0.0051314  | 0.0051314  | 0.0051314  |   0.0 | 90.75
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.4521e-05 | 9.4521e-05 | 9.4521e-05 |   0.0 |  1.94
-Output  | 0.0001779  | 0.0001779  | 0.0001779  |   0.0 |  3.65
+Comm    | 0.00011184 | 0.00011184 | 0.00011184 |   0.0 |  1.98
+Output  | 0.00024632 | 0.00024632 | 0.00024632 |   0.0 |  4.36
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001436  |            |       |  2.95
+Other   |            | 0.0001646  |            |       |  2.91
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1468,9 +1468,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8097076e-07 -5.7700779e-07  1.7684664e-07 -1.4275112e-07 -0.56449338    -7.5016158e-09 -1.3533626e-08  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8097662e-07 -5.7701383e-07  1.7683977e-07 -1.4275581e-07 -0.56449336     2.3426003e-09  3.9682637e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8096918e-07 -5.7700742e-07  1.7684415e-07 -1.4274426e-07 -0.56449337    -1.1104243e-09 -1.5810251e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00500535 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00504455 on 1 procs for 49 steps with 192 atoms
 
-105.4% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1484,12 +1484,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045724  | 0.0045724  | 0.0045724  |   0.0 | 91.35
+Pair    | 0.0046011  | 0.0046011  | 0.0046011  |   0.0 | 91.21
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.9536e-05 | 9.9536e-05 | 9.9536e-05 |   0.0 |  1.99
-Output  | 0.00018462 | 0.00018462 | 0.00018462 |   0.0 |  3.69
+Comm    | 0.00010008 | 0.00010008 | 0.00010008 |   0.0 |  1.98
+Output  | 0.0001928  | 0.0001928  | 0.0001928  |   0.0 |  3.82
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001488  |            |       |  2.97
+Other   |            | 0.0001506  |            |       |  2.98
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1539,7 +1539,9 @@ Shear Modulus 1 = 56.4493366925819 GPa
 Shear Modulus 2 = 37.5011974824554 GPa
 Poisson Ratio = 0.335410300248826
 Total wall time: 0:00:00
- 1 MPI tasks x no OpenMP threads
+r 49 steps with 192 atoms
+
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1553,12 +1555,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045665  | 0.0045665  | 0.0045665  |   0.0 | 91.50
+Pair    | 0.0054066  | 0.0054066  | 0.0054066  |   0.0 | 89.21
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.5595e-05 | 9.5595e-05 | 9.5595e-05 |   0.0 |  1.92
-Output  | 0.00018249 | 0.00018249 | 0.00018249 |   0.0 |  3.66
+Comm    | 0.00013067 | 0.00013067 | 0.00013067 |   0.0 |  2.16
+Output  | 0.00032665 | 0.00032665 | 0.00032665 |   0.0 |  5.39
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.000146   |            |       |  2.93
+Other   |            | 0.0001963  |            |       |  3.24
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1665,14 +1667,14 @@ thermo_modify norm no
 # Positive deformation
 
 variable delta equal ${up}*${len0}
-variable delta equal 1e-06*${len0}
-variable delta equal 1e-06*21.7237991136209
+variable delta equal 1.0e-6*${len0}
+variable delta equal 1.0e-6*21.7237991136209
 variable deltaxy equal ${up}*xy
-variable deltaxy equal 1e-06*xy
+variable deltaxy equal 1.0e-6*xy
 variable deltaxz equal ${up}*xz
-variable deltaxz equal 1e-06*xz
+variable deltaxz equal 1.0e-6*xz
 variable deltayz equal ${up}*yz
-variable deltayz equal 1e-06*yz
+variable deltayz equal 1.0e-6*yz
 if "${dir} == 1" then    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
 if "${dir} == 2" then    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
 if "${dir} == 3" then    "change_box all z delta 0 ${delta} remap units box"
@@ -1754,9 +1756,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.809491e-07  -5.7699425e-07 -1.4284811e-07  1.7699507e-07 -2.3609022e-09 -0.56449337    -2.5034827e-09  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8096692e-07 -5.7700248e-07 -1.4285984e-07  1.7696155e-07  8.1201816e-10 -0.56449337     1.3052004e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8099681e-07 -5.7703793e-07 -1.4289114e-07  1.7693863e-07 -5.3062906e-10 -0.56449337    -1.3374284e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00534161 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00529399 on 1 procs for 49 steps with 192 atoms
 
-105.5% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1770,12 +1772,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0048674  | 0.0048674  | 0.0048674  |   0.0 | 91.12
+Pair    | 0.0048267  | 0.0048267  | 0.0048267  |   0.0 | 91.17
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.9179e-05 | 9.9179e-05 | 9.9179e-05 |   0.0 |  1.86
-Output  | 0.00020812 | 0.00020812 | 0.00020812 |   0.0 |  3.90
+Comm    | 0.00010308 | 0.00010308 | 0.00010308 |   0.0 |  1.95
+Output  | 0.00020552 | 0.00020552 | 0.00020552 |   0.0 |  3.88
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001669  |            |       |  3.12
+Other   |            | 0.0001587  |            |       |  3.00
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1936,14 +1938,14 @@ thermo_modify norm no
 # Negative deformation
 
 variable delta equal -${up}*${len0}
-variable delta equal -1e-06*${len0}
-variable delta equal -1e-06*16.2928493352156
+variable delta equal -1.0e-6*${len0}
+variable delta equal -1.0e-6*16.2928493352156
 variable deltaxy equal -${up}*xy
-variable deltaxy equal -1e-06*xy
+variable deltaxy equal -1.0e-6*xy
 variable deltaxz equal -${up}*xz
-variable deltaxz equal -1e-06*xz
+variable deltaxz equal -1.0e-6*xz
 variable deltayz equal -${up}*yz
-variable deltayz equal -1e-06*yz
+variable deltayz equal -1.0e-6*yz
 if "${dir} == 1" then    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
 if "${dir} == 2" then    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
 if "${dir} == 3" then    "change_box all z delta 0 ${delta} remap units box"
@@ -2025,9 +2027,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8100775e-07 -5.7703956e-07  1.7680329e-07 -1.42787e-07    0.56449336     6.0769633e-10 -1.413015e-09   10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8100223e-07 -5.7703497e-07  1.7680725e-07 -1.4277897e-07  0.56449337    -4.0206468e-10  8.5527611e-10  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8100651e-07 -5.770422e-07   1.7680846e-07 -1.4278581e-07  0.56449336     3.7493382e-10 -9.2828433e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00487383 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00565416 on 1 procs for 49 steps with 192 atoms
 
-105.4% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -2041,12 +2043,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0044578  | 0.0044578  | 0.0044578  |   0.0 | 91.46
+Pair    | 0.0051314  | 0.0051314  | 0.0051314  |   0.0 | 90.75
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.4521e-05 | 9.4521e-05 | 9.4521e-05 |   0.0 |  1.94
-Output  | 0.0001779  | 0.0001779  | 0.0001779  |   0.0 |  3.65
+Comm    | 0.00011184 | 0.00011184 | 0.00011184 |   0.0 |  1.98
+Output  | 0.00024632 | 0.00024632 | 0.00024632 |   0.0 |  4.36
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001436  |            |       |  2.95
+Other   |            | 0.0001646  |            |       |  2.91
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -2153,14 +2155,14 @@ thermo_modify norm no
 # Positive deformation
 
 variable delta equal ${up}*${len0}
-variable delta equal 1e-06*${len0}
-variable delta equal 1e-06*16.2928493352156
+variable delta equal 1.0e-6*${len0}
+variable delta equal 1.0e-6*16.2928493352156
 variable deltaxy equal ${up}*xy
-variable deltaxy equal 1e-06*xy
+variable deltaxy equal 1.0e-6*xy
 variable deltaxz equal ${up}*xz
-variable deltaxz equal 1e-06*xz
+variable deltaxz equal 1.0e-6*xz
 variable deltayz equal ${up}*yz
-variable deltayz equal 1e-06*yz
+variable deltayz equal 1.0e-6*yz
 if "${dir} == 1" then    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
 if "${dir} == 2" then    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
 if "${dir} == 3" then    "change_box all z delta 0 ${delta} remap units box"
@@ -2242,9 +2244,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8097076e-07 -5.7700779e-07  1.7684664e-07 -1.4275112e-07 -0.56449338    -7.5016158e-09 -1.3533626e-08  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8097662e-07 -5.7701383e-07  1.7683977e-07 -1.4275581e-07 -0.56449336     2.3426003e-09  3.9682637e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8096918e-07 -5.7700742e-07  1.7684415e-07 -1.4274426e-07 -0.56449337    -1.1104243e-09 -1.5810251e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00500535 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00504455 on 1 procs for 49 steps with 192 atoms
 
-105.4% CPU use with 1 MPI tasks x no OpenMP threads
+105.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -2258,12 +2260,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045724  | 0.0045724  | 0.0045724  |   0.0 | 91.35
+Pair    | 0.0046011  | 0.0046011  | 0.0046011  |   0.0 | 91.21
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.9536e-05 | 9.9536e-05 | 9.9536e-05 |   0.0 |  1.99
-Output  | 0.00018462 | 0.00018462 | 0.00018462 |   0.0 |  3.69
+Comm    | 0.00010008 | 0.00010008 | 0.00010008 |   0.0 |  1.98
+Output  | 0.0001928  | 0.0001928  | 0.0001928  |   0.0 |  3.82
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001488  |            |       |  2.97
+Other   |            | 0.0001506  |            |       |  2.98
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
