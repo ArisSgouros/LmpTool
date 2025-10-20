@@ -1,0 +1,13 @@
+#
+# Evaluate deformed conformation
+#
+units    metal
+variable cfac equal 1.0e-4 # atom to GPa
+variable cunits string GPa
+variable dmax equal 0.0
+read_data o.pos_${tag}.data
+mass 1 1.0e-20
+include ../potential/potential.mod
+run 0
+write_data o.pos_${tag}.data.debug
+print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
