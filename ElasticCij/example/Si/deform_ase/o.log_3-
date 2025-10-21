@@ -1,14 +1,16 @@
 LAMMPS (2 Aug 2023 - Update 3)
+
+The 'box' command has been removed and will be ignored
+
 Reading data file ...
-  orthogonal box = (0 0 0) to (10.8619 16.292849 21.723777)
+  triclinic box = (0 0 0) to (10.8619 16.292849 21.723777) with tilt (0 0 0)
   1 by 1 by 1 MPI processor grid
   reading atoms ...
   192 atoms
   reading velocities ...
   192 velocities
-  read_data CPU = 0.001 seconds
+  read_data CPU = 0.000 seconds
 Reading sw potential file ../potential/Si.sw with DATE: 2007-06-11
-WARNING: No fixes with time integration, atoms won't move (../verlet.cpp:60)
 Neighbor list info ...
   update: every = 1 steps, delay = 0 steps, check = yes
   max neighbors/atom: 2000, page size: 100000
@@ -20,26 +22,35 @@ Neighbor list info ...
       pair build: full/nsq
       stencil: none
       bin: none
-Setting up Verlet run ...
+Setting up cg style minimization ...
   Unit style    : metal
   Current step  : 0
-  Time step     : 0.001
-Per MPI rank memory allocation (min/avg/max) = 3.053 | 3.053 | 3.053 Mbytes
+Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
    Step          Temp          PotEng         Press           Pxx            Pyy            Pzz            Pxy            Pxz            Pyz             Lx             Ly             Lz           Volume    
-         0   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465      3.8557002e-10  6.249959e-10  -1.8777069e-10  10.8619        16.292849      21.723777      3844.485     
-Loop time of 2.85e-07 on 1 procs for 0 steps with 192 atoms
+         0   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465      2.6518228e-10  2.1923714e-09 -4.0653959e-10  10.8619        16.292849      21.723777      3844.485     
+         1   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465      2.047191e-11  -5.2883533e-11 -1.6689763e-10  10.8619        16.292849      21.723777      3844.485     
+Loop time of 0.000174626 on 1 procs for 1 steps with 192 atoms
 
-0.0% CPU use with 1 MPI tasks x no OpenMP threads
+99.6% CPU use with 1 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = force tolerance
+  Energy initial, next-to-last, final = 
+     -832.627199982311  -832.627199982311  -832.627199982311
+  Force two-norm initial, final = 1.068922e-12 3.5452873e-13
+  Force max component initial, final = 1.3544628e-13 4.1238059e-14
+  Final line search alpha, max atom move = 1 4.1238059e-14
+  Iterations, force evaluations = 1 2
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Pair    | 0.00015963 | 0.00015963 | 0.00015963 |   0.0 | 91.41
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 3.88e-06   | 3.88e-06   | 3.88e-06   |   0.0 |  2.22
 Output  | 0          | 0          | 0          |   0.0 |  0.00
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 2.85e-07   |            |       |100.00
+Other   |            | 1.112e-05  |            |       |  6.37
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -54,6 +65,5 @@ Total # of neighbors = 5376
 Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
-System init for write_data ...
-{"1":7.6422270902694219548e-05, "2":7.6422270888040779954e-05,"3":0.00015142464723861732176,"4":-1.8777068827599085126e-14,"5":6.2499589916466606808e-14,"6":3.8557001587676470633e-14}
+{"1":7.6422270903088449011e-05, "2":7.6422270887727472631e-05,"3":0.00015142464723779186443,"4":-1.6689762844003637449e-14,"5":-5.2883532972729207023e-15,"6":2.0471910293003705569e-15}
 Total wall time: 0:00:00
