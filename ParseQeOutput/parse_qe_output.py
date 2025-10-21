@@ -3,7 +3,13 @@ import re
 import json
 
 kRyToEv = 13.6057039763
+kRyToJoule = 2.1798741E-18
 kBohrToAngstrom = 0.529177
+kEvToJoule = 1.60218e-19
+kPaToAtm = 1.0 / 101325
+kAngstromToMeter = 1e-10
+kRy_Bohr3ToPa = kRyToJoule/(kBohrToAngstrom*kAngstromToMeter)**3
+kRy_Bohr3ToAtm = kRy_Bohr3ToPa*kPaToAtm
 
 def parse_qe_output(file_path, xyzfmt = 'ase', debug = False):
 
@@ -170,9 +176,11 @@ def parse_qe_output(file_path, xyzfmt = 'ase', debug = False):
         szz = float(lsplit[2])
 
         stress_tensor_Ry_bohr3 = [sxx, sxy, sxz, syx, syy, syz, szx, szy, szz]
-        virial_ev = [sij*unit_cell_volume_bohr3*kRyToEv for sij in stress_tensor_Ry_bohr3]
+        virial_tensor_ev = [sij*unit_cell_volume_bohr3*kRyToEv for sij in stress_tensor_Ry_bohr3]
+        stress_tensor_atm = [sij*kRy_Bohr3ToAtm for sij in stress_tensor_Ry_bohr3]
 
-        parsed_frame['cell_properties']['virial'] = virial_ev
+        parsed_frame['cell_properties']['virial'] = virial_tensor_ev
+        parsed_frame['cell_properties']['stress'] = stress_tensor_atm
 
     # Parse ATOMIC_POSITIONS
     atoms_data = []
