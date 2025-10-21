@@ -1,7 +1,7 @@
 import os
 import sys
 # Add the parent directory to sys.path
-parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../src/'))
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
 sys.path.insert(0, parent_dir)
 
 from ase_lammps_io import read_lammps, write_xyz, read_xyz, write_lammps
