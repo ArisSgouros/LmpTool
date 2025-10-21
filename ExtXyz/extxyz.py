@@ -60,6 +60,10 @@ def parse_xyz_frame(frame_lines):
     virial_str = virial_match.group(1) if virial_match else ""
     virial = [float(x) for x in virial_str.split()]
 
+    stress_match = re.search(r'stress="([^"]*)"', properties_line)
+    stress_str = stress_match.group(1) if stress_match else ""
+    stress = [float(x) for x in stress_str.split()]
+
     # Corrected parsing for properties
     format_match = re.search(r'Properties=([a-zA-Z0-9:]+)', properties_line, re.IGNORECASE)
     format_str = format_match.group(1) if format_match else ""
@@ -104,6 +108,7 @@ def parse_xyz_frame(frame_lines):
             'energy': energy,
             'lattice_vectors': lattice_vectors,
             'virial': virial,
+            'stress': stress,
             'atom_section_format': atom_format,
             'config_type': config_type,
             'weight': weight,
@@ -161,7 +166,7 @@ def read_xyz_file(file_path):
 
     return all_frames_data
 
-def export_xyz_frame(frame_data, xyzfmt = 'ase'):
+def export_xyz_frame(frame_data, property_list, xyzfmt = 'ase'):
 
     """
     Exports a single XYZ-like frame from a dictionary to a list of strings.
@@ -205,22 +210,29 @@ def export_xyz_frame(frame_data, xyzfmt = 'ase'):
     # --- Construct the properties line ---
     properties_parts = []
 
+
     # Energy
     energy = cell_properties.get('energy')
-    if energy is not None:
+    if 'energy' in property_list and energy is not None:
         properties_parts.append(f"energy={energy:.9f}") # Format to 9 decimal places
 
     # lattice
     lattice_vectors = cell_properties.get('lattice_vectors')
-    if lattice_vectors and isinstance(lattice_vectors, list) and all(isinstance(x, (int, float)) for x in lattice_vectors):
+    if 'lattice_vectors' in property_list and lattice_vectors and isinstance(lattice_vectors, list) and all(isinstance(x, (int, float)) for x in lattice_vectors):
         lattice_str = " ".join([f"{x:.9f}" for x in lattice_vectors])
         properties_parts.append(f'{kLatticeFmt}="{lattice_str}"')
 
     # virial
     virial = cell_properties.get('virial')
-    if virial and isinstance(virial, list) and all(isinstance(x, (int, float)) for x in virial):
+    if 'virial' in property_list and virial and isinstance(virial, list) and all(isinstance(x, (int, float)) for x in virial):
         virial_str = " ".join([f"{x:.9f}" for x in virial])
         properties_parts.append(f'virial="{virial_str}"')
+
+    # stress
+    stress = cell_properties.get('stress')
+    if 'stress' in property_list and stress and isinstance(stress, list) and all(isinstance(x, (int, float)) for x in stress):
+        stress_str = " ".join([f"{x:.9f}" for x in stress])
+        properties_parts.append(f'stress="{stress_str}"')
 
     # Atom Section Format
     atom_format = cell_properties.get('atom_section_format')
@@ -239,12 +251,12 @@ def export_xyz_frame(frame_data, xyzfmt = 'ase'):
 
     # Config type
     config_type = cell_properties.get('config_type')
-    if config_type is not None:
+    if 'config_type' in property_list and config_type is not None:
         properties_parts.append(f"config_type={config_type:s}") # Format to 9 decimal places
 
     # Weight
     weight = cell_properties.get('weight')
-    if weight is not None:
+    if 'weight' in property_list and weight is not None:
         properties_parts.append(f"weight={weight:.1f}") # Format to 9 decimal places
 
     properties_line = " ".join(properties_parts)
@@ -289,7 +301,7 @@ def export_xyz_frame(frame_data, xyzfmt = 'ase'):
     return output_lines
 
 
-def write_xyz_file(file_path, frames_data, status, xyzfmt):
+def write_xyz_file(file_path, frames_data, status, xyzfmt, property_list = ['energy', 'lattice_vectors', 'virial', 'config_type', 'weight']):
     """
     Writes a list of parsed XYZ frame dictionaries to an XYZ-like file.
 
@@ -305,7 +317,7 @@ def write_xyz_file(file_path, frames_data, status, xyzfmt):
     try:
         with open(file_path, status) as f:
             for i, frame_data in enumerate(frames_data):
-                frame_lines = export_xyz_frame(frame_data, xyzfmt)
+                frame_lines = export_xyz_frame(frame_data, property_list, xyzfmt)
                 if frame_lines:
                     f.write("\n".join(frame_lines))
                     f.write("\n") # Add a newline between frames
