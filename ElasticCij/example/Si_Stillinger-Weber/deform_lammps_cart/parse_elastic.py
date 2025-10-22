@@ -15,11 +15,8 @@ import sys
 import json
 import argparse
 
-voigt_to_dir = {1:"xx", 2:"yy", 3:"zz", 4:"yz", 5:"xz", 6:"xy"}
-
 parser = argparse.ArgumentParser(description="Parse stiffness matrix from lammps")
 parser.add_argument("--log", default="log.lammps", help="Lammps log file")
-parser.add_argument("--epsilon", type=float, default=1e-6, help="Strain magnitude used in deformation (default: 1e-6)")
 args = parser.parse_args()
 
 # define logfile layout
@@ -87,7 +84,7 @@ for i in range(6):
 stiffness = {}
 for i in range(6):
     for j in range(6):
-        index = "%s%s" %(voigt_to_dir[i+1], voigt_to_dir[j+1])
+        index = "%d%d" %(i+1, j+1)
         stiffness[index] = c[i][j]
 with open('o.stiffness.json', 'w') as foo: 
     json.dump(stiffness, foo, indent=2)
@@ -116,7 +113,7 @@ for i in range(6):
 compliance = {}
 for i in range(6):
     for j in range(6):
-        index = "%s%s" %(voigt_to_dir[i+1], voigt_to_dir[j+1])
+        index = "%d%d" %(i+1, j+1)
         compliance[index] = s[i][j]
 with open('o.compliance.json', 'w') as foo: 
     json.dump(compliance, foo, indent=2)

@@ -1,0 +1,4 @@
+prefix_in: o.press
+prefix_out: o.press2cij
+epsilon_list: ['1.0e-6', '-1.0e-6']
+component_list: ['1', '2', '3', '4', '5', '6']
