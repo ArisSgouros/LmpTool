@@ -33,7 +33,7 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
          2   0             -832.6272      -0.016514738   -0.016514738   -0.016514738   -0.016514738   -4.8086135e-11  1.0021046e-10 -4.2157868e-11  10.8619        16.292849      21.723799      3844.4889    
          3   0             -832.6272      -1.8901541e-06 -1.8901704e-06 -1.8901198e-06 -1.8901721e-06  1.651315e-10   2.6639791e-11 -3.1664045e-10  10.8619        16.292849      21.723799      3844.4888    
          4   0             -832.6272      -4.1060377e-11 -2.2709669e-11 -8.800783e-11  -1.2463631e-11  5.9162573e-10  1.2434231e-10 -2.2833446e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00045927 on 1 procs for 4 steps with 192 atoms
+Loop time of 0.000473173 on 1 procs for 4 steps with 192 atoms
 
 0.0% CPU use with 1 MPI tasks x no OpenMP threads
 
@@ -49,12 +49,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.00038422 | 0.00038422 | 0.00038422 |   0.0 | 83.66
+Pair    | 0.00039663 | 0.00039663 | 0.00039663 |   0.0 | 83.82
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 8.765e-06  | 8.765e-06  | 8.765e-06  |   0.0 |  1.91
-Output  | 1.257e-05  | 1.257e-05  | 1.257e-05  |   0.0 |  2.74
+Comm    | 8.898e-06  | 8.898e-06  | 8.898e-06  |   0.0 |  1.88
+Output  | 1.3406e-05 | 1.3406e-05 | 1.3406e-05 |   0.0 |  2.83
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 5.371e-05  |            |       | 11.69
+Other   |            | 5.424e-05  |            |       | 11.46
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -70,7 +70,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":-2.2709669199827007371e-15, "2":-8.800783012669045051e-15,"3":-1.2463631495248945446e-15,"4":-2.2833445772872979618e-14,"5":1.2434230513788431143e-14,"6":5.9162573177610992597e-14}
+{"xx":-2.2709669199827007371e-15, "yy":-8.800783012669045051e-15,"zz":-1.2463631495248945446e-15,"yz":-2.2833445772872979618e-14,"xz":1.2434230513788431143e-14,"xy":5.9162573177610992597e-14}
 Displacing atoms ...
 System init for write_restart ...
 
@@ -155,9 +155,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272       1.0142306      1.5142465      0.76422271     0.76422271    -4.4905095e-09 -1.8399489e-09 -2.2251955e-09  10.861889      16.292849      21.723799      3844.485     
         52   0             -832.6272       1.0142306      1.5142465      0.76422271     0.76422271     1.8900632e-09  1.1521311e-09  7.8722808e-10  10.861889      16.292849      21.723799      3844.485     
         53   0             -832.6272       1.0142306      1.5142465      0.76422271     0.76422271    -1.5928094e-09 -1.3240747e-09 -5.2517772e-10  10.861889      16.292849      21.723799      3844.485     
-Loop time of 0.00505842 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00527903 on 1 procs for 49 steps with 192 atoms
 
-0.0% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -171,12 +171,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046065  | 0.0046065  | 0.0046065  |   0.0 | 91.07
+Pair    | 0.0047787  | 0.0047787  | 0.0047787  |   0.0 | 90.52
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.6434e-05 | 9.6434e-05 | 9.6434e-05 |   0.0 |  1.91
-Output  | 0.00019351 | 0.00019351 | 0.00019351 |   0.0 |  3.83
+Comm    | 0.00011361 | 0.00011361 | 0.00011361 |   0.0 |  2.15
+Output  | 0.00022751 | 0.00022751 | 0.00022751 |   0.0 |  4.31
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.000162   |            |       |  3.20
+Other   |            | 0.0001592  |            |       |  3.02
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -192,8 +192,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":0.00015142464722865857244, "2":7.6422270879488755847e-05,"3":7.6422270891458686645e-05,"4":-5.2517772232734891046e-14,"5":-1.3240746900938603949e-13,"6":-1.5928094124206539413e-13}
-delta/len0 = -1e-06 -9.9999999999999995475e-07
+{"xx":0.00015142464722865857244, "yy":7.6422270879488755847e-05,"zz":7.6422270891458686645e-05,"yz":-5.2517772232734891046e-14,"xz":-1.3240746900938603949e-13,"xy":-1.5928094124206539413e-13}
 
 The 'box' command has been removed and will be ignored
 
@@ -276,9 +275,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.014227      -1.5142431     -0.76421898    -0.76421898    -3.6930792e-09 -1.0940558e-09 -7.2171431e-10  10.86191       16.292849      21.723799      3844.4927    
         52   0             -832.6272      -1.014227      -1.5142431     -0.76421898    -0.76421898     1.3156436e-09  6.1636973e-10 -9.8122028e-11  10.86191       16.292849      21.723799      3844.4927    
         53   0             -832.6272      -1.014227      -1.5142431     -0.76421898    -0.76421898    -1.0522799e-09 -6.8900393e-10  4.4758276e-10  10.86191       16.292849      21.723799      3844.4927    
-Loop time of 0.00503668 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00514648 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+38.9% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -292,12 +291,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046027  | 0.0046027  | 0.0046027  |   0.0 | 91.38
+Pair    | 0.0046938  | 0.0046938  | 0.0046938  |   0.0 | 91.20
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.5789e-05 | 9.5789e-05 | 9.5789e-05 |   0.0 |  1.90
-Output  | 0.00018608 | 0.00018608 | 0.00018608 |   0.0 |  3.69
+Comm    | 9.6778e-05 | 9.6778e-05 | 9.6778e-05 |   0.0 |  1.88
+Output  | 0.00021072 | 0.00021072 | 0.00021072 |   0.0 |  4.09
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001521  |            |       |  3.02
+Other   |            | 0.0001452  |            |       |  2.82
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -313,8 +312,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":-0.00015142431128586580978, "2":-7.6421897697721326162e-05,"3":-7.6421897686922333711e-05,"4":4.4758276382302256923e-14,"5":-6.8900393113515671051e-14,"6":-1.0522798694337047726e-13}
-delta/len0 = 1e-06 9.9999999999999995475e-07
+{"xx":-0.00015142431128586580978, "yy":-7.6421897697721326162e-05,"zz":-7.6421897686922333711e-05,"yz":4.4758276382302256923e-14,"xz":-6.8900393113515671051e-14,"xy":-1.0522798694337047726e-13}
 
 The 'box' command has been removed and will be ignored
 
@@ -396,9 +394,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272       1.0142306      0.76422271     1.5142465      0.76422271    -3.8272457e-09 -1.042488e-09  -1.9580353e-09  10.8619        16.292833      21.723799      3844.485     
         52   0             -832.6272       1.0142306      0.76422271     1.5142465      0.76422271     1.4689807e-09  5.9325794e-10  7.0174446e-10  10.8619        16.292833      21.723799      3844.485     
         53   0             -832.6272       1.0142306      0.76422271     1.5142465      0.76422271    -1.1202099e-09 -6.9666955e-10 -4.9426076e-10  10.8619        16.292833      21.723799      3844.485     
-Loop time of 0.0049114 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00503867 on 1 procs for 49 steps with 192 atoms
 
-72.3% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -412,12 +410,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0044826  | 0.0044826  | 0.0044826  |   0.0 | 91.27
+Pair    | 0.0046106  | 0.0046106  | 0.0046106  |   0.0 | 91.50
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010237 | 0.00010237 | 0.00010237 |   0.0 |  2.08
-Output  | 0.00017981 | 0.00017981 | 0.00017981 |   0.0 |  3.66
+Comm    | 9.6367e-05 | 9.6367e-05 | 9.6367e-05 |   0.0 |  1.91
+Output  | 0.00018021 | 0.00018021 | 0.00018021 |   0.0 |  3.58
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001466  |            |       |  2.98
+Other   |            | 0.0001515  |            |       |  3.01
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -433,8 +431,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":7.6422270889079770896e-05, "2":0.00015142464720482805263,"3":7.642227088881144441e-05,"4":-4.942607561812616532e-14,"5":-6.9666954503613131781e-14,"6":-1.1202099259584071187e-13}
-delta/len0 = -1e-06 -9.9999999999999995475e-07
+{"xx":7.6422270889079770896e-05, "yy":0.00015142464720482805263,"zz":7.642227088881144441e-05,"yz":-4.942607561812616532e-14,"xz":-6.9666954503613131781e-14,"xy":-1.1202099259584071187e-13}
 
 The 'box' command has been removed and will be ignored
 
@@ -516,9 +513,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.014227      -0.76421898    -1.5142431     -0.76421898    -3.5255055e-09 -1.6863056e-10 -2.6310354e-09  10.8619        16.292866      21.723799      3844.4927    
         52   0             -832.6272      -1.014227      -0.76421898    -1.5142431     -0.76421898     1.3286216e-09 -8.2230906e-11  1.2424046e-09  10.8619        16.292866      21.723799      3844.4927    
         53   0             -832.6272      -1.014227      -0.76421898    -1.5142431     -0.76421898    -9.2633121e-10  1.8671993e-10 -1.2177242e-09  10.8619        16.292866      21.723799      3844.4927    
-Loop time of 0.00513551 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00509888 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -532,12 +529,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046751  | 0.0046751  | 0.0046751  |   0.0 | 91.03
+Pair    | 0.0046655  | 0.0046655  | 0.0046655  |   0.0 | 91.50
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.9349e-05 | 9.9349e-05 | 9.9349e-05 |   0.0 |  1.93
-Output  | 0.00020326 | 0.00020326 | 0.00020326 |   0.0 |  3.96
+Comm    | 0.00010259 | 0.00010259 | 0.00010259 |   0.0 |  2.01
+Output  | 0.00018435 | 0.00018435 | 0.00018435 |   0.0 |  3.62
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001578  |            |       |  3.07
+Other   |            | 0.0001465  |            |       |  2.87
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -553,8 +550,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":-7.6421897676749454462e-05, "2":-0.00015142431127844943324,"3":-7.6421897675716643473e-05,"4":-1.2177241506447292857e-13,"5":1.8671993484080719168e-14,"6":-9.2633121395935099266e-14}
-delta/len0 = 1e-06 9.9999999999999995475e-07
+{"xx":-7.6421897676749454462e-05, "yy":-0.00015142431127844943324,"zz":-7.6421897675716643473e-05,"yz":-1.2177241506447292857e-13,"xz":1.8671993484080719168e-14,"xy":-9.2633121395935099266e-14}
 
 The 'box' command has been removed and will be ignored
 
@@ -635,9 +631,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465     -2.7780924e-09 -2.850997e-10  -1.3295516e-09  10.8619        16.292849      21.723777      3844.485     
         52   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465      3.9238449e-10  1.2069883e-10  3.1407184e-10  10.8619        16.292849      21.723777      3844.485     
         53   0             -832.6272       1.0142306      0.76422271     0.76422271     1.5142465      5.3624227e-10 -6.1880347e-11  7.4068178e-12  10.8619        16.292849      21.723777      3844.485     
-Loop time of 0.00503025 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00510011 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+90.9% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -651,12 +647,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046048  | 0.0046048  | 0.0046048  |   0.0 | 91.54
+Pair    | 0.0046646  | 0.0046646  | 0.0046646  |   0.0 | 91.46
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.5803e-05 | 9.5803e-05 | 9.5803e-05 |   0.0 |  1.90
-Output  | 0.00018007 | 0.00018007 | 0.00018007 |   0.0 |  3.58
+Comm    | 9.7901e-05 | 9.7901e-05 | 9.7901e-05 |   0.0 |  1.92
+Output  | 0.00018721 | 0.00018721 | 0.00018721 |   0.0 |  3.67
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001496  |            |       |  2.97
+Other   |            | 0.0001504  |            |       |  2.95
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -672,8 +668,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":7.642227089646677911e-05, "2":7.6422270884838304234e-05,"3":0.00015142464723329258805,"4":7.4068177774432443464e-16,"5":-6.1880346878502834667e-15,"6":5.3624226652545626409e-14}
-delta/len0 = -1e-06 -9.9999999999999995475e-07
+{"xx":7.642227089646677911e-05, "yy":7.6422270884838304234e-05,"zz":0.00015142464723329258805,"yz":7.4068177774432443464e-16,"xz":-6.1880346878502834667e-15,"xy":5.3624226652545626409e-14}
 
 The 'box' command has been removed and will be ignored
 
@@ -754,9 +749,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.014227      -0.76421898    -0.76421898    -1.5142431     -2.1295809e-09  4.2564358e-11 -3.2225905e-09  10.8619        16.292849      21.723821      3844.4927    
         52   0             -832.6272      -1.014227      -0.76421898    -0.76421898    -1.5142431      4.6185856e-10 -2.7769467e-10  1.3740354e-09  10.8619        16.292849      21.723821      3844.4927    
         53   0             -832.6272      -1.014227      -0.76421898    -0.76421898    -1.5142431      3.8683527e-11  5.5683673e-10 -1.1422135e-09  10.8619        16.292849      21.723821      3844.4927    
-Loop time of 0.00493122 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00534346 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -770,12 +765,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045125  | 0.0045125  | 0.0045125  |   0.0 | 91.51
+Pair    | 0.0048468  | 0.0048468  | 0.0048468  |   0.0 | 90.70
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010104 | 0.00010104 | 0.00010104 |   0.0 |  2.05
-Output  | 0.00017525 | 0.00017525 | 0.00017525 |   0.0 |  3.55
+Comm    | 0.00010615 | 0.00010615 | 0.00010615 |   0.0 |  1.99
+Output  | 0.00021796 | 0.00021796 | 0.00021796 |   0.0 |  4.08
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001424  |            |       |  2.89
+Other   |            | 0.0001726  |            |       |  3.23
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -791,8 +786,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":-7.6421897687166658671e-05, "2":-7.6421897698664947971e-05,"3":-0.00015142431128491453079,"4":-1.1422135472314471557e-13,"5":5.5683673445630116482e-14,"6":3.8683527463455901555e-15}
-delta/len0 = 1e-06 9.9999999999999995475e-07
+{"xx":-7.6421897687166658671e-05, "yy":-7.6421897698664947971e-05,"zz":-0.00015142431128491453079,"yz":-1.1422135472314471557e-13,"xz":5.5683673445630116482e-14,"xy":3.8683527463455901555e-15}
 
 The 'box' command has been removed and will be ignored
 
@@ -873,9 +867,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8099952e-07 -1.4277705e-07 -5.7716005e-07  1.7693855e-07 -3.2351694e-09  1.341159e-09   0.56449336     10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8098508e-07 -1.4275483e-07 -5.7714996e-07  1.7694954e-07  1.1580941e-09 -1.0965366e-09  0.56449337     10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8098486e-07 -1.4276615e-07 -5.7714038e-07  1.7695196e-07 -8.721517e-10   1.5566211e-09  0.56449337     10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00503652 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00673031 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -889,12 +883,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045996  | 0.0045996  | 0.0045996  |   0.0 | 91.33
+Pair    | 0.0062013  | 0.0062013  | 0.0062013  |   0.0 | 92.14
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010262 | 0.00010262 | 0.00010262 |   0.0 |  2.04
-Output  | 0.00018877 | 0.00018877 | 0.00018877 |   0.0 |  3.75
+Comm    | 0.00010422 | 0.00010422 | 0.00010422 |   0.0 |  1.55
+Output  | 0.00025272 | 0.00025272 | 0.00025272 |   0.0 |  3.75
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001455  |            |       |  2.89
+Other   |            | 0.000172   |            |       |  2.56
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -910,8 +904,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":-1.4276615319254051202e-11, "2":-5.7714038090844340114e-11,"3":1.7695196476729551814e-11,"4":5.6449336650906005767e-05,"5":1.5566211249745744232e-13,"6":-8.7215169729638793222e-14}
-delta/len0 = -1e-06 -9.9999999999999995475e-07
+{"xx":-1.4276615319254051202e-11, "yy":-5.7714038090844340114e-11,"zz":1.7695196476729551814e-11,"yz":5.6449336650906005767e-05,"xz":1.5566211249745744232e-13,"xy":-8.7215169729638793222e-14}
 
 The 'box' command has been removed and will be ignored
 
@@ -992,9 +985,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8096861e-07 -1.4274565e-07 -5.7713119e-07  1.76971e-07   -3.8312927e-09 -2.3665579e-09 -0.56449337     10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8099106e-07 -1.4277097e-07 -5.7714927e-07  1.7694706e-07  1.6320363e-09  1.444377e-09  -0.56449337     10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8094673e-07 -1.4272266e-07 -5.771051e-07   1.7698757e-07 -1.407351e-09  -1.6322069e-09 -0.56449337     10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00493572 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00505647 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+92.3% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1008,12 +1001,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045153  | 0.0045153  | 0.0045153  |   0.0 | 91.48
+Pair    | 0.004627   | 0.004627   | 0.004627   |   0.0 | 91.51
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010207 | 0.00010207 | 0.00010207 |   0.0 |  2.07
-Output  | 0.00017736 | 0.00017736 | 0.00017736 |   0.0 |  3.59
+Comm    | 9.6751e-05 | 9.6751e-05 | 9.6751e-05 |   0.0 |  1.91
+Output  | 0.00018468 | 0.00018468 | 0.00018468 |   0.0 |  3.65
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.000141   |            |       |  2.86
+Other   |            | 0.0001481  |            |       |  2.93
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1029,8 +1022,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":-1.4272265779410739997e-11, "2":-5.7710510083119887496e-11,"3":1.7698757128058041449e-11,"4":-5.6449336730587940103e-05,"5":-1.6322069459328168705e-13,"6":-1.4073509532731022367e-13}
-delta/len0 = 1e-06 9.9999999999999995475e-07
+{"xx":-1.4272265779410739997e-11, "yy":-5.7710510083119887496e-11,"zz":1.7698757128058041449e-11,"yz":-5.6449336730587940103e-05,"xz":-1.6322069459328168705e-13,"xy":-1.4073509532731022367e-13}
 
 The 'box' command has been removed and will be ignored
 
@@ -1111,9 +1103,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8100832e-07 -5.7704021e-07 -1.429088e-07   1.7692406e-07 -2.8386548e-09  0.56449337    -1.8783014e-09  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8095496e-07 -5.7698773e-07 -1.4285143e-07  1.7697427e-07  4.6089052e-10  0.56449337     6.2461757e-10  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8100922e-07 -5.7704716e-07 -1.4291567e-07  1.7693516e-07  3.1476332e-10  0.56449337    -4.0959518e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.0050198 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00507177 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1127,12 +1119,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045954  | 0.0045954  | 0.0045954  |   0.0 | 91.55
+Pair    | 0.004625   | 0.004625   | 0.004625   |   0.0 | 91.19
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.6436e-05 | 9.6436e-05 | 9.6436e-05 |   0.0 |  1.92
-Output  | 0.00018387 | 0.00018387 | 0.00018387 |   0.0 |  3.66
+Comm    | 9.6949e-05 | 9.6949e-05 | 9.6949e-05 |   0.0 |  1.91
+Output  | 0.00019671 | 0.00019671 | 0.00019671 |   0.0 |  3.88
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001441  |            |       |  2.87
+Other   |            | 0.0001531  |            |       |  3.02
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1148,8 +1140,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":-5.7704716293450387544e-11, "2":-1.4291566533147126695e-11,"3":1.7693516185550466299e-11,"4":-4.0959518339540300493e-14,"5":5.6449336773582681984e-05,"6":3.1476332252898891484e-14}
-delta/len0 = -1e-06 -9.9999999999999995475e-07
+{"xx":-5.7704716293450387544e-11, "yy":-1.4291566533147126695e-11,"zz":1.7693516185550466299e-11,"yz":-4.0959518339540300493e-14,"xz":5.6449336773582681984e-05,"xy":3.1476332252898891484e-14}
 
 The 'box' command has been removed and will be ignored
 
@@ -1230,9 +1221,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.809491e-07  -5.7699425e-07 -1.4284811e-07  1.7699507e-07 -2.3609022e-09 -0.56449337    -2.5034827e-09  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8096692e-07 -5.7700248e-07 -1.4285984e-07  1.7696155e-07  8.1201816e-10 -0.56449337     1.3052004e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8099681e-07 -5.7703793e-07 -1.4289114e-07  1.7693863e-07 -5.3062906e-10 -0.56449337    -1.3374284e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00508605 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00524478 on 1 procs for 49 steps with 192 atoms
 
-98.2% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1246,12 +1237,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046394  | 0.0046394  | 0.0046394  |   0.0 | 91.22
+Pair    | 0.0047454  | 0.0047454  | 0.0047454  |   0.0 | 90.48
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010299 | 0.00010299 | 0.00010299 |   0.0 |  2.02
-Output  | 0.00019475 | 0.00019475 | 0.00019475 |   0.0 |  3.83
+Comm    | 0.00010845 | 0.00010845 | 0.00010845 |   0.0 |  2.07
+Output  | 0.00020615 | 0.00020615 | 0.00020615 |   0.0 |  3.93
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001489  |            |       |  2.93
+Other   |            | 0.0001848  |            |       |  3.52
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1267,8 +1258,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":-5.7703792662223721635e-11, "2":-1.4289114029751120046e-11,"3":1.7693862532840504278e-11,"4":-1.3374284297858038721e-13,"5":-5.6449336812195661443e-05,"6":-5.306290606021104925e-14}
-delta/len0 = 1e-06 9.9999999999999995475e-07
+{"xx":-5.7703792662223721635e-11, "yy":-1.4289114029751120046e-11,"zz":1.7693862532840504278e-11,"yz":-1.3374284297858038721e-13,"xz":-5.6449336812195661443e-05,"xy":-5.306290606021104925e-14}
 
 The 'box' command has been removed and will be ignored
 
@@ -1349,9 +1339,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8100775e-07 -5.7703956e-07  1.7680329e-07 -1.42787e-07    0.56449336     6.0769633e-10 -1.413015e-09   10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8100223e-07 -5.7703497e-07  1.7680725e-07 -1.4277897e-07  0.56449337    -4.0206468e-10  8.5527611e-10  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8100651e-07 -5.770422e-07   1.7680846e-07 -1.4278581e-07  0.56449336     3.7493382e-10 -9.2828433e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00493757 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.0053155 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1365,12 +1355,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045051  | 0.0045051  | 0.0045051  |   0.0 | 91.24
+Pair    | 0.0048731  | 0.0048731  | 0.0048731  |   0.0 | 91.68
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.5006e-05 | 9.5006e-05 | 9.5006e-05 |   0.0 |  1.92
-Output  | 0.00018767 | 0.00018767 | 0.00018767 |   0.0 |  3.80
+Comm    | 9.7636e-05 | 9.7636e-05 | 9.7636e-05 |   0.0 |  1.84
+Output  | 0.0001939  | 0.0001939  | 0.0001939  |   0.0 |  3.65
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001498  |            |       |  3.03
+Other   |            | 0.0001508  |            |       |  2.84
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1386,8 +1376,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":-5.7704219813818935609e-11, "2":1.7680846438086708643e-11,"3":-1.4278580892219343315e-11,"4":-9.2828433108975131057e-14,"5":3.7493381902708172022e-14,"6":5.6449336336729694931e-05}
-delta/len0 = -1e-06 -9.9999999999999995475e-07
+{"xx":-5.7704219813818935609e-11, "yy":1.7680846438086708643e-11,"zz":-1.4278580892219343315e-11,"yz":-9.2828433108975131057e-14,"xz":3.7493381902708172022e-14,"xy":5.6449336336729694931e-05}
 
 The 'box' command has been removed and will be ignored
 
@@ -1468,9 +1457,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8097076e-07 -5.7700779e-07  1.7684664e-07 -1.4275112e-07 -0.56449338    -7.5016158e-09 -1.3533626e-08  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8097662e-07 -5.7701383e-07  1.7683977e-07 -1.4275581e-07 -0.56449336     2.3426003e-09  3.9682637e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8096918e-07 -5.7700742e-07  1.7684415e-07 -1.4274426e-07 -0.56449337    -1.1104243e-09 -1.5810251e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00519597 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00516727 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1484,12 +1473,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0047196  | 0.0047196  | 0.0047196  |   0.0 | 90.83
+Pair    | 0.004723   | 0.004723   | 0.004723   |   0.0 | 91.40
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.7461e-05 | 9.7461e-05 | 9.7461e-05 |   0.0 |  1.88
-Output  | 0.00021221 | 0.00021221 | 0.00021221 |   0.0 |  4.08
+Comm    | 9.8285e-05 | 9.8285e-05 | 9.8285e-05 |   0.0 |  1.90
+Output  | 0.00019221 | 0.00019221 | 0.00019221 |   0.0 |  3.72
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001667  |            |       |  3.21
+Other   |            | 0.0001538  |            |       |  2.98
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1505,8 +1494,7 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 System init for write_data ...
-{"1":-5.7700741734344102963e-11, "2":1.7684414997122981646e-11,"3":-1.4274426409059289072e-11,"4":-1.5810251003520888702e-13,"5":-1.1104243492440160052e-13,"6":-5.6449336851489343683e-05}
-delta/len0 = 1e-06 9.9999999999999995475e-07
+{"xx":-5.7700741734344102963e-11, "yy":1.7684414997122981646e-11,"zz":-1.4274426409059289072e-11,"yz":-1.5810251003520888702e-13,"xz":-1.1104243492440160052e-13,"xy":-5.6449336851489343683e-05}
 =========================================
 Components of the Elastic Constant Tensor
 =========================================
@@ -1539,9 +1527,21 @@ Shear Modulus 1 = 56.4493366925819 GPa
 Shear Modulus 2 = 37.5011974824554 GPa
 Poisson Ratio = 0.335410300248826
 Total wall time: 0:00:00
-or 49 steps with 192 atoms
+.292849      21.723799      3844.4888    
+        43   0             -832.6272      -1.8095443e-07 -5.7698926e-07 -1.4285148e-07  1.7697745e-07 -8.9035636e-07  0.5644928     -4.6630169e-07  10.8619        16.292849      21.723799      3844.4888    
+        44   0             -832.6272      -1.8098705e-07 -5.7702003e-07 -1.4289051e-07  1.7694939e-07  5.2320191e-07  0.5644937      2.7398037e-07  10.8619        16.292849      21.723799      3844.4888    
+        45   0             -832.6272      -1.8097964e-07 -5.770241e-07  -1.4287761e-07  1.7696278e-07 -2.5579865e-07  0.5644932     -1.3398549e-07  10.8619        16.292849      21.723799      3844.4888    
+        46   0             -832.6272      -1.8099198e-07 -5.7703103e-07 -1.4289408e-07  1.7694919e-07  1.3574922e-07  0.56449345     7.1156587e-08  10.8619        16.292849      21.723799      3844.4888    
+        47   0             -832.6272      -1.80958e-07   -5.7699841e-07 -1.4285481e-07  1.7697921e-07 -5.3596686e-08  0.56449333    -2.8127449e-08  10.8619        16.292849      21.723799      3844.4888    
+        48   0             -832.6272      -1.8092947e-07 -5.7696682e-07 -1.4283015e-07  1.7700855e-07  2.9546639e-08  0.56449339     1.5590991e-08  10.8619        16.292849      21.723799      3844.4888    
+        49   0             -832.6272      -1.809597e-07  -5.7699457e-07 -1.4286268e-07  1.7697815e-07 -1.1932512e-08  0.56449336    -6.3756712e-09  10.8619        16.292849      21.723799      3844.4888    
+        50   0             -832.6272      -1.8099851e-07 -5.7703222e-07 -1.4290405e-07  1.7694076e-07  5.1260188e-09  0.56449337     2.8580639e-09  10.8619        16.292849      21.723799      3844.4888    
+        51   0             -832.6272      -1.8100832e-07 -5.7704021e-07 -1.429088e-07   1.7692406e-07 -2.8386548e-09  0.56449337    -1.8783014e-09  10.8619        16.292849      21.723799      3844.4888    
+        52   0             -832.6272      -1.8095496e-07 -5.7698773e-07 -1.4285143e-07  1.7697427e-07  4.6089052e-10  0.56449337     6.2461757e-10  10.8619        16.292849      21.723799      3844.4888    
+        53   0             -832.6272      -1.8100922e-07 -5.7704716e-07 -1.4291567e-07  1.7693516e-07  3.1476332e-10  0.56449337    -4.0959518e-10  10.8619        16.292849      21.723799      3844.4888    
+Loop time of 0.00507177 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1555,12 +1555,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045954  | 0.0045954  | 0.0045954  |   0.0 | 91.55
+Pair    | 0.004625   | 0.004625   | 0.004625   |   0.0 | 91.19
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.6436e-05 | 9.6436e-05 | 9.6436e-05 |   0.0 |  1.92
-Output  | 0.00018387 | 0.00018387 | 0.00018387 |   0.0 |  3.66
+Comm    | 9.6949e-05 | 9.6949e-05 | 9.6949e-05 |   0.0 |  1.91
+Output  | 0.00019671 | 0.00019671 | 0.00019671 |   0.0 |  3.88
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001441  |            |       |  2.87
+Other   |            | 0.0001531  |            |       |  3.02
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1576,14 +1576,15 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 
-variable tag string "${dir}-"
-5-
+variable tag string "${dir_str}_-${up}"
+xz_-${up}
+xz_-1.0e-6
 write_data o.pos_${tag}.data
-write_data o.pos_5-.data
+write_data o.pos_xz_-1.0e-6.data
 System init for write_data ...
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_5-.json
-{"1":-5.7704716293450387544e-11, "2":-1.4291566533147126695e-11,"3":1.7693516185550466299e-11,"4":-4.0959518339540300493e-14,"5":5.6449336773582681984e-05,"6":3.1476332252898891484e-14}
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file o.press_${tag}.json
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file o.press_xz_-1.0e-6.json
+{"xx":-5.7704716293450387544e-11, "yy":-1.4291566533147126695e-11,"zz":1.7693516185550466299e-11,"yz":-4.0959518339540300493e-14,"xz":5.6449336773582681984e-05,"xy":3.1476332252898891484e-14}
 
 # Obtain new stress tensor
 
@@ -1620,10 +1621,6 @@ variable C5neg equal ${d5}
 variable C5neg equal 56.4493367611485
 variable C6neg equal ${d6}
 variable C6neg equal -2.76862409247121e-08
-
-print "delta/len0 = ${TEST} $(v_TEST)"
-delta/len0 = -1e-06 -9.9999999999999995475e-07
-
 
 # Reset box and simulation parameters
 
@@ -1675,16 +1672,17 @@ variable deltaxz equal ${up}*xz
 variable deltaxz equal 1.0e-6*xz
 variable deltayz equal ${up}*yz
 variable deltayz equal 1.0e-6*yz
-if "${dir} == 1" then    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
-if "${dir} == 2" then    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
-if "${dir} == 3" then    "change_box all z delta 0 ${delta} remap units box"
-if "${dir} == 4" then    "change_box all yz delta ${delta} remap units box"
-if "${dir} == 5" then    "change_box all xz delta ${delta} remap units box"
+if "${dir} == 1" then    "variable dir_str string 'xx'"    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
+if "${dir} == 2" then    "variable dir_str string 'yy'"    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
+if "${dir} == 3" then    "variable dir_str string 'zz'"    "change_box all z delta 0 ${delta} remap units box"
+if "${dir} == 4" then    "variable dir_str string 'yz'"    "change_box all yz delta ${delta} remap units box"
+if "${dir} == 5" then    "variable dir_str string 'xz'"    "change_box all xz delta ${delta} remap units box"
+variable dir_str string 'xz'
 change_box all xz delta ${delta} remap units box
 change_box all xz delta 2.17237991136209e-05 remap units box
 Changing box ...
   triclinic box = (-0.00094977841 -0.0014246676 -0.0018995568) to (10.86095 16.291425 21.7219) with tilt (0 2.1723799e-05 0)
-if "${dir} == 6" then    "change_box all xy delta ${delta} remap units box"
+if "${dir} == 6" then    "variable dir_str string 'xy'"    "change_box all xy delta ${delta} remap units box"
 
 # Relax atoms positions
 
@@ -1756,9 +1754,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.809491e-07  -5.7699425e-07 -1.4284811e-07  1.7699507e-07 -2.3609022e-09 -0.56449337    -2.5034827e-09  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8096692e-07 -5.7700248e-07 -1.4285984e-07  1.7696155e-07  8.1201816e-10 -0.56449337     1.3052004e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8099681e-07 -5.7703793e-07 -1.4289114e-07  1.7693863e-07 -5.3062906e-10 -0.56449337    -1.3374284e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00508605 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00524478 on 1 procs for 49 steps with 192 atoms
 
-98.2% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -1772,12 +1770,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0046394  | 0.0046394  | 0.0046394  |   0.0 | 91.22
+Pair    | 0.0047454  | 0.0047454  | 0.0047454  |   0.0 | 90.48
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00010299 | 0.00010299 | 0.00010299 |   0.0 |  2.02
-Output  | 0.00019475 | 0.00019475 | 0.00019475 |   0.0 |  3.83
+Comm    | 0.00010845 | 0.00010845 | 0.00010845 |   0.0 |  2.07
+Output  | 0.00020615 | 0.00020615 | 0.00020615 |   0.0 |  3.93
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001489  |            |       |  2.93
+Other   |            | 0.0001848  |            |       |  3.52
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -1793,14 +1791,15 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 
-variable tag string "${dir}+"
-5+
+variable tag string "${dir_str}_${up}"
+xz_${up}
+xz_1.0e-6
 write_data o.pos_${tag}.data
-write_data o.pos_5+.data
+write_data o.pos_xz_1.0e-6.data
 System init for write_data ...
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_5+.json
-{"1":-5.7703792662223721635e-11, "2":-1.4289114029751120046e-11,"3":1.7693862532840504278e-11,"4":-1.3374284297858038721e-13,"5":-5.6449336812195661443e-05,"6":-5.306290606021104925e-14}
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file o.press_${tag}.json
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file o.press_xz_1.0e-6.json
+{"xx":-5.7703792662223721635e-11, "yy":-1.4289114029751120046e-11,"zz":1.7693862532840504278e-11,"yz":-1.3374284297858038721e-13,"xz":-5.6449336812195661443e-05,"xy":-5.306290606021104925e-14}
 
 # Obtain new stress tensor
 
@@ -1843,9 +1842,6 @@ variable C5pos equal ${d5}
 variable C5pos equal 56.4493368246299
 variable C6pos equal ${d6}
 variable C6pos equal 1.12225479237822e-07
-
-print "delta/len0 = ${TEST} $(v_TEST)"
-delta/len0 = 1e-06 9.9999999999999995475e-07
 
 # Combine positive and negative
 
@@ -1946,12 +1942,13 @@ variable deltaxz equal -${up}*xz
 variable deltaxz equal -1.0e-6*xz
 variable deltayz equal -${up}*yz
 variable deltayz equal -1.0e-6*yz
-if "${dir} == 1" then    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
-if "${dir} == 2" then    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
-if "${dir} == 3" then    "change_box all z delta 0 ${delta} remap units box"
-if "${dir} == 4" then    "change_box all yz delta ${delta} remap units box"
-if "${dir} == 5" then    "change_box all xz delta ${delta} remap units box"
-if "${dir} == 6" then    "change_box all xy delta ${delta} remap units box"
+if "${dir} == 1" then    "variable dir_str string 'xx'"    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
+if "${dir} == 2" then    "variable dir_str string 'yy'"    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
+if "${dir} == 3" then    "variable dir_str string 'zz'"    "change_box all z delta 0 ${delta} remap units box"
+if "${dir} == 4" then    "variable dir_str string 'yz'"    "change_box all yz delta ${delta} remap units box"
+if "${dir} == 5" then    "variable dir_str string 'xz'"    "change_box all xz delta ${delta} remap units box"
+if "${dir} == 6" then    "variable dir_str string 'xy'"    "change_box all xy delta ${delta} remap units box"
+variable dir_str string 'xy'
 change_box all xy delta ${delta} remap units box
 change_box all xy delta -1.62928493352156e-05 remap units box
 Changing box ...
@@ -2027,9 +2024,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8100775e-07 -5.7703956e-07  1.7680329e-07 -1.42787e-07    0.56449336     6.0769633e-10 -1.413015e-09   10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8100223e-07 -5.7703497e-07  1.7680725e-07 -1.4277897e-07  0.56449337    -4.0206468e-10  8.5527611e-10  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8100651e-07 -5.770422e-07   1.7680846e-07 -1.4278581e-07  0.56449336     3.7493382e-10 -9.2828433e-10  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00493757 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.0053155 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -2043,12 +2040,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0045051  | 0.0045051  | 0.0045051  |   0.0 | 91.24
+Pair    | 0.0048731  | 0.0048731  | 0.0048731  |   0.0 | 91.68
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.5006e-05 | 9.5006e-05 | 9.5006e-05 |   0.0 |  1.92
-Output  | 0.00018767 | 0.00018767 | 0.00018767 |   0.0 |  3.80
+Comm    | 9.7636e-05 | 9.7636e-05 | 9.7636e-05 |   0.0 |  1.84
+Output  | 0.0001939  | 0.0001939  | 0.0001939  |   0.0 |  3.65
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001498  |            |       |  3.03
+Other   |            | 0.0001508  |            |       |  2.84
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -2064,14 +2061,15 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 
-variable tag string "${dir}-"
-6-
+variable tag string "${dir_str}_-${up}"
+xy_-${up}
+xy_-1.0e-6
 write_data o.pos_${tag}.data
-write_data o.pos_6-.data
+write_data o.pos_xy_-1.0e-6.data
 System init for write_data ...
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_6-.json
-{"1":-5.7704219813818935609e-11, "2":1.7680846438086708643e-11,"3":-1.4278580892219343315e-11,"4":-9.2828433108975131057e-14,"5":3.7493381902708172022e-14,"6":5.6449336336729694931e-05}
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file o.press_${tag}.json
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file o.press_xy_-1.0e-6.json
+{"xx":-5.7704219813818935609e-11, "yy":1.7680846438086708643e-11,"zz":-1.4278580892219343315e-11,"yz":-9.2828433108975131057e-14,"xz":3.7493381902708172022e-14,"xy":5.6449336336729694931e-05}
 
 # Obtain new stress tensor
 
@@ -2108,10 +2106,6 @@ variable C5neg equal ${d5}
 variable C5neg equal 2.50591513889198e-08
 variable C6neg equal ${d6}
 variable C6neg equal 56.4493362775671
-
-print "delta/len0 = ${TEST} $(v_TEST)"
-delta/len0 = -1e-06 -9.9999999999999995475e-07
-
 
 # Reset box and simulation parameters
 
@@ -2163,12 +2157,13 @@ variable deltaxz equal ${up}*xz
 variable deltaxz equal 1.0e-6*xz
 variable deltayz equal ${up}*yz
 variable deltayz equal 1.0e-6*yz
-if "${dir} == 1" then    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
-if "${dir} == 2" then    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
-if "${dir} == 3" then    "change_box all z delta 0 ${delta} remap units box"
-if "${dir} == 4" then    "change_box all yz delta ${delta} remap units box"
-if "${dir} == 5" then    "change_box all xz delta ${delta} remap units box"
-if "${dir} == 6" then    "change_box all xy delta ${delta} remap units box"
+if "${dir} == 1" then    "variable dir_str string 'xx'"    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
+if "${dir} == 2" then    "variable dir_str string 'yy'"    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
+if "${dir} == 3" then    "variable dir_str string 'zz'"    "change_box all z delta 0 ${delta} remap units box"
+if "${dir} == 4" then    "variable dir_str string 'yz'"    "change_box all yz delta ${delta} remap units box"
+if "${dir} == 5" then    "variable dir_str string 'xz'"    "change_box all xz delta ${delta} remap units box"
+if "${dir} == 6" then    "variable dir_str string 'xy'"    "change_box all xy delta ${delta} remap units box"
+variable dir_str string 'xy'
 change_box all xy delta ${delta} remap units box
 change_box all xy delta 1.62928493352156e-05 remap units box
 Changing box ...
@@ -2244,9 +2239,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.178 | 4.178 | 4.178 Mbytes
         51   0             -832.6272      -1.8097076e-07 -5.7700779e-07  1.7684664e-07 -1.4275112e-07 -0.56449338    -7.5016158e-09 -1.3533626e-08  10.8619        16.292849      21.723799      3844.4888    
         52   0             -832.6272      -1.8097662e-07 -5.7701383e-07  1.7683977e-07 -1.4275581e-07 -0.56449336     2.3426003e-09  3.9682637e-09  10.8619        16.292849      21.723799      3844.4888    
         53   0             -832.6272      -1.8096918e-07 -5.7700742e-07  1.7684415e-07 -1.4274426e-07 -0.56449337    -1.1104243e-09 -1.5810251e-09  10.8619        16.292849      21.723799      3844.4888    
-Loop time of 0.00519597 on 1 procs for 49 steps with 192 atoms
+Loop time of 0.00516727 on 1 procs for 49 steps with 192 atoms
 
-104.6% CPU use with 1 MPI tasks x no OpenMP threads
+103.1% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = force tolerance
@@ -2260,12 +2255,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0047196  | 0.0047196  | 0.0047196  |   0.0 | 90.83
+Pair    | 0.004723   | 0.004723   | 0.004723   |   0.0 | 91.40
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 9.7461e-05 | 9.7461e-05 | 9.7461e-05 |   0.0 |  1.88
-Output  | 0.00021221 | 0.00021221 | 0.00021221 |   0.0 |  4.08
+Comm    | 9.8285e-05 | 9.8285e-05 | 9.8285e-05 |   0.0 |  1.90
+Output  | 0.00019221 | 0.00019221 | 0.00019221 |   0.0 |  3.72
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0001667  |            |       |  3.21
+Other   |            | 0.0001538  |            |       |  2.98
 
 Nlocal:            192 ave         192 max         192 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -2281,14 +2276,15 @@ Ave neighs/atom = 28
 Neighbor list builds = 0
 Dangerous builds = 0
 
-variable tag string "${dir}+"
-6+
+variable tag string "${dir_str}_${up}"
+xy_${up}
+xy_1.0e-6
 write_data o.pos_${tag}.data
-write_data o.pos_6+.data
+write_data o.pos_xy_1.0e-6.data
 System init for write_data ...
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_6+.json
-{"1":-5.7700741734344102963e-11, "2":1.7684414997122981646e-11,"3":-1.4274426409059289072e-11,"4":-1.5810251003520888702e-13,"5":-1.1104243492440160052e-13,"6":-5.6449336851489343683e-05}
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file o.press_${tag}.json
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file o.press_xy_1.0e-6.json
+{"xx":-5.7700741734344102963e-11, "yy":1.7684414997122981646e-11,"zz":-1.4274426409059289072e-11,"yz":-1.5810251003520888702e-13,"xz":-1.1104243492440160052e-13,"xy":-5.6449336851489343683e-05}
 
 # Obtain new stress tensor
 
@@ -2331,9 +2327,6 @@ variable C5pos equal ${d5}
 variable C5pos equal 1.2347666543819e-07
 variable C6pos equal ${d6}
 variable C6pos equal 56.4493369106519
-
-print "delta/len0 = ${TEST} $(v_TEST)"
-delta/len0 = 1e-06 9.9999999999999995475e-07
 
 # Combine positive and negative
 

@@ -30,25 +30,31 @@ variable deltaxy equal -${up}*xy
 variable deltaxz equal -${up}*xz
 variable deltayz equal -${up}*yz
 if "${dir} == 1" then &
+   "variable dir_str string 'xx'" &
    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
 if "${dir} == 2" then &
+   "variable dir_str string 'yy'" &
    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
 if "${dir} == 3" then &
+   "variable dir_str string 'zz'" &
    "change_box all z delta 0 ${delta} remap units box"
 if "${dir} == 4" then &
+   "variable dir_str string 'yz'" &
    "change_box all yz delta ${delta} remap units box"
 if "${dir} == 5" then &
+   "variable dir_str string 'xz'" &
    "change_box all xz delta ${delta} remap units box"
 if "${dir} == 6" then &
+   "variable dir_str string 'xy'" &
    "change_box all xy delta ${delta} remap units box"
 
 # Relax atoms positions
 
 minimize ${etol} ${ftol} ${maxiter} ${maxeval}
 
-variable tag string "${dir}-"
+variable tag string "${dir_str}_-${up}"
 write_data o.pos_${tag}.data
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file o.press_${tag}.json
 
 # Obtain new stress tensor
  
@@ -74,9 +80,6 @@ variable C4neg equal ${d4}
 variable C5neg equal ${d5}
 variable C6neg equal ${d6}
 
-print "delta/len0 = ${TEST} $(v_TEST)"
-
-
 # Reset box and simulation parameters
 
 clear
@@ -91,25 +94,31 @@ variable deltaxy equal ${up}*xy
 variable deltaxz equal ${up}*xz
 variable deltayz equal ${up}*yz
 if "${dir} == 1" then &
+   "variable dir_str string 'xx'" &
    "change_box all x delta 0 ${delta} xy delta ${deltaxy} xz delta ${deltaxz} remap units box"
 if "${dir} == 2" then &
+   "variable dir_str string 'yy'" &
    "change_box all y delta 0 ${delta} yz delta ${deltayz} remap units box"
 if "${dir} == 3" then &
+   "variable dir_str string 'zz'" &
    "change_box all z delta 0 ${delta} remap units box"
 if "${dir} == 4" then &
+   "variable dir_str string 'yz'" &
    "change_box all yz delta ${delta} remap units box"
 if "${dir} == 5" then &
+   "variable dir_str string 'xz'" &
    "change_box all xz delta ${delta} remap units box"
 if "${dir} == 6" then &
+   "variable dir_str string 'xy'" &
    "change_box all xy delta ${delta} remap units box"
 
 # Relax atoms positions
 
 minimize ${etol} ${ftol} ${maxiter} ${maxeval}
 
-variable tag string "${dir}+"
+variable tag string "${dir_str}_${up}"
 write_data o.pos_${tag}.data
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file o.press_${tag}.json
 
 # Obtain new stress tensor
  
@@ -138,8 +147,6 @@ variable C3pos equal ${d3}
 variable C4pos equal ${d4}
 variable C5pos equal ${d5}
 variable C6pos equal ${d6}
-
-print "delta/len0 = ${TEST} $(v_TEST)"
 
 # Combine positive and negative 
 
