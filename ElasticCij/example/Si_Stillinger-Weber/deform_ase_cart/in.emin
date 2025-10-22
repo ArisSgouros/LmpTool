@@ -13,9 +13,9 @@ variable dmax equal 1.0e-2
 
 
 box tilt large
-read_data o.pos_${tag}.data
+read_data ${datafile}
 mass 1 1.0e-20
 include ../potential/potential.mod
 minimize ${etol} ${ftol} ${maxiter} ${maxeval}
-#write_data o.pos_${tag}.data.debug
-print '{"1":$(pxx*v_cfac), "2":$(pyy*v_cfac),"3":$(pzz*v_cfac),"4":$(pyz*v_cfac),"5":$(pxz*v_cfac),"6":$(pxy*v_cfac)}' file o.stress_${tag}.json
+#write_data ${data_file}.debug
+print '{"xx":$(pxx*v_cfac), "yy":$(pyy*v_cfac),"zz":$(pzz*v_cfac),"yz":$(pyz*v_cfac),"xz":$(pxz*v_cfac),"xy":$(pxy*v_cfac)}' file press.json
