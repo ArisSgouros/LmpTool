@@ -28,6 +28,7 @@ frame_def, status = parse_qe_output(out_qe, xyzfmt = 'ase', debug = False)
 
 print()
 print('Display parsed properties:')
+
 # Check whether the properties were parsed
 for key in frame_def['cell_properties']:
    print(key, frame_def['cell_properties'][key])
@@ -38,6 +39,5 @@ if ('forces' in frame_def['atoms'][0] or 'force' in frame_def['atoms'][0]):
 if 'virial' in frame_def['cell_properties']:
    print('found virial')
 
-# set the default weight
 frame_def['cell_properties']['config_type'] = case_
 write_xyz_file(xyz_ref, [frame_def], status='w', xyzfmt = 'ase')

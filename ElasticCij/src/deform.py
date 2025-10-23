@@ -118,8 +118,50 @@ def write_lammps(
 
     return out_path
 
+def read_xyz(input_file: str, frame: Optional[int] = 0) -> Union[Atoms, List[Atoms]]:
+    """
+    Read an extended XYZ file.
 
-# --------------------------- CLI (optional) ---------------------------
+    Parameters
+    ----------
+    input_file : str
+        Path to .xyz (extended XYZ).
+    frame : int | None
+        - int (default 0): return that frame as a single Atoms.
+        - None: return all frames as a list[Atoms].
+
+    Returns
+    -------
+    Atoms or list[Atoms]
+    """
+    in_path = Path(input_file)
+    if not in_path.exists():
+        raise FileNotFoundError(f"Input file not found: {in_path}")
+
+    if frame is None:
+        return read(str(in_path), format="extxyz", index=":")
+    else:
+        return read(str(in_path), format="extxyz", index=frame)
+
+def write_xyz(atoms_or_list: Union[Atoms, List[Atoms]], output_file: str) -> Path:
+    """
+    Write an extended XYZ file.
+
+    Parameters
+    ----------
+    atoms_or_list : Atoms | list[Atoms]
+        Single structure or a trajectory.
+    output_file : str
+        Path to output .xyz
+
+    Returns
+    -------
+    Path
+    """
+    out_path = Path(output_file)
+    write(str(out_path), atoms_or_list, format="extxyz")
+    return out_path
+
 
 def deformation_gradient(dir_idx: int, s: float) -> np.ndarray:
     """
@@ -159,6 +201,9 @@ def main():
     parser.add_argument("--data_in", default="", help="Input data file.")
     parser.add_argument("--prefix_out", default="deform", help="Output file prefix.")
     parser.add_argument("--component_fmt", default="voigt", help="cart or voigt")
+    parser.add_argument("--in_filetype", default="lammps", help="lammps, xyz")
+    parser.add_argument("--out_filetype", default="lammps", help="lammps, xyz")
+
     parser.add_argument(
         "--components",
         type=str,
@@ -176,6 +221,8 @@ def main():
     data_in: str = args.data_in
     prefix_out: str = args.prefix_out
     component_fmt: str = args.component_fmt
+    in_filetype: str = args.in_filetype
+    out_filetype: str = args.out_filetype
 
     # Parse and validate lists
     epsilon_list_str = parse_csv_list(args.epsilon)
@@ -224,16 +271,21 @@ def main():
     print(f"component_list (voigt): {components_ints}")
 
     # Reference config
-    atoms0 = read_lammps(data_in, style="atomic")
-    write_lammps(atoms0, f"{prefix_out}_ref.data", style="atomic", units="metal", force_skew=True)
+    if in_filetype == 'lammps':
+        atoms0 = read_lammps(data_in, style="atomic")
+        write_lammps(atoms0, f"{prefix_out}_ref.data", style="atomic", units="metal", force_skew=True)
+    elif in_filetype == 'xyz':
+        atoms0 = read_xyz(data_in, frame=0)
+        write_xyz(atoms0, f"{prefix_out}_ref.xyz")
 
     for eps_str, eps_val in zip(epsilon_list_str, epsilon_floats):
         for comp_str, comp_int in zip(components_list_str, components_ints):
             F = deformation_gradient(comp_int, eps_val)
             atoms_def = apply_deformation_F(atoms0, F)
-            out_data = f"{prefix_out}_{comp_str}_{eps_str}.data"
-            write_lammps(atoms_def, out_data, style="atomic", units="metal", force_skew=True)
-            print(f"Wrote {out_data}")
+            if in_filetype == 'lammps':
+                write_lammps(atoms_def, f"{prefix_out}_{comp_str}_{eps_str}.data", style="atomic", units="metal", force_skew=True)
+            elif in_filetype == 'xyz':
+                write_xyz(atoms_def, f"{prefix_out}_{comp_str}_{eps_str}.xyz")
 
 if __name__ == "__main__":
     main()
