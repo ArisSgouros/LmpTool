@@ -38,7 +38,7 @@ def qe_out_to_json(file_path: str | Path) -> dict | None:
 
         for ii, line in enumerate(lines):
             if "CELL_PARAMETERS" in line:
-                line_cell_parameters = ii + 1
+                line_cell_parameters = ii
             if "crystal axes:" in line:
                 line_crystal_axes = ii + 1
             if "ATOMIC_POSITIONS" in line:
@@ -100,13 +100,15 @@ def qe_out_to_json(file_path: str | Path) -> dict | None:
     # Parse CELL_PARAMETERS or crystal axes
     lattice_vectors = None
     if line_cell_parameters is not None:
-        lsplit = lines[line_cell_parameters + 0].split()
-        ax, ay, az = float(lsplit[0]), float(lsplit[1]), float(lsplit[2])
         lsplit = lines[line_cell_parameters + 1].split()
-        bx, by, bz = float(lsplit[0]), float(lsplit[1]), float(lsplit[2])
+        ax, ay, az = float(lsplit[0]), float(lsplit[1]), float(lsplit[2])
         lsplit = lines[line_cell_parameters + 2].split()
+        bx, by, bz = float(lsplit[0]), float(lsplit[1]), float(lsplit[2])
+        lsplit = lines[line_cell_parameters + 3].split()
         cx, cy, cz = float(lsplit[0]), float(lsplit[1]), float(lsplit[2])
         lattice_vectors = [ax, ay, az, bx, by, bz, cx, cy, cz]
+        if "alat" in lines[line_cell_parameters]:
+            lattice_vectors = [val * alat_bohr * kBohrToAngstrom for val in lattice_vectors]
     elif line_crystal_axes is not None and alat_bohr is not None:
         # Fallback: initial crystal axes, convert from alat to Å
         offset = 3
