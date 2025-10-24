@@ -81,35 +81,47 @@ def _block_iter(lines: list[str], start_idx: int):
         yield raw
         i += 1
 
-#def _block_iter(lines: list[str], start_idx: int) -> Iterator[str]:
-#    """Yield lines after 'start_idx' until blank or next ALLCAPS card."""
-#    i = start_idx + 1
-#    while i < len(lines):
-#        ln = lines[i].strip()
-#        if not ln or _CAPS_LINE.match(lines[i]):  # blank or next card
-#            break
-#        yield lines[i]
-#        i += 1
+import re
 
-def _parse_named_value(lines: list[str], name_regex: str) -> float | None:
-    """Find scalar like celldm(1) = 6.0  or  A = 5.43 in any &namelist."""
-    pat = re.compile(rf"\b{name_regex}\b\s*=\s*([0-9.+\-Ee]+)")
+_NUM_RE = r'([+-]?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)'
+
+def _var_pattern(var: str) -> re.Pattern:
+    """
+    Build a regex for keys like 'ecutwfc' or 'celldm(1)', allowing spaces.
+    """
+    m = re.fullmatch(r'\s*([A-Za-z_]\w*)\s*(?:\(\s*(\d+)\s*\))?\s*', var)
+    if not m:
+        # Fallback: literal match for odd keys
+        key = re.escape(var).replace(r'\ ', r'\s*')
+    else:
+        base, idx = m.group(1), m.group(2)
+        key = rf'{base}' if idx is None else rf'{base}\s*\(\s*{idx}\s*\)'
+    return re.compile(rf'{key}\s*=\s*{_NUM_RE}', re.IGNORECASE)
+
+def parse_qe_numeric(lines, var: str):
+    """
+    Parse the first numeric value assigned to `var` from a list of strings.
+    Examples: var='celldm(1)', var='ecutwfc', var='ntyp'
+    Returns int if integer-like, else float; None if not found.
+    """
+    pat = _var_pattern(var)
     for ln in lines:
         m = pat.search(ln)
         if m:
-            try:
-                return float(m.group(1))
-            except ValueError:
-                pass
+            s = m.group(1)
+            return int(s) if re.fullmatch(r'[+-]?\d+', s) else float(s)
     return None
 
-def _parse_units(header_line: str, default_unit: str) -> str:
-    # accept: "CELL_PARAMETERS angstrom" or "ATOMIC_POSITIONS (alat)"
-    m = re.search(r"\b(CELL_PARAMETERS|ATOMIC_POSITIONS)\b\s*[\(\s]*([A-Za-z_]+)[\)]?\s*$",
-                  header_line, flags=re.IGNORECASE)
-    if m and m.group(2):
-        return m.group(2).lower()
-    return default_unit.lower()
+def _parse_units(header_line: str) -> str:
+    if 'alat' in header_line:
+        unit = 'alat'
+    elif 'ang' in header_line:
+        unit = 'angstrom'
+    elif ('bohr' in header_line or 'a.u.' in header_line):
+        unit = 'bohr'
+    else: # default
+        unit = 'alat'
+    return unit
 
 # ---------------- lattice helpers ----------------
 def _parse_cell(lines: list[str]) -> tuple[list[float], str] | None:
@@ -120,7 +132,7 @@ def _parse_cell(lines: list[str]) -> tuple[list[float], str] | None:
     i = _find_block_start(lines, "CELL_PARAMETERS")
     if i is None:
         return None
-    unit = _parse_units(lines[i], "alat")  # QE defaults CELL_PARAMETERS to 'alat'
+    unit = _parse_units(lines[i])  # QE defaults CELL_PARAMETERS to 'alat'
     rows = []
     for j, ln in enumerate(_block_iter(lines, i)):
         parts = ln.split()
@@ -132,18 +144,14 @@ def _parse_cell(lines: list[str]) -> tuple[list[float], str] | None:
     if len(rows) != 3:
         raise ValueError("CELL_PARAMETERS: need 3 rows with 3 numbers each")
 
-    # Convert to Å
+    # Convert to Angstrom
     if unit == "angstrom" or unit == "ang":
-        pass  # already Å
+        pass  # already Angstrom
     elif unit == "bohr" or unit == "a.u.":
         rows = [[v * kBohrToAngstrom for v in r] for r in rows]
     elif unit == "alat":
-        # Need alat in Å: derive from celldm(1) (Bohr) or A (Å)
-        alat_bohr = _parse_named_value(lines, r"celldm\s*\(\s*1\s*\)")
-        alat_ang = _parse_named_value(lines, r"A")
-        if alat_ang is not None:
-            scale = alat_ang
-        elif alat_bohr is not None:
+        alat_bohr = parse_qe_numeric(lines, "celldm(1)")
+        if alat_bohr is not None:
             scale = alat_bohr * kBohrToAngstrom
         else:
             raise ValueError("CELL_PARAMETERS (alat): missing celldm(1) or A to resolve alat")
@@ -172,7 +180,7 @@ def _parse_positions(lines: list[str], lattice_A: list[float] | None) -> tuple[l
     i = _find_block_start(lines, "ATOMIC_POSITIONS")
     if i is None:
         return None
-    unit = _parse_units(lines[i], "alat")  # QE default is alat
+    unit = _parse_units(lines[i])  # QE default is alat
     # Prepare lattice matrix if needed
     L = None
     if lattice_A is not None:
@@ -182,13 +190,8 @@ def _parse_positions(lines: list[str], lattice_A: list[float] | None) -> tuple[l
             [lattice_A[6], lattice_A[7], lattice_A[8]],
         ]
 
-    # alat scaling in Å
-    alat_bohr = _parse_named_value(lines, r"celldm\s*\(\s*1\s*\)")
-    alat_ang = _parse_named_value(lines, r"A")
-    alat_scale_A: float | None = None
-    if alat_ang is not None:
-        alat_scale_A = alat_ang
-    elif alat_bohr is not None:
+    alat_bohr = parse_qe_numeric(lines, "celldm(1)")
+    if alat_bohr is not None:
         alat_scale_A = alat_bohr * kBohrToAngstrom
 
     atoms: list[dict] = []
