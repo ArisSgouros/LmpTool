@@ -60,7 +60,7 @@ def build_atoms_from_json(
         )
         if have_all_forces:
             forces = np.array([a["forces"] for a in atoms_data], dtype=float)
-            atoms.new_array("forces", forces)  # becomes 'force' in EXTXYZ
+            atoms.new_array("forces", forces)
 
     # Global info
     if include_info and isinstance(data.get("info"), dict):
