@@ -11,3 +11,5 @@ done
 for case_ in 01c_MoSSe.scf.out 02b_MoSSe.relax.out 03b_MoSSe.vcrelax_lat.out 03c_MoSSe.vcrelax_ang.out; do
     python $pwo2json $case_ --pretty -o $case_.json
 done
+
+python ../pwo2json.py "./03*.out" --pretty > 03bc.out.combined.json
