@@ -17,24 +17,7 @@
       "info": {
         "source": "qe_input",
         "cell_unit": "angstrom",
-        "positions_unit": "angstrom",
-        "species": [
-          {
-            "symbol": "S",
-            "mass": 32.07,
-            "pseudo": "S.pz-hgh.UPF"
-          },
-          {
-            "symbol": "Se",
-            "mass": 78.96,
-            "pseudo": "Se.pz-hgh.UPF"
-          },
-          {
-            "symbol": "Mo",
-            "mass": 95.94,
-            "pseudo": "Mo.pz-hgh.UPF"
-          }
-        ]
+        "positions_unit": "angstrom"
       },
       "atoms_data": [
         {
@@ -274,24 +257,7 @@
       "info": {
         "source": "qe_input",
         "cell_unit": "angstrom",
-        "positions_unit": "angstrom",
-        "species": [
-          {
-            "symbol": "S",
-            "mass": 32.07,
-            "pseudo": "S.pz-hgh.UPF"
-          },
-          {
-            "symbol": "Se",
-            "mass": 78.96,
-            "pseudo": "Se.pz-hgh.UPF"
-          },
-          {
-            "symbol": "Mo",
-            "mass": 95.94,
-            "pseudo": "Mo.pz-hgh.UPF"
-          }
-        ]
+        "positions_unit": "angstrom"
       },
       "atoms_data": [
         {
