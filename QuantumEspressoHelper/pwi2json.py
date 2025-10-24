@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-qe_in_parser.py — Parse Quantum ESPRESSO pw.x input files to JSON.
+qe_in_parser.py Parse Quantum ESPRESSO pw.x input files to JSON.
 
 Outputs a dict with:
 {
@@ -151,8 +151,11 @@ def _parse_cell(lines: list[str]) -> tuple[list[float], str] | None:
         rows = [[v * kBohrToAngstrom for v in r] for r in rows]
     elif unit == "alat":
         alat_bohr = parse_qe_numeric(lines, "celldm(1)")
+        alat_angstrom = parse_qe_numeric(lines, "A")
         if alat_bohr is not None:
             scale = alat_bohr * kBohrToAngstrom
+        if alat_angstrom is not None:
+            scale = alat_angstrom
         else:
             raise ValueError("CELL_PARAMETERS (alat): missing celldm(1) or A to resolve alat")
         rows = [[v * scale for v in r] for r in rows]
@@ -191,8 +194,11 @@ def _parse_positions(lines: list[str], lattice_A: list[float] | None) -> tuple[l
         ]
 
     alat_bohr = parse_qe_numeric(lines, "celldm(1)")
+    alat_angstrom = parse_qe_numeric(lines, "A")
     if alat_bohr is not None:
         alat_scale_A = alat_bohr * kBohrToAngstrom
+    elif alat_angstrom is not None:
+        alat_scale_A = alat_angstrom
 
     atoms: list[dict] = []
     for ln in _block_iter(lines, i):
